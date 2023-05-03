@@ -1,0 +1,85 @@
+.contact-page {
+    padding: cRems(169px) cRems(31px);
+
+    @include medium {
+        padding: cRems(219px) 0 cRems(231px);
+    }
+
+    .button-row {
+        border-top: none;
+        border-bottom: none;
+    }
+
+    .bottom-contact-info {
+
+        .socials {
+            display: flex;
+            padding-top: cRems(10px);
+
+            a {
+                color: $colorNavy;
+                font-size: cRems(15px);
+                margin-right: cRems(38px);
+                line-height: 1;
+                letter-spacing: cRems(1.76px);
+                font-weight: 700;
+                font-family: $fontStyrene;
+                width: fit-content;
+                background-color: transparent;
+                text-decoration: none;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                white-space: nowrap;
+                cursor: pointer;
+
+                &:last-of-type {
+                    margin-right: 0;
+                }
+
+                &:hover {
+                    color: $colorTeal;
+
+                    svg {
+                        
+                        path {
+                            fill: $colorTeal;
+                        }
+                    }
+                }
+
+                svg {
+                    margin-right: cRems(10px);
+                    width: cRems(14px);
+                }
+            }
+        }
+
+        .contact-info-left {
+            margin-top: cRems(100px);
+
+            @include medium {
+                margin-top: 0;
+                max-width: cRems(513px);
+            }
+        }
+
+        .contact-info-right {
+            position: relative;
+            margin-top: cRems(100px);
+
+            @include medium {
+                margin-top: 0;
+                max-width: cRems(435px);
+            }
+
+            .sticker {
+                position: absolute;
+                bottom: cRems(-35px);
+                left: cRems(58px);
+                width: cRems(147px);
+                height: auto;
+            }
+        }
+    }
+}

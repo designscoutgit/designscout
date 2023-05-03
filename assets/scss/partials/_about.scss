@@ -1,0 +1,263 @@
+#about_form {
+    max-width: cRems(1186px);
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+
+    @include small {
+        padding: cRems(31px);
+    }
+
+    > div {
+        // margin: cRems(13px);
+
+        &:nth-child(2) {
+            width: 100%;
+
+            @include medium {
+                width: cRems(303px);
+                margin-right: cRems(27px);
+            }
+        }
+
+        &:nth-child(3) {
+            width: 100%;
+
+            @include medium {
+                width: cRems(303px);
+                margin-right: cRems(27px);
+            }
+        }
+
+        &:nth-child(4) {
+            width: 100%;
+
+            @include medium {
+                width: cRems(512px);
+            } 
+        }
+
+        &:nth-child(5) {
+            width: 100%;
+
+            @include medium {
+                width: cRems(639px);
+                margin-right: cRems(27px);
+            }
+        }
+
+        &:nth-child(6) {
+            width: 100%;
+
+            @include medium {
+                width: cRems(512px);
+            }
+        }
+
+        &:nth-child(7) {
+            width: 100%;
+        }
+    }
+
+    h2 {
+        width: 100%;
+    }
+}
+
+.intro-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @include medium {
+        flex-direction: row;
+    }
+}
+
+.logos {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: cRems(221px);
+    margin: 0 auto;
+    padding-top: cRems(92px);
+
+    @include medium {
+        flex-direction: column;
+        justify-content: center;
+        width: cRems(182px);
+        margin-left: cRems(218px);
+        padding-top: cRems(209px);
+    }
+  
+    img {
+        width: cRems(100px);
+        margin-bottom: cRems(20px);
+
+        @include medium {
+            width: cRems(182px);
+            margin-bottom: cRems(50px);
+        }
+    }
+}
+
+.intro-section {
+    padding-top: cRems(92px);
+
+    @include medium {
+        padding-top: cRems(209px);
+        max-width: cRems(880px);
+        padding-left: cRems(103px);
+
+        p {
+            max-width: cRems(521px);
+        }
+    }
+
+    .never-stop-wrapper {
+        position: relative;
+        width: 100%;
+
+        img {
+            width: cRems(261px);
+            position: absolute;
+            right: cRems(85px);
+            bottom: cRems(-90px);
+        }
+    }
+}
+
+.intro-images {
+    padding-top: cRems(100px);
+
+    > div {
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: cRems(12px);
+
+        @include medium {
+            max-width: cRems(556px);
+            height: auto;
+            margin-bottom: cRems(35px);
+        }
+    }
+}
+
+.quote-container {
+    position: relative;
+    margin-top: cRems(130px);
+
+    @include small {
+        text-align: center;
+    }
+
+    .quote-icon {
+        width: cRems(39px);
+        margin: 0 auto;
+        margin-bottom: cRems(40px);
+
+        @include medium {
+            position: absolute;
+            left: cRems(-72px);
+            top: cRems(10px);
+            margin-bottom: 0;
+        }
+
+        svg {
+            width: 100%;
+        }
+    }
+  
+    .quote-copy {
+      font-size: cRems(35px);
+      line-height: cRems(69px);
+      font-weight: 500;
+      font-style: normal;
+      font-family: $fontGTAlpinaFine;
+      padding: 0 cRems(52px) cRems(27px);
+
+      @include medium {
+        max-width: cRems(595px);
+        padding: 0;
+    }
+  
+      em,
+      .italic {
+        display: block;
+        font-size: cRems(40px);
+        line-height: cRems(79px);
+        font-weight: 500;
+        font-style: italic;
+        font-family: $fontGTAlpina;
+      }
+
+      h2 {
+
+        @include medium {
+            max-width: cRems(457px);
+            padding: cRems(31px) 0;
+        }
+      }
+  
+      .call-out {
+        display: block;
+        padding: cRems(30px) 0 0;
+        font-weight: 250;
+      }
+    }
+  }
+
+.good-company-container {
+    padding: 0 cRems(93px) cRems(150px) !important;
+    justify-content: space-around;
+
+    @include medium {
+        padding: 0 cRems(93px) !important;
+    }
+
+    .svg-wrapper {
+
+        .badge-1 {
+            width: cRems(97px);
+        }
+
+        .badge-2 {
+            width: cRems(73px);
+        }
+
+        .badge-3 {
+            width: cRems(77px);
+        }
+    }
+
+    .col {
+
+        &:last-of-type {
+            
+            @include medium {
+                max-width: cRems(390px);
+            }
+        }
+    }
+
+    .scout-signature {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        @include medium {
+            justify-content: flex-end;
+        }
+
+        svg {
+            width: cRems(190px);
+        }
+    }
+}

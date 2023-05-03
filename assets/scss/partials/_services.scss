@@ -1,0 +1,77 @@
+// SERVICES PAGE
+.services {
+
+    main {
+        padding: cRems(190px) 0;
+
+        .container {
+            max-width: $large;
+            margin: 0 auto;
+            padding: 0 cRems(83px);
+
+            .service-row {
+                
+                @include medium {
+                    border-bottom: cRems(1px) solid $colorCream;
+                }
+
+                .left-col {
+                    max-width: cRems(569px);
+                }
+
+                .right-col {
+
+                    @include medium {
+
+                        ul {
+                            list-style-type: disc;
+                            min-width: cRems(371px);
+    
+                            li {
+                                display: list-item;
+                            }
+                        }
+                    }
+                }
+            }
+    
+            .row {
+                padding: cRems(129px) cRems(37px);
+
+                @include small {
+                    padding-bottom: 0;
+                }
+            }
+    
+            .services-disclaimer {
+    
+                h2 {
+                    width: cRems(834px);
+                }
+                
+                p {
+                    max-width: cRems(348px);
+
+                    @include small {
+                        display: none;
+                    }
+                }
+            }
+
+            .btn {
+
+                @include small {
+                    margin: 0 auto;
+                }
+            }
+
+            .contact-copy {
+                max-width: cRems(750px);
+            }
+        }
+
+        .case-studies-carousel-container {
+            padding-bottom: cRems(230px);
+        }
+    }
+}

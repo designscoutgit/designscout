@@ -1,0 +1,521 @@
+// NAVBAR
+// header {
+//     height: cRems(94px);
+
+//     @include medium {
+//         height: cRems(104px);
+//     }  
+// }
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    // height: 0;
+    height: cRems(94px);
+    z-index: 9997;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 cRems(35px);
+    transition: background-color 2s ease-in-out;
+    
+    @include medium {
+        height: cRems(104px);
+        padding: 0 cRems(96px);
+    }
+
+    .camp-diary-gallery {
+
+        .logo {
+
+            &:hover {
+                
+                svg {
+
+                    path {
+                        fill: $colorCream
+                    }
+                }
+            }
+        }
+    }
+  
+    &.scrolling {
+      background: linear-gradient(to bottom, rgba($colorCream, 1), rgba($colorCream, 0)) !important;
+      height: cRems(104px);
+
+      .camp-diary-gallery & {
+        background: linear-gradient(to bottom, rgba($colorNavy, 1), rgba($colorNavy, 0)) !important;
+      }
+
+      .dark &,
+      &.dark {
+        background: linear-gradient(to bottom, rgba($colorGrayBlue, 1), rgba($colorGrayBlue, 0)) !important;
+
+        .home & {
+            background: $colorGrayBlue;
+            background-color: $colorGrayBlue;
+        }
+      }
+    }
+  
+    &.active {
+        background-color: transparent;
+        // cursor: url("../svg/cursor.svg") 40 40, auto !important;
+
+        // * {
+        //   cursor: url("../svg/cursor.svg") 40 40, auto !important;
+        // }
+
+        // .logo {
+
+        //     svg {
+
+        //         path {
+        //             fill: $colorCream;
+        //         }
+        //     }
+        // }
+    }
+
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+            
+            svg {
+
+                path {
+                    fill: $colorNavy;
+                }
+            }
+        }
+
+        .dark & {
+
+            svg {
+
+                path {
+                    fill: $colorCream;
+                }
+            }
+        }
+    }
+}
+
+.in-video {
+    background: none !important;
+
+    * {
+        color: $colorCream;
+    }
+
+    svg {
+
+        path {
+            fill: $colorCream;
+        }
+    }
+
+    line {
+        stroke: $colorCream;
+    }
+}
+
+.top-of-page {
+    background: none !important;
+
+    * {
+        color: $colorNavy;
+    }
+
+    svg {
+
+        path {
+            fill: $colorNavy;
+        }
+    }
+
+    line {
+        stroke: $colorNavy;
+    }
+}
+
+// MENU TOGGLE
+.menu-toggle {
+    font-family: $fontStyrene;
+    font-weight: $weightHeavy;
+    font-size: cRems(15px);
+    letter-spacing: cRems(1.76px);
+    background: none;
+    border: none;
+    color: $colorNavy;
+    cursor: pointer;
+    padding: 0;
+    display: inline-block;
+
+    .dark &,
+    .camp-diary-gallery & {
+        color: $colorCream;
+
+        span {
+
+            .icon {
+                
+                line {
+                    stroke: $colorCream;
+                }
+            }
+        }
+    }
+
+    .light & {
+        color: $colorNavy;
+
+        span {
+            color: $colorNavy;
+
+            .icon {
+                
+                line {
+                    stroke: $colorNavy;
+                }
+            }
+        }
+    }
+
+    span {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        line-height: cRems(21px);
+
+        .icon {
+            margin-left: cRems(20px);
+            transition: rotate .3s ease-in-out;
+            
+            &.close {
+                width: cRems(21px);
+                height: cRems(21px);
+            }
+        }
+    }
+}
+
+// FULLSCREEN MENU
+.fs-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    background-color: $colorGrayBlue;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    transform: translateX(-100%);
+    // opacity: 0;
+    transition: transform 1s ease-in-out;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    @include medium {
+        padding: cRems(181px) cRems(246px) cRems(215px) cRems(137px);
+    }
+
+    &.open {
+        transform: translateX(0);
+        // opacity: 1;
+    }
+
+    .sidebar {
+        content: "";
+        display: inline-block;
+        background-image: url("../images/menu_pattern.jpg");
+        background-size: cover;
+        position: absolute;
+        left: 0;
+        top: cRems(94px);
+        width: cRems(14px);
+        height: cRems(207px);
+    
+        @include medium {
+          top: cRems(204px);
+          width: cRems(18px);
+          height: cRems(270px);
+        }
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+
+        @include medium {
+            flex-direction: row;
+        }
+
+        ul {
+            min-width: cRems(408px);
+            text-align: center;
+            padding: cRems(81px) 0;
+
+            @include medium {
+                text-align: left;
+                padding: 0;
+            }
+
+            li {
+
+                a {
+                    font-family: $fontGTAlpinaFine;
+                    color: $colorCream;
+                    font-size: cRems(40px);
+                    line-height: cRems(67px);
+                    text-decoration: none;
+                    font-weight: $weightExtraLight;
+                    font-style: italic;
+                    white-space: nowrap;
+            
+                    @include medium {
+                        font-size: cRems(80px);
+                        line-height: cRems(125px);
+                    }
+            
+                    &:hover {
+                        color: $colorYellow;
+                    }
+
+                    &.router-link-active {
+                        color: $colorYellow;
+                    }
+                }
+            }
+        }
+    }
+    .menu-aside {
+        display: flex;
+        flex-direction: column;
+
+        @include medium {
+            margin-left: cRems(175px);
+        }
+
+        h2,
+        h3 {
+            color: $colorCream;
+            text-align: center;
+
+            @include medium {
+                text-align: left;
+            }
+
+            a {
+                color: $colorCream;
+
+                &:hover {
+                    color: $colorYellow;
+
+                    svg {
+
+                        path {
+                            fill: $colorYellow;
+                        }
+                    }
+                }
+            }
+        }
+        h2 {
+            padding: 0 0 cRems(15px) 0;
+        }
+
+        .aside-block {
+            padding-bottom: cRems(67px);
+
+            &.above-line {
+
+                @include small {
+                    display: none;
+                }
+            }
+
+            &.below-line {
+                padding-top: cRems(63px);
+            }
+        }
+
+        .bottom-buttons {
+            display: flex;
+            justify-content: space-evenly;
+            width: cRems(269px);
+            flex-direction: row;
+            align-items: center;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            padding-top: cRems(63px);
+        
+            @include medium {
+                justify-content: flex-start;
+                width: cRems(507px);
+                padding-top: 0;
+            }
+        
+            button,
+            .btn,
+            .button {
+                margin: 0 0 cRems(27px) 0;
+        
+                @include medium {
+                    margin: 0 cRems(27px) cRems(27px) 0;
+                }
+            }
+        }
+    }
+}
+
+// LOGO AND MENU TOGGLE
+.navbar,
+.fs-menu {
+
+    .logo {
+        position: absolute;
+        top: cRems(51px);
+        left: cRems(96px);
+
+        @include medium {
+            left: cRems(58px);
+        }
+        
+        svg {
+            width: cRems(138px);
+            height: auto;
+        }
+    }
+
+    .menu-toggle {
+        position: absolute;
+        top: cRems(51px);
+        right: cRems(96px);
+        height: auto;
+
+        @include medium {
+            right: cRems(58px);
+        }
+        
+        &:hover {
+
+            svg {
+
+                path {
+                    fill: $colorCream;
+                }
+            }
+        }
+
+        svg {
+            width: cRems(21px);
+            height: cRems(21px);
+        }
+    }
+}
+// .navbar {
+
+//     .logo {
+
+//         &:hover {
+
+//             svg {
+
+//                 path {
+//                     fill: $colorCream;
+//                 }
+//             }
+//         }
+//     }
+// }
+.fs-menu {
+
+    // .logo {
+        
+    //     &:hover {
+
+    //         svg {
+
+    //             path {
+    //                 fill: $colorCream;
+    //             }
+    //         }
+    //     }
+    // }
+
+    .menu-toggle {
+
+        svg {
+            width: cRems(30px);
+            height: auto;
+        }
+    }
+    
+    span {
+        color: $colorCream;
+    }
+}
+
+// PAGE SPECIFIC STYLES FOR THE NAV
+.about {
+
+    .navbar {
+        background: transparent;
+    }
+
+    .logo {
+        
+        svg {
+
+            path {
+                fill: $colorCream;
+            }
+        }
+
+        &:hover {
+            
+            svg {
+
+                path {
+                    fill: $colorCream;
+                }
+            }
+        }
+    }
+
+    .light {
+
+        .logo {
+
+            svg {
+
+                path {
+                    fill: $colorNavy;
+                }
+            }
+        }
+    }
+
+    .menu-toggle {
+        color: $colorCream;
+
+        svg {
+
+            line {
+                stroke: $colorCream;
+            }
+        }
+    }
+}

@@ -1,0 +1,191 @@
+footer {
+    background-color: $colorNavy;
+    color: $colorCream;
+    text-transform: uppercase;
+    padding: cRems(62px) cRems(35px) cRems(84px);
+    
+    @include medium {
+        padding: cRems(88px) cRems(96px) cRems(59px);
+    }
+
+    .container {
+        max-width: $large;
+        margin: 0 auto;
+        font-family: $fontStyrene;
+        font-size: cRems(15px);
+        line-height: cRems(19px);
+        letter-spacing: cRems(2.08px);
+        font-weight: $weightHeavy;
+    
+        a {
+            color: $colorCream;
+            display: inline-flex;
+            align-items: center;
+
+            &:hover {
+                color: $colorYellow;
+
+                svg {
+
+                    path {
+                        fill: $colorYellow;
+                    }
+                }
+            }
+        }
+
+        .row {
+            justify-content: space-between;
+
+            &:last-of-type {
+                
+                @include medium {
+                    padding: cRems(112px) 0 0;
+                }
+            }
+
+            > .col {
+                width: 100%;
+
+                @include medium {
+                    width: 50%;
+                }
+            }
+        }
+    
+        .disclaimer {
+            display: block;
+            width: 100%;
+            font-family: $fontStyrene;
+            font-size: cRems(15px);
+            line-height: cRems(19px);
+            letter-spacing: cRems(2.08px);
+            padding: cRems(72px) 0 0;
+            border-top: cRems(1px) solid $colorCream;
+
+            @include medium {
+                display: inline;
+                padding: 0;
+                border-top: none;
+            }
+        }
+
+        .footer-engagement {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            
+            .footer-logo {
+                width: cRems(180px);
+                margin: 0 auto;
+
+                @include medium {
+                    margin: 0;
+                }
+            }
+
+            .watch-reel {
+
+                @include small {
+                    display: none;
+                }
+            }
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            @include medium {
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: row;
+            }
+
+            .col {
+                width: cRems(220px);
+
+                h5 {
+                    font-weight: 300;
+                    font-size: cRems(10px);
+                    line-height: cRems(13px);
+                    letter-spacing: cRems(4px);
+                    padding-bottom: cRems(10px);
+
+                    @include small {
+                        padding-bottom: cRems(20px);
+                    }
+                }
+
+                @include small {
+                    width: auto;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    padding-bottom: cRems(41px);
+                }
+
+                ul {
+                    font-family: $fontStyrene;
+                    font-weight: $weightHeavy;
+                    font-size: cRems(15px);
+                    line-height: cRems(19px);
+                    font-style: normal;
+
+                    @include small {
+                        width: auto;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    li {
+
+                        a {
+                            font-size: cRems(12px);
+                            line-height: cRems(28px);
+                            letter-spacing: cRems(1.76px);
+
+                            @include medium {
+                                font-size: cRems(15px);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .follow-us {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            @include medium {
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: row;
+            }
+
+            a {
+                font-size: cRems(12px);
+                line-height: cRems(28px);
+                letter-spacing: cRems(1.76px);
+
+                @include medium {
+                    font-size: cRems(15px);
+                    margin-left: cRems(40px);
+
+                    &:first-of-type {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,399 @@
+.button-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include medium {
+        flex-direction: row;
+        width: fit-content;
+        margin: 0 auto;
+    }
+    
+    button,
+    .btn,
+    .button {
+        margin: 0 auto;
+        margin-bottom: cRems(20px);
+        // margin-left: cRems(20px);
+
+        @include medium {
+            margin-left: cRems(59px);
+            margin-bottom: 0;
+        }
+    }
+
+    .share-btn {
+        margin-left: cRems(20px);
+
+        @include medium {
+            margin-left: cRems(59px);
+        }
+    }
+}
+
+form button,
+.btn,
+.button {
+    color: $colorWhite;
+    font-size: cRems(12px);
+    line-height: 1;
+    letter-spacing: cRems(1.76px);
+    font-weight: 700;
+    padding: 0 cRems(24px);
+    border: cRems(2px) solid $colorWhite;
+    border-radius: cRems(100px);
+    font-family: $fontStyrene;
+    text-align: center;
+    width: fit-content;
+    min-width: cRems(43px);  
+    background-color: transparent;
+    text-decoration: none;
+    height: cRems(43px);    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
+
+    @include medium {
+        font-size: cRems(15px);
+        text-align: left;
+        display: inline-flex;
+    }
+
+    &:hover {
+        background-color: $colorCream;
+        color: $colorNavy;
+
+        span {
+            color: $colorNavy;
+        }
+
+        svg {
+    
+            path {
+                fill: $colorNavy;
+            }
+        }
+    }
+
+    svg {
+        width: cRems(13px);
+        margin-right: cRems(11px);
+
+        path {
+            fill: $colorCream;
+        }
+    }
+
+    &.round {
+        padding: 0;
+        height: cRems(43px);
+        width: cRems(43px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+            margin-right: 0 !important;
+        }
+    }
+
+    &.light {
+        border: cRems(2px) solid $colorCream;
+        color: $colorCream;
+        background: transparent;
+
+        @include small {
+            margin: auto;
+        }
+
+        &:hover {
+            background-color: $colorCream;
+            color: $colorNavy;
+
+            span {
+                color: $colorNavy;
+            }
+
+            svg {
+        
+                path {
+                    fill: $colorNavy;
+                }
+            }
+        }
+
+        svg {
+            margin-right: cRems(11px);
+    
+            path {
+                fill: $colorCream;
+            }
+        }
+    }
+
+    &.dark {
+        border: cRems(2px) solid $colorNavy;
+        color: $colorNavy; 
+        background-color: transparent;
+
+        @include small {
+            margin: auto;
+        }
+        
+        svg {
+            margin-right: cRems(11px);
+    
+            path {
+                fill: $colorNavy;
+            }
+        }
+
+        &:hover {
+            background-color: $colorNavy;
+            color: $colorCream; 
+
+            svg {
+        
+                path {
+                    fill: $colorCream;
+                }
+            }
+        }
+    }
+}
+
+// NEWSLETTER SIGNUP FORM
+#newsletter,
+#newsletter_thanks {
+    position: relative;
+    margin: cRems(56px) auto cRems(66px);
+    
+    @include medium {
+        margin: cRems(66px) 0 cRems(36px);
+    }
+    
+    input {
+        appearance: none;
+        color: $colorCream;
+        background-color: transparent;
+        border: none;
+        border-bottom: cRems(2px) solid $colorCream;
+        border-radius: 0;
+        box-shadow: none;
+        width: cRems(418px);
+        font-style: normal;
+        font-size: cRems(15px);
+        line-height: cRems(38px);
+        font-weight: $weightBold;
+
+        &::placeholder {
+            color: $colorCream;
+            font-size: cRems(10px);
+            letter-spacing: cRems(2.08px);
+            font-weight: $weightLight;
+        }
+    }
+
+    .arrow {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        border: none;
+        padding: 0;
+        height: auto;
+        cursor: pointer;
+        background: transparent;
+        min-width: 0;
+
+        &:hover {
+
+            svg {
+
+                path {
+                    fill: $colorYellow;
+                }
+            }
+        }
+
+        svg {
+            width: cRems(18px);
+            height: auto;
+            margin-right: 0;
+        }
+    }
+}
+
+// CONTACT FORM 
+form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    > div {
+        width: 32%;
+        // padding: cRems(13px);
+        margin-bottom: cRems(27px);
+
+        @include small {
+            width: 100%;
+        }
+
+        &.wide-container {
+            min-width: 49%;
+
+            @include small {
+                width: 100%;
+            }
+        }
+
+        &.textarea-container {
+            width: 100%;
+        }
+
+        input,
+        select,
+        .custom-dropdown,
+        textarea {
+            width: 100%;
+            appearance: none;
+            background: transparent;
+            border: cRems(1px) solid $colorDarkGray;
+            min-height: cRems(73px);
+            font-family: $fontStyrene;
+            font-size: cRems(15px);
+            line-height: cRems(34px);
+            letter-spacing: cRems(1.76px);
+            font-weight: $weightHeavy;
+            padding: 0 cRems(36px);
+            color: $colorDarkGray;
+
+            &:focus {
+                background-color: $colorBeige;
+                outline: none;
+            }
+        }
+        textarea {
+            height: cRems(351px);
+            user-select: none;
+            resize: none;
+            padding-top: cRems(21px)
+        }
+        .custom-dropdown {
+            padding: 0;
+        }
+    }
+
+    .button-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+
+        button {
+            margin: 0;
+        }
+    }
+}
+
+// MISCELLANEOUS BUTTON STYLES
+.button-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: cRems(50px) 0;
+    border-top: cRems(1px) solid $colorNavy;
+    border-bottom: cRems(1px) solid $colorNavy;
+    margin: 0 cRems(28px);
+
+    @include medium {
+        margin: 0;
+    }
+
+    .btn {
+        margin: cRems(17px);
+    }
+}
+
+// CUSTOM SELECT
+.custom-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    text-transform: uppercase;
+    color: $colorDarkGray;
+    cursor: pointer;
+  }
+
+  .custom-dropdown-selected {
+    width: 100%;
+    height: cRems(73px);
+    line-height: cRems(73px);
+    padding: 0 cRems(36px);
+    margin: 0;
+
+    span {
+        position: absolute;
+        right: cRems(36px);
+        width: cRems(16px);
+
+        svg {
+            width: 100%;
+        }
+    }
+
+    &.open {
+
+        svg {
+
+            rotate: 180deg;
+        }
+    }
+  }
+
+  .custom-dropdown-options {
+    background-color: $colorCream;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute;
+    left: cRems(-1px);
+    right: 0;
+    margin: auto;
+    top: 100%;
+    width: calc(100% + cRems(2px));
+    z-index: 1;
+    border: cRems(1px) solid $colorDarkGray;
+
+    &.open {
+        display: flex;
+    }
+  }
+  
+  .custom-dropdown-option {
+    padding: 0 cRems(36px);
+    width: 100%;
+    height: cRems(73px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .custom-dropdown-option:hover {
+    background-color: $colorBeige;
+  }
+  
+  .custom-dropdown-option.selected {
+    background-color: $colorBeige;
+  }
+  
+  .custom-dropdown.open .custom-dropdown-options {
+    display: block;
+  }
+  

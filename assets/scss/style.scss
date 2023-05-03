@@ -1,0 +1,29 @@
+@use 'sass:math';
+
+// GLOBAL STYLES
+@import 'partials/variables';
+@import 'partials/mixins';
+@import 'partials/helpers';
+@import 'partials/global';
+@import 'partials/layout';
+@import 'partials/forms';
+@import 'partials/animations';
+
+// PAGE STYLES
+@import 'partials/home';
+@import 'partials/about';
+@import 'partials/contact';
+@import 'partials/case_studies';
+@import 'partials/articles';
+@import 'partials/process';
+@import 'partials/services';
+@import 'partials/charity_referral';
+
+// COMPONENT STYLES
+@import 'partials/nav';
+@import 'partials/footer';
+@import 'partials/the_troop';
+@import 'partials/faq';
+@import 'partials/gallery';
+
+@import 'partials/old_styles';

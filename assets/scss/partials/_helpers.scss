@@ -1,0 +1,182 @@
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: $weightBold;
+}
+
+* html .clearfix {
+  height: 1%;
+}
+
+.clearfix {
+  display: block;
+
+  &:after {
+    clear: both;
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    visibility: hidden;
+  }
+}
+
+.clear {
+  clear: both;
+}
+
+.center {
+  text-align: center;
+
+  p {
+    text-align: center;
+  }
+}
+
+.disable-scroll {
+  overflow: hidden;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.word-break {
+  word-break: break-word;
+  word-break: break-all;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.underline {
+  text-decoration: underline;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.navy {
+  color: $colorNavy;
+}
+
+.cream {
+  color: $colorCream;
+
+  span {
+    color: $colorCream;
+  }
+
+  svg {
+    
+    path {
+      fill: $colorCream;
+    }
+
+    line {
+      stroke: $colorCream;
+    }
+  }
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+.no-pad {
+  padding: 0 !important;
+}
+.no-pad-btm {
+  padding-bottom: 0;
+}
+
+.no-mar-btm {
+  margin-bottom: 0;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+  
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+svg {
+
+  &.light {
+
+    path {
+
+      fill: $colorCream;
+    }
+  }
+
+  &.dark {
+
+    path {
+
+      fill: $colorNavy;
+    }
+  }
+}
+
+.rotate-45 {
+  rotate: 45deg;
+}
+
+// .custom-cursor-light {
+//   cursor: url("../svg/cursor.svg") 40 40, auto !important;
+
+//   * {
+//     cursor: url("../svg/cursor.svg") 40 40, auto !important;
+//   }
+// }
+
+// .custom-cursor-dark {
+//   cursor: url("../svg/cursor-dark.svg") 40 40, auto !important;
+
+//   * {
+//     cursor: url("../svg/cursor-dark.svg") 40 40, auto !important;
+//   }
+// }
+
+/* -------------------------- */
+/* ----- MEDIA QUERIES ------ */
+/* -------------------------- */
+@include small {
+  .large-only {
+    display: none !important;
+  }
+}
+
+@include medium {
+  .small-only {
+    display: none !important;
+  }
+}

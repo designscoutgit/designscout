@@ -1,0 +1,215 @@
+//The Troop (Bio Section)
+.the-troop {
+    padding: cRems(238px) 0 cRems(100px);
+    max-width: $large;
+    margin: 0 auto;
+
+    h2 {
+
+        @include medium {
+            padding-left: cRems(125px);
+        }
+    }
+
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        @include medium {
+            flex-direction: row;
+        }
+    }
+
+    li {
+        width: 91vw;
+        height: 130vw;
+        font-family: $fontStyrene;
+        font-weight: $weightBold;
+        font-size: cRems(20px);
+        line-height: cRems(36px);
+        letter-spacing: cRems(1.1px);
+        text-transform: uppercase;
+        position: relative;
+        perspective: 1000px;
+        margin: cRems(10px);
+        font-style: normal;
+
+        @include medium {
+            width: cRems(423px);
+            height: cRems(602px);
+            font-size: cRems(10px);
+        }
+
+        &:hover {
+
+            // .front {
+            //     transform: rotateY(-180deg);
+            // }
+
+            .back {
+                transform: rotateY(0deg);
+                opacity: 1;
+            }
+        }
+
+        .bio-container {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .front, .back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            // transition: transform 0.6s ease-in-out;
+            // opacity: 0;
+
+            .bio-row {
+                padding: cRems(15px);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 0 cRems(12px);
+
+                @include medium {
+                    max-height: cRems(328px);
+                }
+
+                &:first-of-type {
+                    margin-top: cRems(12px);
+
+                    @include medium {
+                        height: cRems(83px);
+                    }
+                }
+                &:nth-child(2) {
+                    height: 73vw;
+
+                    @include medium {
+                        height: cRems(328px);
+                    }
+                }
+                &:nth-child(3) {
+
+                    @include medium {
+                        height: cRems(45px);
+                    }
+                }
+                &:last-of-type {
+                    margin-bottom: cRems(12px);
+
+                    @include medium {
+                        height: cRems(118px);
+                    }
+                }
+
+                img {
+                    width: 100%
+                }
+
+                .bio-name {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: cRems(30px);
+                    line-height: 1.1;
+
+                    @include medium {
+                        font-size: cRems(18px);
+                    }
+                }
+
+                .bio-description {
+                    text-transform: initial;
+                    font-size: cRems(24px);
+                    line-height: cRems(36px);
+                    letter-spacing: 0;
+                    padding: cRems(15px);
+                    color: $colorCream;
+                    font-family: $fontBaskerville;
+
+                    @include medium {
+                        font-size: cRems(15px);
+                        line-height: cRems(24px);
+                    }
+                }
+
+                .bio-badges {
+                    max-width: 100%;
+
+                    ul {
+                        flex-direction: column;
+                        align-items: flex-start;
+
+                        li {
+                            height: auto;
+                            min-height: 0;
+                            font-size: cRems(24px);
+                            line-height: cRems(36px);
+                            font-weight: 500;
+                            font-family: $fontGTAlpina;
+                            text-transform: initial;
+                            margin: 0;
+                            max-width: 100%;
+                            width: fit-content;
+                            letter-spacing: 0;
+
+                            @include medium {
+                                font-size: cRems(13px);
+                                line-height: cRems(22px);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .front {
+            transform: rotateY(0deg);
+            background-color: rgba(226, 221, 203, 0.5);
+
+            .bio-row {
+                border-top: cRems(2px) solid $colorNavy;
+                border-left: cRems(2px) solid $colorNavy;
+                border-right: cRems(2px) solid $colorNavy;
+
+                &:last-of-type {
+                    border-bottom: cRems(2px) solid $colorNavy;
+                }
+            }
+        }
+
+        .back {
+            transform: rotateY(180deg);
+            background-color: $colorNavy;
+            color: $colorWhite;
+            opacity: 0;
+            transition: opacity .3s ease-in-out;
+
+            .bio-row {
+                border-top: cRems(2px) solid $colorWhite;
+                border-left: cRems(2px) solid $colorWhite;
+                border-right: cRems(2px) solid $colorWhite;
+
+                &:last-of-type {
+                    border-bottom: cRems(2px) solid $colorWhite;
+                }
+            }
+        }
+    }
+}
+
+.below-troop {
+    max-width: cRems(1186px);
+    margin: 0 auto;
+
+    .contact-form {
+        max-width: 100%;
+    }
+}

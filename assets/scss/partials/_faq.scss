@@ -1,0 +1,93 @@
+.faq-container {
+    padding: cRems(31px);
+
+    @include medium {
+        padding: cRems(174px) 0 0;
+    }
+
+    h2 {
+        padding-bottom: cRems(86px);
+    }
+
+    .faq-accordion-container {
+        width: 100%;
+        margin: 0 auto;
+        display: block;
+        padding: cRems(30px);
+
+        @include medium {
+            // width: cRems(1169px);
+        }
+
+        .faq-accordion {
+
+            .faq-item {
+                border-bottom: cRems(2px) solid $colorLightGray;
+                margin-bottom: cRems(48px);
+
+                .faq-item-header {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    flex-direction: row;
+                    cursor: pointer;
+                    transition: all 0.3s;
+                    padding-bottom: cRems(43px);
+
+                    svg {
+
+                        line {
+                            opacity: 1;
+                            transition: opacity .1s ease-in-out;
+                        }
+                    }
+
+                    &.faq-item-header-active {
+
+                        svg {
+
+                            line {
+
+                                &.vertical {
+                                    opacity: 0;
+                                }
+                            }
+                        }
+                    }
+
+                    div {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+
+                        p {
+                            padding: 0;
+                        }
+                    }
+
+                    .faq-item-title {
+                        text-align: left;
+                        max-width: 75%;
+                        // min-height: cRems(66px);
+                        display: flex;
+                        align-items: flex-end;
+                        color: $colorNavy;
+                    }
+                }
+
+                .faq-item-content {
+                    overflow: hidden;
+                    transition: height 0.3s ease-in-out;
+                    display: flex;
+                    height: 0;
+
+                    &.active {
+                        height: fit-content;
+                    }
+                }
+            }
+        }
+    }
+}

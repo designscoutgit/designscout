@@ -1,0 +1,39 @@
+// * {
+//     animation: fadeIn ease-in-out 1s;
+// }
+
+.word {
+  opacity: 0;
+}
+
+.strike-animate {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .strike-animate:before {
+    content: "";
+    position: absolute;
+    top: 52%;
+    left: 0;
+    right: 0;
+    height: cRems(5px);
+    background-color: $colorDarkGray;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 1s ease-out;
+  }
+  
+  .strike-animate.strike-animate-visible:before {
+    transform: scaleX(1);
+  }
+  
+
+@keyframes fadeIn {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

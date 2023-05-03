@@ -1,0 +1,21 @@
+.charity-referral {
+
+    .large-width {
+        
+        @include medium {
+            padding: 0 cRems(60px);
+        }
+    }
+
+    h2 {
+        padding: cRems(200px) 0 0;
+
+        @include medium {
+            padding: cRems(200px) 0 0;
+        }
+    }
+
+    p {
+        max-width: cRems(880px);
+    }
+}

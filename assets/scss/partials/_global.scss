@@ -1,0 +1,553 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, font, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+    scroll-behavior: smooth;
+}
+html {
+    -webkit-text-size-adjust: none; /* Prevent font scaling in landscape */
+}
+body {
+    line-height: 1;
+    color: $colorNavy;
+    background-color: $colorCream;
+    scroll-behavior: smooth;
+
+    &.menu-open {
+        overflow: hidden;
+    }
+}
+ul {
+    counter-reset: item;
+    list-style-type: none;
+    font-family: $fontGTAlpinaFine;
+    font-weight: $weightExtraLight;
+    font-style: italic;
+    font-size: cRems(30px);
+
+    li {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+
+        @include medium {
+            justify-content: flex-start;
+        }
+
+        &::marker {
+            font-family: $fontStyrene;
+            font-weight: $weightBold;
+            font-style: normal;
+            font-size: cRems(15px);
+            line-height: cRems(34px);
+            letter-spacing: cRems(1.76px);
+            text-align: left;
+            padding: 0;
+        }
+
+        p {
+            font-family: $fontStyrene;
+            font-weight: $weightBold;
+            color: $colorNavy;
+            font-style: normal;
+            font-size: cRems(15px);
+            line-height: cRems(34px);
+            letter-spacing: cRems(1.76px);
+            text-align: left;
+            padding: 0;
+        }
+    }
+}
+ol {
+    counter-reset: item;
+    list-style-type: none;
+    font-family: $fontGTAlpinaFine;
+    font-weight: $weightExtraLight;
+    font-style: italic;
+    font-size: cRems(30px);
+
+    li {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        // justify-content: center;
+        // align-items: center;
+
+        @include small {
+            width: cRems(340px);
+            margin: 0 auto;
+        }
+
+        &::before {
+            content: counter(item) "  "; 
+            counter-increment: item;
+            margin-right: cRems(25px);
+        }
+
+        p {
+            font-family: $fontStyrene;
+            font-weight: $weightBold;
+            color: $colorNavy;
+            font-style: normal;
+            font-size: cRems(15px);
+            line-height: cRems(34px);
+            letter-spacing: cRems(1.76px);
+            text-align: left;
+        }
+    }
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+// blockquote:before, blockquote:after,
+// q:before, q:after {
+// 	content: "";
+// }
+// blockquote, q {
+// 	quotes: "" "";
+// }
+blockquote {
+
+    &::before {
+        content: "";
+        display: block;
+        background-image: url("../svg/quotes.svg");
+        background-size: cover;
+        width: cRems(39px);
+        height: cRems(31px);
+        margin: 0 auto;
+        margin-bottom: cRems(30px);
+
+        @include medium {
+            display: inline-block;
+            margin: auto;
+            margin-bottom: cRems(30px);
+        }
+    }
+}
+input::-moz-focus-inner,
+button::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+html {
+	width: 100%;
+	margin-bottom: 0;
+}
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+    font-size: 2.5vw; //sets a base font size of 16px for creative set to a width of 640px
+    /*
+    font-size: 2.13334vw; //sets a base font size of 16px for creative set to a width of 750px
+    */
+
+    @include medium {
+        font-size: $medium; //scaling content but will look like the large layout
+    }
+    @include large {
+        font-size: 16px; //we no longer want to scale content
+    }
+}
+
+body {
+    color: $colorNavy;
+    font-family: $fontStyrene;
+    -webkit-text-size-adjust: 100%;
+    position: relative;
+}
+
+footer,
+header,
+main,
+nav {
+    display: block; // some browsers don't have a default display value for these elements
+}
+
+p {
+    display: block;
+    font-family: $fontBaskerville;
+    font-size: cRems(21px);
+    line-height: cRems(36px);
+    font-weight: 500;
+    padding: 0 cRems(40px) cRems(30px) cRems(40px);
+    text-align: center;
+    margin: unset;
+
+    @include medium {
+        padding: 0 0 cRems(30px) 0;
+        text-align: left;
+    }
+}
+
+a {
+    position: relative;
+    color: $colorTeal;
+    text-decoration: none;
+
+    &:focus {
+        outline: auto;
+    }
+
+    &:hover {
+        color: $colorTeal;
+        // background-position: 0;
+        text-decoration: none;
+
+        &:before{
+            width: 100%;
+        }
+    }
+
+    &.external-link {
+        
+        svg {
+            width: cRems(13px);
+            margin-right: cRems(11px);
+        }
+    }
+
+    &.dark {
+        color: $colorNavy;
+
+        &:hover {
+            color: $colorTeal;
+        }
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1 {
+    @extend .visually-hidden;
+}
+
+h2 {
+    display: block;
+    width: auto;
+    color: $colorDarkGray;
+    font-size: cRems(100px);
+    line-height: cRems(102px);
+    padding: 0 0 cRems(52px) 0;
+    font-family: $fontGTAlpinaFine;
+    font-weight: $weightExtraLight;
+    font-style: italic;
+    text-align: center;
+    transition: color .6s ease-in-out;
+
+    @include medium {
+        font-size: cRems(160px);
+        line-height: cRems(192px);
+        text-align: left;
+    }
+
+    &.size-2,
+    .size-2 {
+        font-size: cRems(80px);
+        line-height: cRems(88px);
+        padding: 0 0 cRems(52px) 0;
+
+        @include medium {
+            padding: 0 0 cRems(18px) 0;
+        }
+    }
+
+    &.size-3,
+    .size-3 {
+        font-size: cRems(80px);
+        line-height: cRems(88px);
+        font-style: italic;
+        padding: 0 0 cRems(52px) 0;
+
+        @include medium {
+            font-size: cRems(65px);
+            line-height: cRems(72px);
+        }
+    }
+
+    &.size-4,
+    .size-4 {
+        font-size: cRems(40px);
+        line-height: cRems(52px);
+        font-family: $fontGTAlpinaFine;
+        font-style: italic;
+        font-weight: $weightExtraLight;
+        // color: $colorNavy;
+
+        @include medium {
+            font-size: cRems(30px);
+            line-height: cRems(36px);
+        }
+
+        a {
+            font-weight: $weightExtraLight;
+        }
+    }
+
+    &.size-5,
+    .size-5 {
+        font-size: cRems(30px);
+        line-height: cRems(36px);
+        margin: 0 0 cRems(20px) 0;
+        padding: 0 !important;
+        font-family: $fontGTAlpinaFine;
+        font-style: italic;
+        font-weight: $weightExtraLight;
+        // color: $colorNavy;
+
+        @include medium {
+            font-size: cRems(21px);
+            line-height: cRems(24px);
+        }
+
+        a {
+            font-weight: $weightExtraLight;
+        }
+    }
+
+    &.pad-left {
+        
+        @include medium {
+            padding-left: cRems(58px);
+        }
+    }
+}
+
+h3 {
+    font-family: $fontStyrene;
+    font-size: cRems(15px);
+    line-height: cRems(25px);
+    letter-spacing: cRems(1.76px);
+    color: $colorDarkGray;
+    font-weight: $weightHeavy;
+    padding: 0 0 cRems(12px) 0;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include medium {
+        text-align: left;
+    }
+}
+
+h4 {
+    font-family: $fontGTAlpina;
+    font-style: italic;
+    font-size: cRems(21px);
+    line-height: cRems(24px);
+    font-weight: 500;
+    padding-bottom: cRems(12px);
+    text-align: center;
+
+    @include medium {
+        text-align: left;
+    }
+}
+
+h6 {
+    font-family: $fontGTAlpina;
+    font-size: cRems(40px);
+    font-style: italic;
+    line-height: cRems(63px);
+    letter-spacing: 0;
+    text-align: center;
+    padding-bottom: cRems(15px);
+
+    @include medium {
+        text-align: left;
+    }
+
+    .outgoing-link {
+        font-family: $fontStyrene;
+        font-size: cRems(15px);
+        letter-spacing: cRems(1.76px);
+        color: $colorNavy;
+        font-weight: $weightHeavy;
+        text-transform: uppercase;
+        font-style: normal;
+        text-decoration: underline;
+        margin-left: cRems(15px);
+    }
+}
+
+::-moz-selection {
+    background: #0097dc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #0097dc;
+    text-shadow: none;
+}
+
+sup {
+    font-size: 70%;
+    position: relative;
+    top: cRems(-4px);
+}
+
+em,
+i {
+    font-style: italic;
+}
+
+b,
+strong {
+    font-weight: $weightBold;
+}
+
+/**************
+CUSTOM ELEMENTS
+**************/
+
+// spacer
+.spacer {
+    width: 100%;
+    height: cRems(20px);
+  
+    @include medium {
+      height: cRems(150px);
+    }
+  
+    &.small {
+      height: cRems(107px);
+
+      @include medium {
+        height: cRems(41px);
+      }
+    }
+  
+    &.x-small {
+      height: cRems(10px);
+    }
+
+    &.medium {
+        height: cRems(66px);
+    }
+}
+
+// SEPARATOR
+.separator {
+    height: cRems(1px);
+    background-color: $colorNavy;
+    border: none;
+    width: cRems(25px) !important;
+    
+    @include small {
+        margin: 0 auto;
+        height: cRems(2px);
+    }
+}
+
+// DIVIDER
+.divider {
+    height: cRems(1px);
+    background-color: $colorCream;
+    margin: 0 auto;
+    border: none;
+    width: 90%;
+    // max-width: $large;
+
+    @include medium {
+        width: 100%;
+    }
+  
+    &.dark {
+      background-color: $colorNavy;
+    }
+
+    .dark & {
+        background-color: $colorCream;
+    }
+}
+
+// BACK TO TOP LINK
+.back-to-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: cRems(90px) 0;
+    height: cRems(300px);
+
+    a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: $colorNavy;
+        text-align: center;
+        text-decoration: none;
+        font-weight: $weightBold;
+
+        &:hover {
+
+            svg {
+                scale: 1.25;
+            }
+        }
+
+        svg {
+            width: cRems(29px);
+            margin-bottom: cRems(20px);
+            transition: scale .6s ease-in-out;
+            scale: 1;
+        }
+    }
+}
+
+// SVG WRAPPER
+.row {
+
+    &.svg-wrapper {
+
+        @include small {
+            flex-direction: row;
+        }
+    
+        svg {
+            margin: 0 cRems(32px);
+        }
+    }
+}
+
+// COPY LINK SUCCESS MESSAGE
+.copied {
+    padding: cRems(5px);
+    font-size: cRems(12px);
+    position: absolute;
+    top: cRems(-35px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+}

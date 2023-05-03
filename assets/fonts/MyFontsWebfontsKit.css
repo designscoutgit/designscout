@@ -1,0 +1,63 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3867246, 2020-12-16T11:57:38-0500
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Monotype Baskerville Bold by Monotype
+ * URL: https://www.myfonts.com/products/pro-bold-baskerville-mt-346951
+ * Copyright: Copyright © 2023 Monotype Imaging Inc. All rights reserved.
+ *
+ * Webfont: Monotype Baskerville Italic by Monotype
+ * URL: https://www.myfonts.com/products/pro-italic-baskerville-mt-346961
+ * Copyright: Copyright © 2023 Monotype Imaging Inc. All rights reserved.
+ *
+ * Webfont: Monotype Baskerville Roman by Monotype
+ * URL: https://www.myfonts.com/products/pro-roman-baskerville-mt-346966
+ * Copyright: Copyright © 2023 Monotype Imaging Inc. All rights reserved.
+ *
+ * Webfont: Monotype Baskerville Bold Italic by Monotype
+ * URL: https://www.myfonts.com/products/pro-bold-italic-baskerville-mt-346956
+ * Copyright: Copyright © 2023 Monotype Imaging Inc. All rights reserved.
+ *
+ * Webfont: Monotype Baskerville Semi Bold by Monotype
+ * URL: https://www.myfonts.com/products/pro-semi-bold-baskerville-mt-346970
+ * Copyright: Copyright © 2023 Monotype Imaging Inc. All rights reserved.
+ *
+ * Webfont: Monotype Baskerville Semi Bold Italic by Monotype
+ * URL: https://www.myfonts.com/products/pro-semi-bold-italic-baskerville-mt-346975
+ * Copyright: Copyright © 2023 Monotype Imaging Inc. All rights reserved.
+ * 
+ * © 2023 MyFonts Inc. */
+
+
+  
+@font-face {
+  font-family: "MonotypeBaskervilleBold";
+  src: url('webFonts/MonotypeBaskervilleBold/font.woff2') format('woff2'), url('webFonts/MonotypeBaskervilleBold/font.woff') format('woff');
+}
+@font-face {
+  font-family: "MonotypeBaskervilleRoman";
+  src: url('webFonts/MonotypeBaskervilleRoman/font.woff2') format('woff2'), url('webFonts/MonotypeBaskervilleRoman/font.woff') format('woff');
+}
+@font-face {
+  font-family: "MonotypeBaskervilleSemiBold";
+  src: url('webFonts/MonotypeBaskervilleSemiBold/font.woff2') format('woff2'), url('webFonts/MonotypeBaskervilleSemiBold/font.woff') format('woff');
+}
+@font-face {
+  font-family: "MonotypeBaskervilleItalic";
+  src: url('webFonts/MonotypeBaskervilleItalic/font.woff2') format('woff2'), url('webFonts/MonotypeBaskervilleItalic/font.woff') format('woff');
+}
+@font-face {
+  font-family: "MonotypeBaskervilleSemiBoldItalic";
+  src: url('webFonts/MonotypeBaskervilleSemiBoldItalic/font.woff2') format('woff2'), url('webFonts/MonotypeBaskervilleSemiBoldItalic/font.woff') format('woff');
+}
+@font-face {
+  font-family: "MonotypeBaskervilleBoldItalic";
+  src: url('webFonts/MonotypeBaskervilleBoldItalic/font.woff2') format('woff2'), url('webFonts/MonotypeBaskervilleBoldItalic/font.woff') format('woff');
+}
+

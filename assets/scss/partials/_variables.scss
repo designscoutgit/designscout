@@ -1,0 +1,134 @@
+//COLORS
+$colorWhite: #FFFFFF;
+$colorCream: #F7F5F0;
+$colorBeige: #E2DDCB;
+$colorLightGray: #B6B3A4;
+$colorGray: #c2c0c0;
+$colorDarkGray: #706D5F;
+$colorGrayBlue: #39464A;
+$colorDarkBlue: #2A3336;
+$colorNavy: #303A3E;
+$colorBlack: #000000;
+$colorYellow: #E0BE5E;
+$colorRust: #9C6D49;
+$colorTeal: #578B8D;
+$colorOlive: #66643F;
+$colorRed: #ba1223;
+$colorErrorRed: #ff0000;
+
+//WEIGHTS
+$weightThin: 100;
+$weightExtraLight: 250;
+$weightLight: 300;
+$weightRegular: 400;
+$weightBold: 600;
+$weightHeavy: 700;
+
+//FONTS
+@font-face {
+    font-family: 'GT Alpina Fine';
+    src:  url('/assets/fonts/GT-Alpina-Fine-Standard-Thin.woff2') format('woff2'),
+          url('/assets/fonts/GT-Alpina-Fine-Standard-Thin.woff') format('woff');
+    font-weight: 250;
+}
+@font-face {
+    font-family: 'GT Alpina Fine';
+    src:  url('/assets/fonts/GT-Alpina-Fine-Standard-Thin-Italic.woff2') format('woff2'),
+          url('/assets/fonts/GT-Alpina-Fine-Standard-Thin-Italic.woff') format('woff');
+    font-weight: 250;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'GT Alpina Fine';
+    src:  url('/assets/fonts/GT-Alpina-Fine-Standard-Regular.woff2') format('woff2'),
+          url('/assets/fonts/GT-Alpina-Fine-Standard-Regular.woff') format('woff');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'GT Alpina Fine';
+    src:  url('/assets/fonts/GT-Alpina-Fine-Standard-Regular-Italic.woff2') format('woff2'),
+          url('/assets/fonts/GT-Alpina-Fine-Standard-Regular-Italic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'GT Alpina Fine';
+    src:  url('/assets/fonts/GT-Alpina-Fine-Standard-Medium.woff2') format('woff2'),
+          url('/assets/fonts/GT-Alpina-Fine-Standard-Medium.woff') format('woff');
+    font-weight: 500;
+}
+// GT Alpina font
+@font-face {
+    font-family: 'GT Alpina';
+    src:  url('/assets/fonts/GT-Alpina-Standard-Thin.woff2') format('woff2'),
+          url('/assets/fonts/GT-Alpina-Standard-Thin.woff') format('woff');
+    font-weight: 100;
+}
+@font-face {
+    font-family: 'GT Alpina';
+    src:  url('/assets/fonts/GT-Alpina-Standard-Medium.woff2') format('woff2'),
+          url('/assets/fonts/GT-Alpina-Standard-Medium.woff') format('woff');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'GT Alpina';
+    src:  url('/assets/fonts/GT-Alpina-Standard-Medium-Italic.woff2') format('woff2'),
+          url('/assets/fonts/GT-Alpina-Standard-Medium-Italic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+// Styrene A font
+@font-face {
+    font-family: 'Styrene A';
+    src:  url('/assets/fonts/StyreneAWeb-Light.woff2') format('woff2'),
+          url('/assets/fonts/StyreneAWeb-Light.woff') format('woff');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'Styrene A';
+    src:  url('/assets/fonts/StyreneAWeb-Regular.woff2') format('woff2'),
+          url('/assets/fonts/StyreneAWeb-Regular.woff') format('woff');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Styrene A';
+    src:  url('/assets/fonts/StyreneAWeb-Bold.woff2') format('woff2'),
+          url('/assets/fonts/StyreneAWeb-Bold.woff') format('woff');
+    font-weight: 700;
+}
+// Baskerville
+@font-face {
+    font-family: "MonotypeBaskervilleBold";
+    src: url('/assets/fonts/webFonts/MonotypeBaskervilleBold/font.woff2') format('woff2'), url('/assets/fonts/webFonts/MonotypeBaskervilleBold/font.woff') format('woff');
+}
+@font-face {
+    font-family: "MonotypeBaskervilleRoman";
+    src: url('/assets/fonts/webFonts/MonotypeBaskervilleRoman/font.woff2') format('woff2'), url('/assets/fonts/webFonts/MonotypeBaskervilleRoman/font.woff') format('woff');
+}
+@font-face {
+    font-family: "MonotypeBaskervilleSemiBold";
+    src: url('/assets/fonts/webFonts/MonotypeBaskervilleSemiBold/font.woff2') format('woff2'), url('/assets/fonts/webFonts/MonotypeBaskervilleSemiBold/font.woff') format('woff');
+}
+@font-face {
+    font-family: "MonotypeBaskervilleItalic";
+    src: url('/assets/fonts/webFonts/MonotypeBaskervilleItalic/font.woff2') format('woff2'), url('/assets/fonts/webFonts/MonotypeBaskervilleItalic/font.woff') format('woff');
+}
+@font-face {
+    font-family: "MonotypeBaskervilleSemiBoldItalic";
+    src: url('/assets/fonts/webFonts/MonotypeBaskervilleSemiBoldItalic/font.woff2') format('woff2'), url('/assets/fonts/webFonts/MonotypeBaskervilleSemiBoldItalic/font.woff') format('woff');
+}
+@font-face {
+    font-family: "MonotypeBaskervilleBoldItalic";
+    src: url('/assets/fonts/webFonts/MonotypeBaskervilleBoldItalic/font.woff2') format('woff2'), url('/assets/fonts/webFonts/MonotypeBaskervilleBoldItalic/font.woff') format('woff');
+}
+
+$fontBaskerville: 'MonotypeBaskervilleSemiBold', sans-serif;
+$fontGTAlpina: 'GT Alpina', serif;
+$fontGTAlpinaFine: 'GT Alpina Fine', serif;
+$fontStyrene: 'Styrene A', Arial, sans-serif;
+$fontArial: Arial, verdana, sans-serif;
+
+//SIZES
+$base_font_size: 16px;
+$large: 1440px;//this should be the same as the max-width of your content
+$medium: ((math.div($base_font_size, $large))*100) + vw;

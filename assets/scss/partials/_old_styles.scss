@@ -1,0 +1,245 @@
+.scouts-honor-container-wrapper {
+    width: 100%;
+    // height: cRems(819px);
+    margin: 0 auto;
+    padding: cRems(211px) 0;
+
+    @include medium {
+        width: cRems(1184px);
+    }
+  }
+  .scouts-honor-container,
+  .scouts-honor-container .innerblocks-wrap {
+    margin-left: 0 !important;
+    width: 100%;
+    position: relative !important;
+    display: block !important;
+
+    @include medium {
+        width: cRems(1184px);
+        height: cRems(819px);
+    }
+  
+    .scouts-honor-badge {
+      position: absolute;
+      top: cRems(-18px);
+      left: cRems(100px);
+      width: cRems(128px);
+      height: cRems(53px);
+
+        @include medium {
+            top: cRems(-50px);
+            left: cRems(308px);
+            width: cRems(316px);
+            height: cRems(136px);
+        }
+    }
+  
+    .ds-af {
+      height: fit-content;
+      width: 100%;
+
+      @include medium {
+        width: cRems(1184px);
+        // height: cRems(819px);
+    }
+    }
+  
+    .get-lost-badge {
+      position: absolute;
+      right: cRems(-40px);
+      bottom: cRems(-69px);
+      width: cRems(109px);
+      height: cRems(109px);
+      rotate: 45deg;
+
+      @include medium {
+        right: cRems(-100px);
+        bottom: cRems(181px);
+        width: cRems(179px);
+        height: cRems(179px);
+    }
+    }
+  }
+  .scouts-honor-container {
+    
+    @include medium {
+        margin-left: cRems(-182px) !important;
+    }
+  }
+  
+  .signature-container {
+    position: relative;
+  
+    figure {
+      position: absolute !important;
+      bottom: cRems(-59px);
+      right: 0;
+      width: cRems(160px);
+      height: cRems(59px);
+    }
+  }
+  
+  .home-services-container {
+    max-width: $large;
+    margin: 0 auto;
+  }
+
+.sticker-container {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    max-width: $large;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: cRems(144px);
+  
+    @include medium {
+        flex-direction: row;
+        margin-bottom: cRems(244px);
+    }
+
+    figure {
+        margin: 0;
+    }
+  
+    .sticker-container-left-col {
+      margin: cRems(23px);
+    //   position: relative;
+    //   flex-basis: 35%;
+      
+      img {
+        max-width: cRems(541px);
+        width: 100%;
+        height: auto;
+      }
+  
+      .true-north-pennant {
+        position: absolute;
+        bottom: cRems(-69px);
+        left: cRems(175px);
+        width: cRems(334px);
+        height: cRems(134px);
+        rotate: -16deg;
+        z-index: 1;
+
+        @include medium {
+            bottom: cRems(-50px);
+        }
+      }
+    }
+  
+    .sticker-container-right-col {
+      margin: cRems(23px);
+    //   position: relative;
+    //   flex-basis: 65%;
+      
+      img {
+        max-width: cRems(847px);
+        width: 100%;
+        height: auto;
+      }
+  
+      .swing-break-badge {
+        position: absolute;
+        left: cRems(110px);
+        top: -10vw;
+        width: cRems(179px);
+        height: cRems(179px);
+        z-index: 1;
+        rotate: -8deg;
+
+        @include medium {
+            left: cRems(650px);
+            top: cRems(42px);
+        }
+      }
+  
+      .keep-going-badge {
+        position: absolute;
+        right: cRems(-69px);
+        bottom: -173vw;
+        width: cRems(179px);
+        height: cRems(179px);
+        rotate: 20deg;
+
+        @include medium {
+            bottom: cRems(-275px);
+        }
+      }
+    }
+  }
+
+  .work-life-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+        margin: 0 auto;
+    }
+
+    .two-cols {
+        max-width: 100%;
+
+      @include medium {
+        display: flex;
+      }
+    }
+  
+    .left-col {
+      justify-content: center;
+
+      @include medium {
+        width: cRems(950px);
+        margin-right: cRems(52px);
+        border-right: cRems(1px) solid $colorNavy;
+      }
+  
+      .headline-grid {
+        position: relative;
+  
+        h3 {
+            
+            @include medium {
+                position: absolute;
+            }
+    
+          &.top {
+            bottom: unset;
+            top: cRems(60px);
+            right: cRems(-252px); 
+          }
+    
+          &.bottom {
+            top: unset;
+            bottom: cRems(5px);
+            right: cRems(-252px);      
+          }
+        }
+      }
+    }
+  
+    .right-col {
+        width: 100%;
+        padding: cRems(22px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+      @include medium {
+        width: cRems(265px);
+        padding-top: cRems(120px);
+      }
+    }
+  }
+
+.about {
+
+    .hero-image {
+        width: 100%;
+        height: fit-content;
+    }
+}
