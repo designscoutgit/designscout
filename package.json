@@ -11,6 +11,9 @@
     "nuxt3"
   ],
   "private": true,
+  "engines": {
+    "node": "v18.16.0"
+  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
