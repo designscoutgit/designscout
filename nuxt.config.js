@@ -1,5 +1,3 @@
-const { apiPlugin } = require('@storyblok/vue');
-
 const OPEN_GRAPH = [
   {
     hid: 'og:site_name',
@@ -135,13 +133,13 @@ module.exports = {
       }
     },
   },
-  modules: [
-    ['@storyblok/nuxt', { accessToken: process.env.STORYBLOK_API_TOKEN, use: [apiPlugin] }],
+  modules: [ 
+    ["@storyblok/nuxt", { accessToken: "HycKukPJp5mMudcXuopGqgtt" }],
     '@nuxt/content',
     '@nuxtjs/device',
     '@nuxt/image-edge',
     '@morev/vue-transitions/nuxt',
-    // '@nuxtjs/supabase',
+    '@nuxtjs/supabase',
     // '@nuxtjs/tailwindcss',
     // '@unocss/nuxt',
     // '@nuxtjs/fontaine',
@@ -161,8 +159,13 @@ module.exports = {
   components: true,
   server: {
     // configure the port and host for your dev server
-    port: process.env.NUXT_PORT || 3000,
-    host: 'localhost',
+    port: process.env.PORT || 8080, // Default is 3000
+    host: process.env.HOST || '0.0.0.0', // Default is localhost, use '0.0.0.0' to accept connections from any IP
+  },
+  vite: {
+    optimizeDeps: {
+      exclude: ['fsevents'],
+    },
   },
   router: {
     // set the base URL for your app to run on localhost
@@ -187,5 +190,10 @@ module.exports = {
     storyblok: {
       baseURL: 'https://a.storyblok.com',
     },
+  },
+  publicRuntimeConfig: {
+    storyblokApiToken: process.env.STORYBLOK_API_TOKEN,
+    supabaseUrl: process.env.SUPABASE_URL,
+    supabaseKey: process.env.SUPABASE_KEY,
   },
 };

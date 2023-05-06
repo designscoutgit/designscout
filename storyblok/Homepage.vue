@@ -3,10 +3,12 @@ import HeroCarousel from "~/components/HeroCarousel.vue";
 
 const { slug } = useRoute().params;
 
-const story = await useAsyncStoryblok(
-  slug && slug.length > 0 && slug !== "/" ? slug.join("/") : "home",
-  { version: useRoute().query._storyblok ? "draft" : "published" }
-);
+// const story = await useAsyncStoryblok(
+//   slug && slug.length > 0 && slug !== "/" ? slug.join("/") : "home",
+//   { version: useRoute().query._storyblok ? "draft" : "published" }
+// );
+
+const story = await useAsyncStoryblok("home", { version: "published" });
 
 definePageMeta({
   layout: "default",
@@ -24,9 +26,8 @@ async function setup() {
 
 const props = defineProps({ blok: Object });
 
-const storyblokApi = useStoryblokApi();
-const { data } = await storyblokApi.get("cdn/stories", {
-  version: "draft",
+const { data } = await useAsyncStoryblok("home", {
+  version: "published",
   starts_with: "home",
 });
 </script>
