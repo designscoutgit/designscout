@@ -16,7 +16,7 @@ RUN npm ci
 COPY . .
 
 # Expose the port the app will run on
-EXPOSE 3000
+EXPOSE 8080
 
 # Start the Nuxt.js app
-CMD ["npm", "run", "dev"]
+CMD ["npm", "start"]

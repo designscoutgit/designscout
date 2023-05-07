@@ -1,3 +1,5 @@
+const { apiPlugin } = require('@storyblok/vue');
+
 const OPEN_GRAPH = [
   {
     hid: 'og:site_name',
@@ -133,8 +135,14 @@ module.exports = {
       }
     },
   },
-  modules: [ 
-    ["@storyblok/nuxt", { accessToken: "HycKukPJp5mMudcXuopGqgtt" }],
+  modules: [
+    [
+      '@storyblok/nuxt',
+      {
+        accessToken: 'HycKukPJp5mMudcXuopGqgtt',
+        use: [apiPlugin],
+      },
+    ],    
     '@nuxt/content',
     '@nuxtjs/device',
     '@nuxt/image-edge',
