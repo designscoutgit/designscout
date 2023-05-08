@@ -1,4 +1,21 @@
 <script setup>
+const storyblokApi = useStoryblokApi();
+const { data } = await storyblokApi.get("cdn/stories/config", {
+  version: "draft",
+  resolve_links: "url",
+});
+
+console.log(data.story.content.site_title);
+
+useSeoMeta({
+  title: data.story.content.site_title,
+  ogTitle: data.story.content.site_title,
+  description: data.story.content.site_description,
+  ogDescription: data.story.content.site_description,
+  ogImage: data.story.content.featured_image.filename,
+  twitterCard: "summary_large_image",
+});
+
 const { slug } = useRoute().params;
 
 const story = await useAsyncStoryblok(
@@ -14,7 +31,11 @@ async function setup() {
 </script>
 
 <template>
-  <NuxtLayout>
+  <nuxt-error
+    v-if="hasError"
+    :error="error"
+  />
+  <NuxtLayout v-else>
     <NuxtPage />
   </NuxtLayout>
 </template>

@@ -475,12 +475,9 @@ CUSTOM ELEMENTS
     background-color: $colorCream;
     margin: 0 auto;
     border: none;
-    width: 90%;
+    margin-left: cRems(60px);
+    margin-right: cRems(60px);
     // max-width: $large;
-
-    @include medium {
-        width: 100%;
-    }
   
     &.dark {
       background-color: $colorNavy;
@@ -488,6 +485,11 @@ CUSTOM ELEMENTS
 
     .dark & {
         background-color: $colorCream;
+    }
+
+    .hero-section-content & {
+        margin-left: 0;
+        margin-right: 0;
     }
 }
 

@@ -166,7 +166,7 @@
 
           <div class="bottom-buttons">
             <a
-              href="/matching-grants"
+              href="/charity-referral"
               class="btn light bold"
             ><svg
                 width="12"
@@ -273,6 +273,7 @@ export default {
       } else {
         document.body.classList.remove("menu-open");
       }
+      this.atTheTop = false;
     },
 
     closeNav() {

@@ -21,7 +21,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 cRems(35px);
-    transition: background-color 2s ease-in-out;
+    transition: all 2s ease-in-out;
     
     @include medium {
         height: cRems(104px);
@@ -45,11 +45,15 @@
     }
   
     &.scrolling {
-      background: linear-gradient(to bottom, rgba($colorCream, 1), rgba($colorCream, 0)) !important;
       height: cRems(104px);
 
       .camp-diary-gallery & {
         background: linear-gradient(to bottom, rgba($colorNavy, 1), rgba($colorNavy, 0)) !important;
+      }
+
+      .light &,
+      &.light {
+        background: linear-gradient(to bottom, rgba($colorCream, 1), rgba($colorCream, 0)) !important;
       }
 
       .dark &,

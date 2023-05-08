@@ -49,7 +49,7 @@ onUnmounted(() => {
     :pagination="true"
     :modules="modules"
     :autoplay="{
-      delay: 3000,
+      delay: 6000,
       disableOnInteraction: true,
     }"
   >

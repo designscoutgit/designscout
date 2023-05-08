@@ -288,8 +288,8 @@
                 
                     @include medium {
                       position: absolute;
-                      top: cRems(250px);
-                      right: cRems(-35px);
+                      top: cRems(255px);
+                      right: 0;
                       width: cRems(306px);
                     }
                   }
@@ -306,6 +306,7 @@
     
                         h2 {
                             padding-bottom: 0;
+                            padding-left: 0;
                         }
                     }
     
@@ -704,7 +705,7 @@
 
         .divider-badge {
             position: absolute;
-            right: cRems(40px);
+            right: cRems(100px);
             top: cRems(-90px);
             width: cRems(221px);
             height: cRems(221px);

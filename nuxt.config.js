@@ -1,85 +1,9 @@
 const { apiPlugin } = require('@storyblok/vue');
 
-const OPEN_GRAPH = [
-  {
-    hid: 'og:site_name',
-    property: 'og:site_name',
-    content:
-      'DesignScout | Brand Evolutions | Graphic Design | Chicago | Logo Design | Web Design | Apparel and T Shirt Design | Print Design',
-  },
-  {
-    hid: 'og:description',
-    property: 'og:description',
-    content:
-      "Time to evolve? We solve growing pains with strategic brand evolutions rooted in your authentic brand story. Scout's honor.",
-  },
-  {
-    hid: 'og:title',
-    property: 'og:title',
-    content:
-      'DesignScout | Brand Evolutions | Graphic Design | Chicago | Logo Design | Web Design | Apparel and T Shirt Design | Print Design',
-  },
-  {
-    hid: 'og:url',
-    property: 'og:url',
-    content: 'https://www.designscout.tv',
-  },
-  {
-    hid: 'og:image',
-    property: 'og:image',
-    content: '/images/socialShare.png',
-  },
-  { property: 'og:updated_time', content: new Date().toISOString() },
-];
-
-const TWITTER = [
-  { name: 'twitter:card', content: 'summary_large_image' },
-  { name: 'twitter:site', content: '@DesignScoutChi' },
-  {
-    hid: 'twitter:title',
-    name: 'twitter:title',
-    content: 'DesignScout',
-  },
-  {
-    hid: 'twitter:description',
-    name: 'twitter:description',
-    content:
-      "Time to evolve? We solve growing pains with strategic brand evolutions rooted in your authentic brand story. Scout's honor.",
-  },
-  {
-    hid: 'twitter:image',
-    name: 'twitter:image',
-    content: '/images/socialShare.png',
-  },
-  {
-    hid: 'twitter:image:alt',
-    name: 'twitter:image:alt',
-    content: 'DesignScout | Authenticity | Strategy | Honor | Evolution',
-  },
-];
-
 module.exports = {
   ssr: false,
   target: 'server',
   head: {
-    title: 'DesignScout | Brand Evolutions | Graphic Design | Chicago | Logo Design | Web Design | Apparel and T Shirt Design | Print Design',
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content:
-          "Time to evolve? We solve growing pains with strategic brand evolutions rooted in your authentic brand story. Scout's honor.",
-      },
-      { hid: 'author', name: 'author', content: 'Danny Petrilli' },
-      {
-        hid: 'keywords',
-        property: 'keywords',
-        keywords:
-          'Chicago graphic design agency, logo design services, web design, print design, custom t-shirt design, branding',
-      },
-      ...OPEN_GRAPH,
-      ...TWITTER,
-    ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       // Apple touch icon
@@ -180,7 +104,11 @@ module.exports = {
     base: '/',
   },
   app: {
-    pageTransition: { name: 'storyblok', mode: 'out-in' }
+    pageTransition: { name: 'storyblok', mode: 'out-in' },
+    head: {
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1',
+    },
   },
   nitro: {
     prerender: {

@@ -608,6 +608,7 @@ export default {
   },
   data() {
     return {
+      pageName: "about",
       email: "",
       first_name: "",
       last_name: "",
@@ -707,9 +708,12 @@ export default {
       ) {
         navbar.classList.remove("light");
         navbar.classList.remove("scrolling");
+        navbar.classList.add("prevent-nav");
       } else {
         navbar.classList.add("light");
-        navbar.classList.add("scrolling");
+        if (window.scrollY > 0) {
+          navbar.classList.add("scrolling");
+        }
       }
     },
   },
