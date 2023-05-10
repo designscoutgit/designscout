@@ -158,8 +158,8 @@ import FooterNav from "~/components/FooterNav.vue";
 import { createClient } from "@supabase/supabase-js";
 
 const supabase = createClient(
-  "https://iczlbprulhvmcurwvlpc.supabase.co",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImljemxicHJ1bGh2bWN1cnd2bHBjIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzcyMjY3OTMsImV4cCI6MTk5MjgwMjc5M30.wrsCth3lERjtxRycOFfScmkznIEp_cz2NF_oGuWojJ4"
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_KEY
 );
 
 export default {
