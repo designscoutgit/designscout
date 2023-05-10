@@ -143,6 +143,8 @@ const { data } = await storyblokApi.get("cdn/stories", {
               controls
               muted
               loop
+              autoplay
+              playsinline
               poster="https://danny-petrilli.s3.us-east-2.amazonaws.com/designscout/DS_Sizzle_F6_subtitle_Poster.jpg"
             >
               <source
