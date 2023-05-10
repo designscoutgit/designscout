@@ -136,22 +136,41 @@ const { data } = await storyblokApi.get("cdn/stories", {
             class="slide-2 video-section hero-section-content dark"
             ref="videoSection"
           >
+            <div class="video-overlay"></div>
             <video
               ref="reel"
               loading="lazy"
               controls
               muted
+              loop
               poster="https://danny-petrilli.s3.us-east-2.amazonaws.com/designscout/DS_Sizzle_F6_subtitle_Poster.jpg"
             >
               <source
-                src="https://danny-petrilli.s3.amazonaws.com/designscout/DS_Sizzle_F6_subtitle.mp4"
+                :src="videoSource"
                 type="video/mp4"
               >
             </video>
-            <div
-              class="play-btn"
-              @click="toggleVideo"
-            ><span>watch video</span></div>
+            <div class="play-btn">
+              <h2 class="size-3 center">Meet DesignScout</h2>
+              <button
+                @click="toggleVideo"
+                class="watch-reel btn light"
+              >
+                <svg
+                  width="11"
+                  height="14"
+                  viewBox="0 0 11 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 7L0.499999 13.0622L0.5 0.937822L11 7Z"
+                    fill="#F7F5F0"
+                  />
+                </svg>
+                WATCH REEL
+              </button>
+            </div>
           </div>
           <div class="slide-3 hero-section-content light">
             <div class="col hero-wrapper">
@@ -741,6 +760,7 @@ export default {
   },
   data() {
     return {
+      videoSource: null,
       reel: null,
       currentSlideIndex: 0,
       scrolledDownOnLastSlide: false,
@@ -752,16 +772,20 @@ export default {
     window.addEventListener("scroll", this.handleScroll);
 
     this.reel = this.$refs.reel;
+    this.reel.classList.add("intro-playing");
+    this.videoSource = this.computedVideoSource;
 
     this.splitTextToWords(this.$refs.wordize);
     this.splitTextToWords(this.$refs.wordizeSlide3);
 
     this.reel.addEventListener("play", () => {
-      document.querySelector(".play-btn").style.display = "none";
+      // document.querySelector(".play-btn").style.display = "none";
+      this.reel.classList.remove("paused"); // Remove the 'paused' class when the video is playing
     });
 
     this.reel.addEventListener("pause", () => {
       document.querySelector(".play-btn").style.display = "flex";
+      this.reel.classList.add("paused"); // Add the 'paused' class when the video is paused
     });
 
     this.addSlideOneIntersectionObserver();
@@ -890,7 +914,30 @@ export default {
     window.removeEventListener("scroll", this.handleScroll);
   },
 
+  computed: {
+    computedVideoSource() {
+      return this.getVideoSource();
+    },
+  },
+  watch: {
+    computedVideoSource(newSrc) {
+      if (this.reel) {
+        this.reel.src = newSrc;
+        this.reel.load();
+      }
+    },
+  },
+
   methods: {
+    getVideoSource() {
+      if (!this.reel) {
+        return null; // or return a default video source if needed
+      }
+      return this.reel.classList.contains("intro-playing")
+        ? "https://danny-petrilli.s3.amazonaws.com/designscout/DS_Sizzle_F6.mp4"
+        : "https://danny-petrilli.s3.amazonaws.com/designscout/DS_Sizzle_F6_subtitle.mp4";
+    },
+
     splitTextToWords(element) {
       const words = [];
       element.childNodes.forEach((node) => {
@@ -958,6 +1005,19 @@ export default {
       // });
     },
     toggleVideo() {
+      this.getVideoSource();
+      this.reel.classList.remove("intro-playing");
+      this.reel.src =
+        "https://danny-petrilli.s3.amazonaws.com/designscout/DS_Sizzle_F6_subtitle.mp4";
+      let videoOverlay = document.querySelector(".video-overlay");
+      if (videoOverlay) {
+        videoOverlay.style.display = "none";
+      }
+      let playBtn = document.querySelector(".play-btn");
+      if (playBtn) {
+        playBtn.style.display = "none";
+        playBtn.style.opacity = "0";
+      }
       if (this.reel.paused) {
         this.reel.play();
       } else {
