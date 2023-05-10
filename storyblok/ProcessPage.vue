@@ -324,8 +324,8 @@ import { createClient } from "@supabase/supabase-js";
 const router = useRouter();
 
 const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_KEY
+  "https://xnpxxlvywrcjtuqsjnun.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhucHh4bHZ5d3JjanR1cXNqbnVuIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODMxMzIyNDcsImV4cCI6MTk5ODcwODI0N30.Y47OxVsjGtEhufJbma0rjRUDuJgo9FeOouNemhtSRV4"
 );
 
 export default {
