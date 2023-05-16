@@ -249,7 +249,7 @@
                 max-width: cRems(1254px);
                 width: 100%;
                 height: 100%;
-                background-color: rgba($colorNavy, 0.3); /* Change the RGB values for a different shade of blue */
+                background-color: rgba($colorNavy, 0.35); /* Change the RGB values for a different shade of blue */
                 pointer-events: none; /* Allow click events to pass through the overlay */
 
                 @include medium {
