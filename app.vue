@@ -49,6 +49,12 @@ export default {
     };
   },
   mounted() {
+    if (location.protocol !== "https:") {
+      location.href =
+        "https:" +
+        window.location.href.substring(window.location.protocol.length);
+    }
+
     this.initGoogleAnalytics();
     this.updatePageNameClass();
     document.addEventListener("click", this.handleClickEvent);
