@@ -27,13 +27,18 @@ const allow = "autoplay;";
 
 <style scoped >
 .vimeo-player {
-  width: 100%;
+  position: relative;
   overflow: hidden;
+  width: 100%;
+  padding-bottom: 56.25%; /* for 16:9 aspect ratio */
 }
 
 .vimeo-player iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 100%;
   border: none;
 }
 </style>
