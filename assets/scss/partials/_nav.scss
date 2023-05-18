@@ -269,7 +269,7 @@
         ul {
             min-width: cRems(408px);
             text-align: center;
-            padding: cRems(81px) 0;
+            padding: cRems(100px) 0 cRems(81px);
 
             @include medium {
                 text-align: left;
@@ -281,16 +281,18 @@
                 a {
                     font-family: $fontGTAlpinaFine;
                     color: $colorCream;
-                    font-size: cRems(40px);
-                    line-height: cRems(67px);
+                    // font-size: cRems(40px);
+                    // line-height: cRems(67px);
+                    font-size: cRems(80px);
+                    line-height: cRems(125px);
                     text-decoration: none;
                     font-weight: $weightExtraLight;
                     font-style: italic;
                     white-space: nowrap;
             
                     @include medium {
-                        font-size: cRems(80px);
-                        line-height: cRems(125px);
+                        // font-size: cRems(80px);
+                        // line-height: cRems(125px);
                     }
             
                     &:hover {
