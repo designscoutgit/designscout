@@ -791,11 +791,11 @@
 
     .image-w-badge {
         position: relative;
-        padding-bottom: cRems(97px);
+        margin-bottom: cRems(97px);
              
         @include medium {
             margin-right: cRems(200px);
-            padding-bottom: 0;
+            margin-bottom: 0;
         }
 
         .scouts-img {
@@ -818,9 +818,8 @@
     
         .floating-badge {
             width: cRems(100px);
-            height: fit-content;
             position: absolute;
-            bottom: cRems(60px);
+            bottom: cRems(-60px);
             right: cRems(68px);
 
             @include medium {
