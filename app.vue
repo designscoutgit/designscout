@@ -31,11 +31,7 @@ async function setup() {
 </script>
 
 <template>
-  <nuxt-error
-    v-if="hasError"
-    :error="error"
-  />
-  <NuxtLayout v-else>
+  <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
 </template>
@@ -49,11 +45,11 @@ export default {
     };
   },
   mounted() {
-    if (location.protocol !== "https:") {
-      location.href =
-        "https:" +
-        window.location.href.substring(window.location.protocol.length);
-    }
+    // if (location.protocol !== "https:") {
+    //   location.href =
+    //     "https:" +
+    //     window.location.href.substring(window.location.protocol.length);
+    // }
 
     this.initGoogleAnalytics();
     this.updatePageNameClass();
@@ -79,7 +75,7 @@ export default {
       if (window.dataLayer) return; // Prevent re-initializing the tracking code
 
       const script = document.createElement("script");
-      script.src = "https://www.googletagmanager.com/gtag/js?id=G-RWHJ6Z625G";
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-DE5QK2EX8N";
       script.async = true;
       document.head.appendChild(script);
 
@@ -89,7 +85,7 @@ export default {
           window.dataLayer.push(arguments);
         }
         gtag("js", new Date());
-        gtag("config", "G-RWHJ6Z625G");
+        gtag("config", "G-DE5QK2EX8N");
       };
     },
     handleClickEvent(event) {
