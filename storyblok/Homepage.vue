@@ -29,6 +29,8 @@ const { data } = await storyblokApi.get("cdn/stories", {
   version: "draft",
   starts_with: "home",
 });
+
+const slide3Body = computed(() => renderRichText(props.blok.slide_3_body));
 </script>
 
 <template>
@@ -186,8 +188,9 @@ const { data } = await storyblokApi.get("cdn/stories", {
                 <div class="spacer small small-only"></div>
               </div>
               <div class="col right">
-                <p>DesignScout is a full-service branding and design studio in Chicago, IL. We make it easy for businesses like yours to launch, evolve, and scale.</p>
-                <p>Captivate your audience with a distinctive brand from our creative studio. We'll get you where you need to go.</p>
+                <div v-html="slide3Body"></div>
+                <!-- <p>DesignScout is a full-service branding and design studio in Chicago, IL. We make it easy for businesses like yours to launch, evolve, and scale.</p>
+                <p>Captivate your audience with a distinctive brand from our creative studio. We'll get you where you need to go.</p> -->
                 <a
                   href="/about"
                   class="btn dark no-mar-btm"
