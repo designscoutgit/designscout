@@ -75,7 +75,7 @@ export default {
       if (window.dataLayer) return; // Prevent re-initializing the tracking code
 
       const script = document.createElement("script");
-      script.src = "https://www.googletagmanager.com/gtag/js?id=G-DE5QK2EX8N";
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-V76EM4BBH1";
       script.async = true;
       document.head.appendChild(script);
 
@@ -85,7 +85,7 @@ export default {
           window.dataLayer.push(arguments);
         }
         gtag("js", new Date());
-        gtag("config", "G-DE5QK2EX8N");
+        gtag("config", "G-V76EM4BBH1");
       };
     },
     handleClickEvent(event) {

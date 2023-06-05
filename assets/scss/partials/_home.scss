@@ -494,10 +494,15 @@
         overflow: hidden;
         position: relative;
 
+        video {
+            width: 100%;
+        }
+
         @include small {
             height: cRems(402px);
 
-            img {
+            img,
+            video {
                 position: absolute;
                 top: 50%;
                 left: 50%;
@@ -751,6 +756,9 @@
 }
 
 // SCOUTS BLOCK
+.scout-content-wrapper {
+    max-width: cRems(510px);
+}
 .divider-w-badge {
     position: relative;
     min-height: cRems(110px);

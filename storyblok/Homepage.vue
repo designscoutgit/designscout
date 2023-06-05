@@ -226,6 +226,67 @@ const slide3Body = computed(() => renderRichText(props.blok.slide_3_body));
         v-if="story"
         :blok="story.content"
       /> -->
+      <div class="scouts-block">
+        <div class="image-w-badge">
+          <div class="scouts-img">
+            <img
+              src="~/assets/images/Scout-Driscoll-Founder-DesignScout.webp"
+              alt="Founder of DesignScout, Scout Driscoll, swinging from a hanging egg chair in their studio."
+              title="Scout Driscoll - Founder of DesignScout"
+            />
+          </div>
+          <img
+            class="floating-badge"
+            src="~/assets/svg/Badge_First_Class.svg"
+            alt="First Class Badge"
+            title="First Class Badge"
+          />
+        </div>
+        <div class="scout-content-wrapper">
+          <h2 class="size-3">Meet the <br class="small-only">Founder: <br>Scout Driscoll</h2>
+          <p>As a 20-year founder and CEO, Scout is passionate about working with brand leaders at SMBs. Frequent speaker, contributor, and mentor, Scout is a graduate of Goldman Sach’s 10,000 Small Businesses program, a proud member of The 10th House, a member of the nonprofit Women Employed’s Marketing Council, and a Business Mentor for the Roots Fund creating space for the BIPOC community in the wine industry.</p>
+          <div class="spacer small large-only"></div>
+          <div class="spacer medium small-only"></div>
+          <div>
+            <a
+              class="btn dark with-arrow"
+              href="/scout/"
+            >
+              <svg
+                width="11"
+                height="12"
+                viewBox="0 0 11 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11 1.68164C11 1.12936 10.5523 0.68164 10 0.681641L1 0.68164C0.447715 0.68164 2.8711e-07 1.12936 2.8711e-07 1.68164C2.8711e-07 2.23393 0.447715 2.68164 1 2.68164L9 2.68164L9 10.6816C9 11.2339 9.44772 11.6816 10 11.6816C10.5523 11.6816 11 11.2339 11 10.6816L11 1.68164ZM1.70711 11.3887L10.7071 2.38875L9.29289 0.974534L0.292893 9.97453L1.70711 11.3887Z"
+                  fill="#303A3E"
+                />
+              </svg>
+              GET TO KNOW SCOUT</a>
+          </div>
+          <div class="spacer medium"></div>
+          <h3>RECENT APPEARANCES</h3>
+          <!-- <p>BOPP Beer Design Conference: <br>Speaker on Sep 21, 2022</p> -->
+          <p>Featured Interviews: <a
+              href="https://podcasts.apple.com/us/podcast/wine-women-scout-driscoll-founder-ceo-vint-studio/id1467538301?i=1000535631625"
+              target="_blank"
+              class="underline navy"
+            >Wine Women Radio</a></p>
+          <p>Scout’s Podcast: <a
+              href="https://podcasts.apple.com/us/podcast/wine-women-scout-driscoll-founder-ceo-vint-studio/id1467538301?i=1000535631625"
+              target="_blank"
+              class="underline navy"
+            >VINT<em>ed</em> by Scout Driscoll</a></p>
+        </div>
+      </div>
+
+      <div class="divider dark"></div>
+      <div class="spacer x-small"></div>
+      <div class="divider dark"></div>
+      <div class="spacer medium"></div>
+
       <section ref="section1">
         <div class="case-studies-carousel-container">
           <CaseStudiesCarousel />
@@ -288,11 +349,12 @@ const slide3Body = computed(() => renderRichText(props.blok.slide_3_body));
         <div class="b2p-container">
           <div class="two-cols">
             <div class="col left-col">
-              <h2 class="headline">B2P: <br>people-first <br>branding.</h2>
-              <p>It doesn’t matter if your business is B2B or B2C — you’re selling to people first. That’s why companies of all stripes ask us to design confident brands that connect with audiences on a human level. Now, more than ever, customers crave brands that are real. Go ahead, be yourself, we’ll help you find your perfect audience.</p>
+              <h2 class="headline">The <br>rebrand <br>experts.</h2>
+              <h3>THE BESPOKE BRAND YOU DESERVE</h3>
+              <p>You’ve spent years establishing your business as a leader. Now you’re at a new level of success but your brand is not reflecting where you’re at. We can take you to that next level, so you can compete head to head with the best in the industry.</p>
               <a
                 class="btn dark"
-                href="/process/"
+                href="/contact/"
               >
                 <svg
                   width="11"
@@ -307,7 +369,7 @@ const slide3Body = computed(() => renderRichText(props.blok.slide_3_body));
                   />
                 </svg>
 
-                HOW WE GET THERE</a>
+                CONTACT US</a>
             </div>
             <div class="col right-col">
               <div class="pennant">
@@ -318,7 +380,7 @@ const slide3Body = computed(() => renderRichText(props.blok.slide_3_body));
                   title="Pennant that reads &quot;Rooted in Strategy&quot;"
                 >
               </div>
-              <p><em>We do it all. For all.</em></p>
+              <p><em>End to End Branding</em></p>
               <div class="separator"></div>
               <ul class="services-list">
                 <li>
@@ -377,18 +439,32 @@ const slide3Body = computed(() => renderRichText(props.blok.slide_3_body));
           class="homepage-grid"
         >
           <div
-            v-for="(image, index) in blok.content.images"
+            v-for="(media, index) in blok.content.images"
             :key="index"
           >
             <img
-              :src="image.filename"
-              :alt="image.alt"
-              :title="image.title"
+              v-if="!isVideo(media.filename)"
+              :src="media.filename"
+              :alt="media.alt"
+              :title="media.title"
             >
+            <video
+              v-else
+              controls
+              autoplay
+              muted
+              loop
+            >
+              <source
+                :src="media.filename"
+                :title="media.title"
+              >
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
 
-        <div class="rebranding-container">
+        <!-- <div class="rebranding-container">
           <div class="col-md-6 left-col">
             <h2 class="headline">The<br>rebrand<br>experts.</h2>
             <h3 class="subheadline">YOUR BRAND, JUST MORE YOU.</h3>
@@ -421,7 +497,7 @@ const slide3Body = computed(() => renderRichText(props.blok.slide_3_body));
             ></iframe>
             <p class="hidden"><a href="https://vimeo.com/817366640">DesignScout_TV_Frame_Before &amp; After_Logos</a> from <a href="https://vimeo.com/user645229">DesignScout | A Branding Agency</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
           </div>
-        </div>
+        </div> -->
       </section>
       <section
         ref="section4"
@@ -674,64 +750,6 @@ const slide3Body = computed(() => renderRichText(props.blok.slide_3_body));
         <div class="spacer x-small"></div>
         <div class="divider dark"></div>
         <div class="spacer medium"></div>
-        <div class="scouts-block">
-          <div class="image-w-badge">
-            <div class="scouts-img">
-              <img
-                src="~/assets/images/Scout-Driscoll-Founder-DesignScout.webp"
-                alt="Founder of DesignScout, Scout Driscoll, swinging from a hanging egg chair in their studio."
-                title="Scout Driscoll - Founder of DesignScout"
-              />
-            </div>
-            <img
-              class="floating-badge"
-              src="~/assets/svg/Badge_First_Class.svg"
-              alt="First Class Badge"
-              title="First Class Badge"
-            />
-          </div>
-          <div class="scout-content-wrapper">
-            <h2 class="size-3">Meet the <br class="small-only">Founder: <br>Scout Driscoll</h2>
-            <h3>A PROUD FITFO ENTREPRENEUR</h3>
-            <h3>WORK-LIFE BALANCE WARRIOR</h3>
-            <h3>BADASS MOM OF 2</h3>
-            <h3>WINE ENTHUSIAST</h3>
-            <div class="spacer small large-only"></div>
-            <div class="spacer medium small-only"></div>
-            <div>
-              <a
-                class="btn dark with-arrow"
-                href="/scout/"
-              >
-                <svg
-                  width="11"
-                  height="12"
-                  viewBox="0 0 11 12"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M11 1.68164C11 1.12936 10.5523 0.68164 10 0.681641L1 0.68164C0.447715 0.68164 2.8711e-07 1.12936 2.8711e-07 1.68164C2.8711e-07 2.23393 0.447715 2.68164 1 2.68164L9 2.68164L9 10.6816C9 11.2339 9.44772 11.6816 10 11.6816C10.5523 11.6816 11 11.2339 11 10.6816L11 1.68164ZM1.70711 11.3887L10.7071 2.38875L9.29289 0.974534L0.292893 9.97453L1.70711 11.3887Z"
-                    fill="#303A3E"
-                  />
-                </svg>
-                MORE ON SCOUT</a>
-            </div>
-            <div class="spacer medium"></div>
-            <h3>APPEARANCES</h3>
-            <!-- <p>BOPP Beer Design Conference: <br>Speaker on Sep 21, 2022</p> -->
-            <p>Featured Interviews: <a
-                href="https://podcasts.apple.com/us/podcast/wine-women-scout-driscoll-founder-ceo-vint-studio/id1467538301?i=1000535631625"
-                target="_blank"
-                class="underline navy"
-              >Wine Women Radio</a></p>
-            <p>Scout’s Podcast: <a
-                href="https://podcasts.apple.com/us/podcast/wine-women-scout-driscoll-founder-ceo-vint-studio/id1467538301?i=1000535631625"
-                target="_blank"
-                class="underline navy"
-              >VINT<em>ed</em> by Scout Driscoll</a></p>
-          </div>
-        </div>
 
         <div class="homepage-articles-container">
           <h2 class="size-2">We have a few opinions...</h2>
@@ -941,6 +959,10 @@ export default {
       return this.reel.classList.contains("intro-playing")
         ? "https://danny-petrilli.s3.amazonaws.com/designscout/DS_Sizzle_F6.mp4"
         : "https://danny-petrilli.s3.amazonaws.com/designscout/DS_Sizzle_F6_subtitle.mp4";
+    },
+
+    isVideo(filename) {
+      return filename.endsWith(".mp4");
     },
 
     splitTextToWords(element) {
