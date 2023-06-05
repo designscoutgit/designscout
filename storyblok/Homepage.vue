@@ -31,6 +31,10 @@ const { data } = await storyblokApi.get("cdn/stories", {
 });
 
 const slide3Body = computed(() => renderRichText(props.blok.slide_3_body));
+const founderSectionBody = computed(() =>
+  renderRichText(props.blok.founder_body_copy)
+);
+const b2pBodyCopy = computed(() => renderRichText(props.blok.b2p_body_copy));
 </script>
 
 <template>
@@ -131,7 +135,7 @@ const slide3Body = computed(() => renderRichText(props.blok.slide_3_body));
             <h2
               ref="wordize"
               class="wordize pad-left"
-            >Our <br class="small-only" />Brands <br />Mean <br class="small-only" />Business</h2>
+            >{{ blok.slide_1_headline }}</h2>
           </div>
           <div
             id="reel"
@@ -183,8 +187,8 @@ const slide3Body = computed(() => renderRichText(props.blok.slide_3_body));
                 <h2
                   ref="wordizeSlide3"
                   class="wordize pad-left"
-                >Good <br />Design <br />Matters</h2>
-                <h3>PEOPLE READ DESIGN <br />FASTER THAN WORDS. WHAT <br />IS YOUR BRAND SAYING?</h3>
+                >{{ blok.slide_3_headline }}</h2>
+                <h3>{{ blok.slide_3_subheadline }}</h3>
                 <div class="spacer small small-only"></div>
               </div>
               <div class="col right">
@@ -243,8 +247,8 @@ const slide3Body = computed(() => renderRichText(props.blok.slide_3_body));
           />
         </div>
         <div class="scout-content-wrapper">
-          <h2 class="size-3">Meet the <br class="small-only">Founder: <br>Scout Driscoll</h2>
-          <p>As a 20-year founder and CEO, Scout is passionate about working with brand leaders at SMBs. Frequent speaker, contributor, and mentor, Scout is a graduate of Goldman Sach’s 10,000 Small Businesses program, a proud member of The 10th House, a member of the nonprofit Women Employed’s Marketing Council, and a Business Mentor for the Roots Fund creating space for the BIPOC community in the wine industry.</p>
+          <h2 class="size-3">{{ blok.founder_headline }}</h2>
+          <div v-html="founderSectionBody"></div>
           <div class="spacer small large-only"></div>
           <div class="spacer medium small-only"></div>
           <div>
@@ -298,7 +302,7 @@ const slide3Body = computed(() => renderRichText(props.blok.slide_3_body));
       >
         <div class="row compact-width contact-block-container">
           <div class="col contact-block-content">
-            <h2 class="size-3">Let's talk about your goals <br class="large-only" />and challenges.</h2>
+            <h2 class="size-3">{{ blok.contact_headline }}</h2>
           </div>
           <div class="col">
             <a
@@ -349,9 +353,9 @@ const slide3Body = computed(() => renderRichText(props.blok.slide_3_body));
         <div class="b2p-container">
           <div class="two-cols">
             <div class="col left-col">
-              <h2 class="headline">The <br>rebrand <br>experts.</h2>
-              <h3>THE BESPOKE BRAND YOU DESERVE</h3>
-              <p>You’ve spent years establishing your business as a leader. Now you’re at a new level of success but your brand is not reflecting where you’re at. We can take you to that next level, so you can compete head to head with the best in the industry.</p>
+              <h2 class="headline">{{ blok.b2p_headline }}</h2>
+              <h3>{{ blok.b2p_subheadline }}</h3>
+              <div v-html="b2pBodyCopy"></div>
               <a
                 class="btn dark"
                 href="/contact/"
@@ -752,7 +756,7 @@ const slide3Body = computed(() => renderRichText(props.blok.slide_3_body));
         <div class="spacer medium"></div>
 
         <div class="homepage-articles-container">
-          <h2 class="size-2">We have a few opinions...</h2>
+          <h2 class="size-2">{{ blok.insights_headline }}</h2>
           <ArticlesBlock />
         </div>
 
