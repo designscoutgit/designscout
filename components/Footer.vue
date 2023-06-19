@@ -150,12 +150,14 @@
         </div>
       </div>
     </div>
+    <LinkedInInsightTag />
   </footer>
 </template>
 
 <script>
 import FooterNav from "~/components/FooterNav.vue";
 import { createClient } from "@supabase/supabase-js";
+import LinkedInInsightTag from "@/components/LinkedInInsightTag.vue";
 
 const supabase = createClient(
   "https://xnpxxlvywrcjtuqsjnun.supabase.co",
@@ -165,6 +167,7 @@ const supabase = createClient(
 export default {
   components: {
     FooterNav,
+    LinkedInInsightTag,
   },
 
   data() {

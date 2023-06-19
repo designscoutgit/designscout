@@ -41,6 +41,51 @@ function filterInsights() {
     v-editable="blok"
     class="insights-page"
   >
+
+    <Head>
+      <Title>{{ blok.metatags.title }}</Title>
+      <Meta
+        name="description"
+        :content="blok.metatags.description"
+      />
+      <Meta
+        property="og:title"
+        :content="blok.metatags.og_title"
+      />
+      <Meta
+        property="og:image"
+        :content="blok.metatags.og_image"
+      />
+      <Meta
+        property="og:description"
+        :content="blok.metatags.og_description"
+      />
+      <Meta
+        property="og:url"
+        :content="blok.metatags.og_url"
+      />
+      <Meta
+        property="og:type"
+        content="website"
+      />
+      <Meta
+        name="twitter:card"
+        content="summary_large_image"
+      />
+      <Meta
+        name="twitter:title"
+        :content="blok.metatags.og_title"
+      />
+      <Meta
+        name="twitter:description"
+        :content="blok.metatags.og_description"
+      />
+      <Meta
+        name="twitter:image"
+        :content="blok.metatags.og_image"
+      />
+    </Head>
+
     <h2>{{ blok.headline_copy }}</h2>
     <!-- <pre>{{ data.stories }}</pre> -->
 

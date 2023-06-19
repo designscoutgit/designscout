@@ -15,6 +15,51 @@ const { data } = await storyblokApi.get("cdn/stories", {
     v-editable="blok"
     class="contact-page compact-width"
   >
+
+    <Head>
+      <Title>{{ blok.metatags.title }}</Title>
+      <Meta
+        name="description"
+        :content="blok.metatags.description"
+      />
+      <Meta
+        property="og:title"
+        :content="blok.metatags.og_title"
+      />
+      <Meta
+        property="og:image"
+        :content="blok.metatags.og_image"
+      />
+      <Meta
+        property="og:description"
+        :content="blok.metatags.og_description"
+      />
+      <Meta
+        property="og:url"
+        :content="blok.metatags.og_url"
+      />
+      <Meta
+        property="og:type"
+        content="website"
+      />
+      <Meta
+        name="twitter:card"
+        content="summary_large_image"
+      />
+      <Meta
+        name="twitter:title"
+        :content="blok.metatags.og_title"
+      />
+      <Meta
+        name="twitter:description"
+        :content="blok.metatags.og_description"
+      />
+      <Meta
+        name="twitter:image"
+        :content="blok.metatags.og_image"
+      />
+    </Head>
+
     <!-- <pre>{{ data.stories }}</pre> -->
     <h2 class="size-2 center">{{ blok.content.headline_copy }}</h2>
     <h3 class="center">{{ blok.content.subheadline_copy }}</h3>

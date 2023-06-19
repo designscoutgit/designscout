@@ -4,6 +4,10 @@
         padding: 0;
     }
 
+    .page-content {
+        padding-top: cRems(275px);
+    }
+
     .content-container {
         height: 100%;
         overflow-y: scroll;
@@ -18,7 +22,7 @@
         .video-section {
             width: 100%;
             max-width: 100% !important;
-            min-height: 0 !important;
+            // min-height: 0 !important;
             background-color: $colorGrayBlue !important;
             display: flex;
             justify-content: flex-start !important;
@@ -36,7 +40,8 @@
                 width: 100%;
                 height: 100vh;
 
-                video {
+                video,
+                iframe {
                     height: 100%;
                     max-height: fit-content;
                     position: relative;
@@ -82,7 +87,8 @@
                 }
             }
 
-            video {
+            video,
+            iframe {
                 height: fit-content !important;
                 margin: cRems(40px) 0;
                 transition: all .6s ease-in-out;
@@ -131,7 +137,7 @@
             align-items: flex-start;
             // padding: 0 cRems(74px);
             transition: all .6s ease-in-out;
-            min-height: cRems(906px);
+            // min-height: cRems(906px);
             max-width: cRems(1140px);
             margin: 0 auto;
 
@@ -146,6 +152,8 @@
 
             &.slide-3 {
                 opacity: 0;
+                height: 92vh;
+                min-height: cRems(706px);
                 
                 @include small {
                     padding-top: cRems(60px);
@@ -228,7 +236,8 @@
                     margin: auto;
                 }
 
-                video {
+                video,
+                iframe {
 
                     @include medium {
                         margin: 0 auto;
@@ -247,19 +256,16 @@
                 right: 0;
                 z-index: 1;
                 margin: auto;
-                max-height: cRems(706px);
-                max-width: cRems(1254px);
+                // max-height: cRems(706px);
+                // max-width: cRems(1254px);
                 width: 100%;
                 height: 100%;
                 background-color: rgba($colorNavy, 0.35); /* Change the RGB values for a different shade of blue */
                 pointer-events: none; /* Allow click events to pass through the overlay */
-
-                @include medium {
-                    top: cRems(40px);
-                }
             }
     
-            video {
+            video,
+            frame {
                 // width: 100vw;
                 max-width: 100%;
                 height: auto !important;

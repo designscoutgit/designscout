@@ -1,4 +1,6 @@
 const { apiPlugin } = require('@storyblok/vue');
+const { join } = require('path');
+const redirectHttpMiddleware = require('./middleware/redirect-http');
 
 module.exports = {
   ssr: false,
@@ -181,7 +183,10 @@ module.exports = {
       crawlLinks: true
     }
   },
-  serverMiddleware: ['~/middleware/emailMiddleware.js'],
+  serverMiddleware: [
+    { path: '/', handler: redirectHttpMiddleware },
+    '~/middleware/emailMiddleware.js'
+  ],
   hooks: {
     'vite:extendConfig': (config, { isClient, isServer }) => {
       if (isClient)
