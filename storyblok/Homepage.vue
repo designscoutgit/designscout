@@ -46,26 +46,26 @@ const title = ref("Hello World");
   >
 
     <Head>
-      <Title>{{ blok.metatags.title }}</Title>
+      <Title>DesignScout | Chicago Branding Agency | Ego-Free Since 2003™</Title>
       <Meta
         name="description"
-        :content="blok.metatags.description"
+        content="We build brave brands. DesignScout is a Chicago Branding Agency that builds bold identities for rule-bending hospitality and disruptor B2B brands."
       />
       <Meta
         property="og:title"
-        :content="blok.metatags.og_title"
+        content="DesignScout | Chicago Branding Agency | Ego-Free Since 2003™"
       />
       <Meta
         property="og:image"
-        :content="blok.metatags.og_image"
+        content="https://designscout.com/public/site_image.webp"
       />
       <Meta
         property="og:description"
-        :content="blok.metatags.og_description"
+        content="Ego-Free Since 2003 |  Looking for an iconic brand that stand the test of time? Our 100% Woman owned and operated creative studio is the answer."
       />
       <Meta
         property="og:url"
-        :content="blok.metatags.og_url"
+        content="https://designscout.com/"
       />
       <Meta
         property="og:type"
@@ -77,15 +77,15 @@ const title = ref("Hello World");
       />
       <Meta
         name="twitter:title"
-        :content="blok.metatags.og_title"
+        content="DesignScout | Chicago Branding Agency | Ego-Free Since 2003™"
       />
       <Meta
         name="twitter:description"
-        :content="blok.metatags.og_description"
+        content="Ego-Free Since 2003 |  Looking for an iconic brand that stand the test of time? Our 100% Woman owned and operated creative studio is the answer."
       />
       <Meta
         name="twitter:image"
-        :content="blok.metatags.og_image"
+        content="https://designscout.com/public/site_image.webp"
       />
     </Head>
 
