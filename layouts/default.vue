@@ -42,7 +42,8 @@ export default {
         {
           hid: "og:image",
           property: "og:image",
-          content: "https://designscout.com/public/site_image.webp",
+          content:
+            "https://a.storyblok.com/f/200165/1500x821/cf2a979912/designscout-featured-image.webp",
         },
         {
           hid: "og:description",
@@ -80,7 +81,8 @@ export default {
         {
           hid: "twitter:image",
           name: "twitter:image",
-          content: "https://designscout.com/public/site_image.webp",
+          content:
+            "https://a.storyblok.com/f/200165/1500x821/cf2a979912/designscout-featured-image.webp",
         },
       ],
     };

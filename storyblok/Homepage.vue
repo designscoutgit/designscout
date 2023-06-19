@@ -57,7 +57,7 @@ const title = ref("Hello World");
       />
       <Meta
         property="og:image"
-        content="https://designscout.com/public/site_image.webp"
+        content="https://a.storyblok.com/f/200165/1500x821/cf2a979912/designscout-featured-image.webp"
       />
       <Meta
         property="og:description"
@@ -85,7 +85,7 @@ const title = ref("Hello World");
       />
       <Meta
         name="twitter:image"
-        content="https://designscout.com/public/site_image.webp"
+        content="https://a.storyblok.com/f/200165/1500x821/cf2a979912/designscout-featured-image.webp"
       />
     </Head>
 
