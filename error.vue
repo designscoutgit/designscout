@@ -6,6 +6,7 @@
       <h2 class="size-2 center">404</h2>
       <h3 class="center">PAGE NOT FOUND.</h3>
       <h3 class="center">IN THE MEANTIME TAKE A LOOK AROUND.</h3>
+      <div class="spacer"></div>
       <div class="button-row">
         <a
           href="/case-studies"
