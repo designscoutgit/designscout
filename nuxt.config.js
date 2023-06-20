@@ -199,3 +199,23 @@ module.exports = {
     supabaseKey: process.env.SUPABASE_KEY,
   },
 };
+
+export default {
+  head: {
+    title: 'Branding Agency | Ego-Free Since 2003 | DesignScout',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Welcome to DesignScout, a branding agency. We create bold brands for businesses that stand out. Our Troop Offers: Logo Design, Brand Strategy, Brand Messaging, Brand Websites, Restaurant Branding, and Packaging Design. Woman Owned.'
+      },
+      {
+        hid: 'og:image',
+        name: 'og:image',
+        content: 'https://a.storyblok.com/f/200165/1500x821/cf2a979912/designscout-featured-image.webp'
+      }
+    ]
+  }
+}
