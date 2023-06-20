@@ -37,6 +37,24 @@ const founderSectionBody = computed(() =>
 const b2pBodyCopy = computed(() => renderRichText(props.blok.b2p_body_copy));
 
 const title = ref("Hello World");
+
+useSeoMeta({
+  title: props.blok.metatags.title,
+  ogTitle: props.blok.metatags.title,
+  description: props.blok.metatags.description,
+  ogDescription: props.blok.metatags.description,
+  ogImage: props.blok.metatags.og_image,
+  twitterCard: "summary_large_image",
+});
+
+definePageMeta({
+  title: props.blok.metatags.title,
+  ogTitle: props.blok.metatags.title,
+  description: props.blok.metatags.description,
+  ogDescription: props.blok.metatags.description,
+  ogImage: props.blok.metatags.og_image,
+  twitterCard: "summary_large_image",
+});
 </script>
 
 <template>
@@ -44,51 +62,6 @@ const title = ref("Hello World");
     v-editable="blok"
     class="container"
   >
-
-    <Head>
-      <Title>DesignScout | Chicago Branding Agency | Ego-Free Since 2003™</Title>
-      <Meta
-        name="description"
-        content="We build brave brands. DesignScout is a Chicago Branding Agency that builds bold identities for rule-bending hospitality and disruptor B2B brands."
-      />
-      <Meta
-        property="og:title"
-        content="DesignScout | Chicago Branding Agency | Ego-Free Since 2003™"
-      />
-      <Meta
-        property="og:image"
-        content="https://a.storyblok.com/f/200165/1500x821/cf2a979912/designscout-featured-image.webp"
-      />
-      <Meta
-        property="og:description"
-        content="Ego-Free Since 2003 |  Looking for an iconic brand that stand the test of time? Our 100% Woman owned and operated creative studio is the answer."
-      />
-      <Meta
-        property="og:url"
-        content="https://designscout.com/"
-      />
-      <Meta
-        property="og:type"
-        content="website"
-      />
-      <Meta
-        name="twitter:card"
-        content="summary_large_image"
-      />
-      <Meta
-        name="twitter:title"
-        content="DesignScout | Chicago Branding Agency | Ego-Free Since 2003™"
-      />
-      <Meta
-        name="twitter:description"
-        content="Ego-Free Since 2003 |  Looking for an iconic brand that stand the test of time? Our 100% Woman owned and operated creative studio is the answer."
-      />
-      <Meta
-        name="twitter:image"
-        content="https://a.storyblok.com/f/200165/1500x821/cf2a979912/designscout-featured-image.webp"
-      />
-    </Head>
-
     <div class="hero-section">
       <div>
         <div class="hero-slides">

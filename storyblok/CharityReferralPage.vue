@@ -25,6 +25,24 @@ const bodyRichText = computed(() => renderRichText(props.blok.body_copy));
 setTimeout(() => {
   document.body.classList.add("dark");
 }, 150);
+
+useSeoMeta({
+  title: props.blok.metatags.title,
+  ogTitle: props.blok.metatags.title,
+  description: props.blok.metatags.description,
+  ogDescription: props.blok.metatags.description,
+  ogImage: props.blok.metatags.og_image,
+  twitterCard: "summary_large_image",
+});
+
+definePageMeta({
+  title: props.blok.metatags.title,
+  ogTitle: props.blok.metatags.title,
+  description: props.blok.metatags.description,
+  ogDescription: props.blok.metatags.description,
+  ogImage: props.blok.metatags.og_image,
+  twitterCard: "summary_large_image",
+});
 </script>
 
 <template>
@@ -32,51 +50,6 @@ setTimeout(() => {
     v-editable="blok"
     class="charity-referral-page large-width"
   >
-
-    <Head>
-      <Title>{{ blok.metatags.title }}</Title>
-      <Meta
-        name="description"
-        :content="blok.metatags.description"
-      />
-      <Meta
-        property="og:title"
-        :content="blok.metatags.og_title"
-      />
-      <Meta
-        property="og:image"
-        :content="blok.metatags.og_image"
-      />
-      <Meta
-        property="og:description"
-        :content="blok.metatags.og_description"
-      />
-      <Meta
-        property="og:url"
-        :content="blok.metatags.og_url"
-      />
-      <Meta
-        property="og:type"
-        content="website"
-      />
-      <Meta
-        name="twitter:card"
-        content="summary_large_image"
-      />
-      <Meta
-        name="twitter:title"
-        :content="blok.metatags.og_title"
-      />
-      <Meta
-        name="twitter:description"
-        :content="blok.metatags.og_description"
-      />
-      <Meta
-        name="twitter:image"
-        :content="blok.metatags.og_image"
-      />
-    </Head>
-
     <h2>{{blok.headline_copy}}</h2>
     <h2 class="size-2">{{blok.subheadline_copy}}</h2>
     <div class="spacer small"></div>
