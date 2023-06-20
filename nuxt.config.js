@@ -6,66 +6,6 @@ module.exports = {
   ssr: false,
   target: 'server',
   head: {
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content:
-          "Welcome to DesignScout, a branding agency. We create bold brands for businesses that stand out. Our Troop Offers: Logo Design, Brand Strategy, Brand Messaging, Brand Websites, Restaurant Branding, and Packaging Design. Woman Owned.",
-      },
-      {
-        hid: 'og:site_name',
-        name: 'og:site_name',
-        content:
-          'Branding Agency | Ego-Free Since 2003 | DesignScout',
-      },
-      {
-        hid: 'og:description',
-        name: 'og:description',
-        content:
-          "Welcome to DesignScout, a branding agency. We create bold brands for businesses that stand out. Our Troop Offers: Logo Design, Brand Strategy, Brand Messaging, Brand Websites, Restaurant Branding, and Packaging Design. Woman Owned.",
-      },
-      {
-        hid: 'og:title',
-        name: 'og:title',
-        content:
-          'Branding Agency | Ego-Free Since 2003 | DesignScout',
-      },
-      {
-        hid: 'og:url',
-        name: 'og:url',
-        content: 'https://www.designscout.com',
-      },
-      {
-        hid: 'og:image',
-        name: 'og:image',
-        content: 'https://a.storyblok.com/f/200165/1500x821/cf2a979912/designscout-featured-image.webp',
-      },
-      { property: 'og:updated_time', content: new Date().toISOString() },
-      // Twitter card
-      {
-        hid: 'twitter:description',
-        name: 'twitter:description',
-        content:
-          "Welcome to DesignScout, a branding agency. We create bold brands for businesses that stand out. Our Troop Offers: Logo Design, Brand Strategy, Brand Messaging, Brand Websites, Restaurant Branding, and Packaging Design. Woman Owned.",
-      },
-      {
-        hid: 'twitter:title',
-        name: "twitter:title",
-        content:
-          'Branding Agency | Ego-Free Since 2003 | DesignScout',
-      },
-      {
-        hid: 'twitter:url',
-        name: 'twitter:url',
-        content: 'https://www.designscout.com',
-      },
-      {
-        hid: 'twitter:image',
-        name: 'twitter:image',
-        content: 'https://a.storyblok.com/f/200165/1500x821/cf2a979912/designscout-featured-image.webp',
-      },
-    ],
     link: [
       { hid: "canonical", rel: "canonical", href: 'https://www.designscout.com' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -171,6 +111,66 @@ module.exports = {
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            "Welcome to DesignScout, a branding agency. We create bold brands for businesses that stand out. Our Troop Offers: Logo Design, Brand Strategy, Brand Messaging, Brand Websites, Restaurant Branding, and Packaging Design. Woman Owned.",
+        },
+        {
+          hid: 'og:site_name',
+          name: 'og:site_name',
+          content:
+            'Branding Agency | Ego-Free Since 2003 | DesignScout',
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content:
+            "Welcome to DesignScout, a branding agency. We create bold brands for businesses that stand out. Our Troop Offers: Logo Design, Brand Strategy, Brand Messaging, Brand Websites, Restaurant Branding, and Packaging Design. Woman Owned.",
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content:
+            'Branding Agency | Ego-Free Since 2003 | DesignScout',
+        },
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          content: 'https://www.designscout.com',
+        },
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          content: 'https://a.storyblok.com/f/200165/1500x821/cf2a979912/designscout-featured-image.webp',
+        },
+        { property: 'og:updated_time', content: new Date().toISOString() },
+        // Twitter card
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content:
+            "Welcome to DesignScout, a branding agency. We create bold brands for businesses that stand out. Our Troop Offers: Logo Design, Brand Strategy, Brand Messaging, Brand Websites, Restaurant Branding, and Packaging Design. Woman Owned.",
+        },
+        {
+          hid: 'twitter:title',
+          name: "twitter:title",
+          content:
+            'Branding Agency | Ego-Free Since 2003 | DesignScout',
+        },
+        {
+          hid: 'twitter:url',
+          name: 'twitter:url',
+          content: 'https://www.designscout.com',
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content: 'https://a.storyblok.com/f/200165/1500x821/cf2a979912/designscout-featured-image.webp',
+        },
+      ],
     },
   },
   nitro: {
