@@ -3,7 +3,7 @@ const { join } = require('path');
 const redirectHttpMiddleware = require('./middleware/redirect-http');
 
 module.exports = {
-  ssr: false,
+  ssr: true,
   target: 'server',
   head: {
     link: [
@@ -105,6 +105,12 @@ module.exports = {
   router: {
     // set the base URL for your app to run on localhost
     base: '/',
+    extendRoutes(routes, resolve) {
+      routes.push({
+        path: '*',
+        component: resolve(__dirname, '404.vue'),
+      })
+    },
   },
   app: {
     pageTransition: { name: 'storyblok', mode: 'out-in' },

@@ -26,24 +26,6 @@ const bodyRichText = computed(() => {
   // Return the modified HTML
   return div.innerHTML;
 });
-
-useSeoMeta({
-  title: props.blok.metatags.title,
-  ogTitle: props.blok.metatags.title,
-  description: props.blok.metatags.description,
-  ogDescription: props.blok.metatags.description,
-  ogImage: props.blok.metatags.og_image,
-  twitterCard: "summary_large_image",
-});
-
-definePageMeta({
-  title: props.blok.metatags.title,
-  ogTitle: props.blok.metatags.title,
-  description: props.blok.metatags.description,
-  ogDescription: props.blok.metatags.description,
-  ogImage: props.blok.metatags.og_image,
-  twitterCard: "summary_large_image",
-});
 </script>
 
 <template>
