@@ -98,8 +98,8 @@ definePageMeta({
                 <div v-html="slide3Body"></div>
                 <!-- <p>DesignScout is a full-service branding and design studio in Chicago, IL. We make it easy for businesses like yours to launch, evolve, and scale.</p>
                 <p>Captivate your audience with a distinctive brand from our creative studio. We'll get you where you need to go.</p> -->
-                <a
-                  href="/about"
+                <nuxt-link
+                  to="/about"
                   class="btn dark no-mar-btm"
                 >
                   <svg
@@ -114,7 +114,9 @@ definePageMeta({
                       fill="#303A3E"
                     />
                   </svg>
-                  ABOUT</a>
+                  ABOUT
+                </nuxt-link>
+
               </div>
               <div class="spacer medium"></div>
             </div>

@@ -3,7 +3,7 @@ const { join } = require('path');
 const redirectHttpMiddleware = require('./middleware/redirect-http');
 
 module.exports = {
-  ssr: true,
+  ssr: false,
   target: 'server',
   head: {
     link: [

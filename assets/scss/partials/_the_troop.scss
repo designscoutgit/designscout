@@ -36,6 +36,7 @@
         perspective: 1000px;
         margin: cRems(10px);
         font-style: normal;
+        cursor: url("../icons/cursor.png") 40 40, auto !important;
 
         @include medium {
             width: cRems(423px);
