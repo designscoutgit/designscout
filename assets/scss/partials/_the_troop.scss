@@ -3,6 +3,17 @@
     padding: cRems(238px) 0 cRems(100px);
     max-width: $large;
     margin: 0 auto;
+    position: relative;
+
+    // .custom-cursor {
+    //     background: url("../icons/cursor.svg");
+    //     background-position: center center;
+    //     background-size: cover;
+    //     width: cRems(40px);
+    //     height: cRems(40px);
+    //     position: absolute;
+    //     z-index: 9999;
+    // }
 
     h2 {
 
@@ -36,7 +47,7 @@
         perspective: 1000px;
         margin: cRems(10px);
         font-style: normal;
-        cursor: url("../icons/cursor.png") 40 40, auto !important;
+        cursor: url('../icons/cursor.png') !important;
 
         @include medium {
             width: cRems(423px);

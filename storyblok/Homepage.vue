@@ -61,6 +61,7 @@ useSeoMeta({
   ogTitle: metaTitle,
   description: metaDescription,
   ogDescription: metaDescription,
+  image: ogImage,
   ogImage: ogImage,
   twitterCard: "summary_large_image",
 });
@@ -70,6 +71,7 @@ definePageMeta({
   ogTitle: metaTitle,
   description: metaDescription,
   ogDescription: metaDescription,
+  image: ogImage,
   ogImage: ogImage,
   twitterCard: "summary_large_image",
 });

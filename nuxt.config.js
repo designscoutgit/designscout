@@ -119,10 +119,10 @@ module.exports = {
       viewport: 'width=device-width, initial-scale=1',
       meta: [
         {
-          hid: 'description',
-          name: 'description',
+          hid: 'site_name',
+          name: 'site_name',
           content:
-            "Welcome to DesignScout, a branding agency. We create bold brands for businesses that stand out. Our Troop Offers: Logo Design, Brand Strategy, Brand Messaging, Brand Websites, Restaurant Branding, and Packaging Design. Woman Owned.",
+            'Branding Agency | Ego-Free Since 2003 | DesignScout',
         },
         {
           hid: 'og:site_name',
@@ -131,10 +131,22 @@ module.exports = {
             'Branding Agency | Ego-Free Since 2003 | DesignScout',
         },
         {
+          hid: 'description',
+          name: 'description',
+          content:
+            "Welcome to DesignScout, a branding agency. We create bold brands for businesses that stand out. Our Troop Offers: Logo Design, Brand Strategy, Brand Messaging, Brand Websites, Restaurant Branding, and Packaging Design. Woman Owned.",
+        },
+        {
           hid: 'og:description',
           name: 'og:description',
           content:
             "Welcome to DesignScout, a branding agency. We create bold brands for businesses that stand out. Our Troop Offers: Logo Design, Brand Strategy, Brand Messaging, Brand Websites, Restaurant Branding, and Packaging Design. Woman Owned.",
+        },
+        {
+          hid: 'title',
+          name: 'title',
+          content:
+            'Branding Agency | Ego-Free Since 2003 | DesignScout',
         },
         {
           hid: 'og:title',
@@ -146,6 +158,11 @@ module.exports = {
           hid: 'og:url',
           name: 'og:url',
           content: 'https://www.designscout.com',
+        },
+        {
+          hid: 'image',
+          name: 'image',
+          content: 'https://a.storyblok.com/f/200165/1500x821/cf2a979912/designscout-featured-image.webp',
         },
         {
           hid: 'og:image',

@@ -1,5 +1,6 @@
 <template>
   <div class="the-troop">
+    <!-- <div class="custom-cursor"></div> -->
     <h2 class="size-3 p-r-162">The Troop</h2>
     <ul>
       <li class="no-cursor">
