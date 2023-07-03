@@ -122,37 +122,37 @@ module.exports = {
           hid: 'site_name',
           name: 'site_name',
           content:
-            'Branding Agency | Ego-Free Since 2003 | DesignScout',
+            'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
         },
         {
           hid: 'og:site_name',
           name: 'og:site_name',
           content:
-            'Branding Agency | Ego-Free Since 2003 | DesignScout',
+            'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
         },
         {
           hid: 'description',
           name: 'description',
           content:
-            "Welcome to DesignScout, a branding agency. We create bold brands for businesses that stand out. Our Troop Offers: Logo Design, Brand Strategy, Brand Messaging, Brand Websites, Restaurant Branding, and Packaging Design. Woman Owned.",
+            "We build brave brands. DesignScout is a Chicago Branding Agency that builds bold identities for rule-bending hospitality and disruptor B2B brands.",
         },
         {
           hid: 'og:description',
           name: 'og:description',
           content:
-            "Welcome to DesignScout, a branding agency. We create bold brands for businesses that stand out. Our Troop Offers: Logo Design, Brand Strategy, Brand Messaging, Brand Websites, Restaurant Branding, and Packaging Design. Woman Owned.",
+            "We build brave brands. DesignScout is a Chicago Branding Agency that builds bold identities for rule-bending hospitality and disruptor B2B brands.",
         },
         {
           hid: 'title',
           name: 'title',
           content:
-            'Branding Agency | Ego-Free Since 2003 | DesignScout',
+            'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
         },
         {
           hid: 'og:title',
           name: 'og:title',
           content:
-            'Branding Agency | Ego-Free Since 2003 | DesignScout',
+            'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
         },
         {
           hid: 'og:url',
@@ -175,13 +175,13 @@ module.exports = {
           hid: 'twitter:description',
           name: 'twitter:description',
           content:
-            "Welcome to DesignScout, a branding agency. We create bold brands for businesses that stand out. Our Troop Offers: Logo Design, Brand Strategy, Brand Messaging, Brand Websites, Restaurant Branding, and Packaging Design. Woman Owned.",
+            "We build brave brands. DesignScout is a Chicago Branding Agency that builds bold identities for rule-bending hospitality and disruptor B2B brands.",
         },
         {
           hid: 'twitter:title',
           name: "twitter:title",
           content:
-            'Branding Agency | Ego-Free Since 2003 | DesignScout',
+            'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
         },
         {
           hid: 'twitter:url',
@@ -225,20 +225,86 @@ module.exports = {
 
 export default {
   head: {
-    title: 'Branding Agency | Ego-Free Since 2003 | DesignScout',
+    title: 'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
+        hid: 'site_name',
+        name: 'site_name',
+        content:
+          'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
+      },
+      {
+        hid: 'og:site_name',
+        name: 'og:site_name',
+        content:
+          'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
+      },
+      {
         hid: 'description',
         name: 'description',
-        content: 'Welcome to DesignScout, a branding agency. We create bold brands for businesses that stand out. Our Troop Offers: Logo Design, Brand Strategy, Brand Messaging, Brand Websites, Restaurant Branding, and Packaging Design. Woman Owned.'
+        content:
+          "We build brave brands. DesignScout is a Chicago Branding Agency that builds bold identities for rule-bending hospitality and disruptor B2B brands.",
+      },
+      {
+        hid: 'og:description',
+        name: 'og:description',
+        content:
+          "We build brave brands. DesignScout is a Chicago Branding Agency that builds bold identities for rule-bending hospitality and disruptor B2B brands.",
+      },
+      {
+        hid: 'title',
+        name: 'title',
+        content:
+          'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
+      },
+      {
+        hid: 'og:title',
+        name: 'og:title',
+        content:
+          'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
+      },
+      {
+        hid: 'og:url',
+        name: 'og:url',
+        content: 'https://www.designscout.com',
+      },
+      {
+        hid: 'image',
+        name: 'image',
+        content: 'https://a.storyblok.com/f/200165/1500x821/cf2a979912/designscout-featured-image.webp',
       },
       {
         hid: 'og:image',
         name: 'og:image',
-        content: 'https://a.storyblok.com/f/200165/1500x821/cf2a979912/designscout-featured-image.webp'
-      }
+        content: 'https://a.storyblok.com/f/200165/1500x821/cf2a979912/designscout-featured-image.webp',
+      },
+      { property: 'updated_time', content: new Date().toISOString() },
+      { property: 'og:updated_time', content: new Date().toISOString() },
+      // Twitter card
+      {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content:
+          "We build brave brands. DesignScout is a Chicago Branding Agency that builds bold identities for rule-bending hospitality and disruptor B2B brands.",
+      },
+      {
+        hid: 'twitter:title',
+        name: "twitter:title",
+        content:
+          'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
+      },
+      {
+        hid: 'twitter:url',
+        name: 'twitter:url',
+        content: 'https://www.designscout.com',
+      },
+      {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content: 'https://a.storyblok.com/f/200165/1500x821/cf2a979912/designscout-featured-image.webp',
+      },
     ]
   }
 }
