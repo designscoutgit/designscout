@@ -140,8 +140,8 @@ definePageMeta({
             </span>
           </h2>
           <a
-            v-if="article.full_slug"
-            :href="article.full_slug"
+            v-if="article.slug"
+            :href="article.slug"
           >
             <h3 class="uppercase">{{ article.name }}
               <svg

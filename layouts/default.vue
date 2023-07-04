@@ -3,8 +3,68 @@
     <!-- NAV -->
     <Menu />
     <!-- CONTENT -->
-    <main>
-      <Nuxt :layout="layout" />
+    <main ref="mainContent">
+      <slot />
+      <div
+        v-show="errorPage"
+        class="error-page large-width"
+      >
+        <h2 class="size-2 center">404</h2>
+        <h3 class="center">PAGE NOT FOUND.</h3>
+        <h3 class="center">IN THE MEANTIME TAKE A LOOK AROUND.</h3>
+        <div class="spacer small"></div>
+        <div class="button-row">
+          <a
+            href="/case-studies"
+            class="btn dark"
+          ><svg
+              width="11"
+              height="11"
+              viewBox="0 0 11 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11 1C11 0.447715 10.5523 -3.74211e-07 10 4.72575e-08L1 -1.63477e-07C0.447715 -1.63477e-07 2.8711e-07 0.447715 2.8711e-07 1C2.8711e-07 1.55228 0.447715 2 1 2L9 2L9 10C9 10.5523 9.44772 11 10 11C10.5523 11 11 10.5523 11 10L11 1ZM1.70711 10.7071L10.7071 1.70711L9.29289 0.292893L0.292893 9.29289L1.70711 10.7071Z"
+                fill="#303A3E"
+              />
+            </svg>
+            CASE STUDIES</a>
+          <a
+            href="https://www.instagram.com/designscout/"
+            class="btn dark"
+            target="_blank"
+          ><svg
+              width="11"
+              height="11"
+              viewBox="0 0 11 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11 1C11 0.447715 10.5523 -3.74211e-07 10 4.72575e-08L1 -1.63477e-07C0.447715 -1.63477e-07 2.8711e-07 0.447715 2.8711e-07 1C2.8711e-07 1.55228 0.447715 2 1 2L9 2L9 10C9 10.5523 9.44772 11 10 11C10.5523 11 11 10.5523 11 10L11 1ZM1.70711 10.7071L10.7071 1.70711L9.29289 0.292893L0.292893 9.29289L1.70711 10.7071Z"
+                fill="#303A3E"
+              />
+            </svg>
+            INSTAGRAM</a>
+          <a
+            href="/camp-diary"
+            class="btn dark"
+          ><svg
+              width="11"
+              height="11"
+              viewBox="0 0 11 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11 1C11 0.447715 10.5523 -3.74211e-07 10 4.72575e-08L1 -1.63477e-07C0.447715 -1.63477e-07 2.8711e-07 0.447715 2.8711e-07 1C2.8711e-07 1.55228 0.447715 2 1 2L9 2L9 10C9 10.5523 9.44772 11 10 11C10.5523 11 11 10.5523 11 10L11 1ZM1.70711 10.7071L10.7071 1.70711L9.29289 0.292893L0.292893 9.29289L1.70711 10.7071Z"
+                fill="#303A3E"
+              />
+            </svg>
+            CAMP DIARY</a>
+        </div>
+      </div>
     </main>
     <!-- FOOTER -->
     <Footer />
@@ -27,63 +87,7 @@ export default {
     return {
       title: "DesignScout | Chicago Branding Agency | Ego-Free Since 2003™",
       meta: [
-        {
-          hid: "description",
-          name: "description",
-          content:
-            "We build brave brands. DesignScout is a Chicago Branding Agency that builds bold identities for rule-bending hospitality and disruptor B2B brands.",
-        },
-        {
-          hid: "og:title",
-          property: "og:title",
-          content:
-            "DesignScout | Chicago Branding Agency | Ego-Free Since 2003™",
-        },
-        {
-          hid: "og:image",
-          property: "og:image",
-          content:
-            "https://a.storyblok.com/f/200165/1500x821/cf2a979912/designscout-featured-image.webp",
-        },
-        {
-          hid: "og:description",
-          property: "og:description",
-          content:
-            "Ego-Free Since 2003 | Looking for an iconic brand that stands the test of time? Our 100% Woman-owned and operated creative studio is the answer.",
-        },
-        {
-          hid: "og:url",
-          property: "og:url",
-          content: "https://designscout.com/",
-        },
-        {
-          hid: "og:type",
-          property: "og:type",
-          content: "website",
-        },
-        {
-          hid: "twitter:card",
-          name: "twitter:card",
-          content: "summary_large_image",
-        },
-        {
-          hid: "twitter:title",
-          name: "twitter:title",
-          content:
-            "DesignScout | Chicago Branding Agency | Ego-Free Since 2003™",
-        },
-        {
-          hid: "twitter:description",
-          name: "twitter:description",
-          content:
-            "Ego-Free Since 2003 | Looking for an iconic brand that stands the test of time? Our 100% Woman-owned and operated creative studio is the answer.",
-        },
-        {
-          hid: "twitter:image",
-          name: "twitter:image",
-          content:
-            "https://a.storyblok.com/f/200165/1500x821/cf2a979912/designscout-featured-image.webp",
-        },
+        // ... your existing meta tags
       ],
     };
   },
@@ -92,22 +96,21 @@ export default {
     return {
       pageName: "",
       dark: false,
-      layout: "default", // Set the initial layout to null
+      isContentLoaded: false,
+      errorPage: false,
     };
   },
 
   mounted() {
     this.pageName = this.$route.name;
-  },
 
-  watch: {
-    $route(to) {
-      if (to.matched.length === 0) {
-        this.layout = "error"; // Set the layout to "error" when the page is not found
-      } else {
-        this.layout = "default"; // Set the layout back to null when the page is found
+    setTimeout(() => {
+      this.isContentLoaded = true;
+
+      if (this.$refs.mainContent.childNodes.length > 0) {
+        this.errorPage = true;
       }
-    },
+    }, 2000);
   },
 };
 </script>

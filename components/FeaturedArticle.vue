@@ -22,7 +22,7 @@ const { data } = await storyblokApi.get("cdn/stories", {
       <div>
         <a
           v-if="article.full_slug"
-          :href="'/' + article.full_slug"
+          :href="`/${article.full_slug}`"
         >
           <h3 class="uppercase">{{ article.name }}
             <svg
