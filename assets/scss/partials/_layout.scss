@@ -8,8 +8,26 @@ body {
         background-color: $colorGrayBlue;
     }
 }
-main,
 .error-page {
+    max-width: cRems(1046px);
+    width: 100%;
+    margin: 0 auto;
+    padding: cRems(219px) cRems(35px);
+    display: none !important;
+    
+    @include medium {
+        padding: cRems(219px) cRems(96px);
+    }
+
+    &.errorPage {
+        display: block !important;
+    }
+
+    > div {
+        width: 100%;
+    }
+}
+main {
     // max-width: cRems(1046px);
     width: 100%;
     margin: 0 auto;

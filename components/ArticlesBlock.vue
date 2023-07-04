@@ -27,7 +27,7 @@ categories.value = data.stories;
         </h4>
         <a
           v-if="article.full_slug"
-          :href="article.full_slug"
+          :href="'/' + article.full_slug"
         >
           <h3 class="uppercase">{{ article.name }}
             <svg

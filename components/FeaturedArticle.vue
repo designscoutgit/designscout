@@ -3,7 +3,7 @@ const props = defineProps({ blok: Object });
 
 const storyblokApi = useStoryblokApi();
 const { data } = await storyblokApi.get("cdn/stories", {
-  version: "draft",
+  version: "published",
   starts_with: "insights",
   is_startpage: false,
   resolve_relations: "category",
@@ -20,9 +20,9 @@ const { data } = await storyblokApi.get("cdn/stories", {
       class="article-card"
     >
       <div>
-        <NuxtLink
+        <a
           v-if="article.full_slug"
-          :to="`/${article.full_slug}`"
+          :href="'/' + article.full_slug"
         >
           <h3 class="uppercase">{{ article.name }}
             <svg
@@ -38,7 +38,7 @@ const { data } = await storyblokApi.get("cdn/stories", {
               />
             </svg>
           </h3>
-        </NuxtLink>
+        </a>
         <img
           :src="article.content.featured_image.filename"
           :alt="article.content.featured_image.alt"
