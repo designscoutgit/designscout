@@ -5,6 +5,9 @@ const redirectHttpMiddleware = require('./middleware/redirect-http');
 module.exports = {
   ssr: false,
   target: 'server',
+  layout: {
+    error: 'layouts/NotFound.vue'
+  },
   head: {
     link: [
       { hid: "canonical", rel: "canonical", href: 'https://www.designscout.com' },

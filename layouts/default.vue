@@ -4,7 +4,7 @@
     <Menu />
     <!-- CONTENT -->
     <main>
-      <slot />
+      <Nuxt :layout="layout" />
     </main>
     <!-- FOOTER -->
     <Footer />
@@ -92,11 +92,22 @@ export default {
     return {
       pageName: "",
       dark: false,
+      layout: null, // Set the initial layout to null
     };
   },
 
   mounted() {
     this.pageName = this.$route.name;
+  },
+
+  watch: {
+    $route(to) {
+      if (to.matched.length === 0) {
+        this.layout = "error"; // Set the layout to "error" when the page is not found
+      } else {
+        this.layout = null; // Set the layout back to null when the page is found
+      }
+    },
   },
 };
 </script>
