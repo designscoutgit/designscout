@@ -47,7 +47,8 @@
         perspective: 1000px;
         margin: cRems(10px);
         font-style: normal;
-        cursor: url('../icons/cursor.png') !important;
+        cursor: url('/public/icons/cursor.svg'),
+        url('/public/icons/cursor.cur');
 
         @include medium {
             width: cRems(423px);
