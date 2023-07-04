@@ -2,16 +2,18 @@
 body {
     background-color: $colorCream;
     transition: background-color 1s ease-in-out;
+    min-height: 100vh;
 
     &.dark {
         background-color: $colorGrayBlue;
     }
 }
-main {
+main,
+.error-page {
     // max-width: cRems(1046px);
     width: 100%;
     margin: 0 auto;
-    min-height: 100vh;
+    // min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

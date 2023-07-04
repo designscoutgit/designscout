@@ -20,9 +20,9 @@ const { data } = await storyblokApi.get("cdn/stories", {
       class="article-card"
     >
       <div>
-        <a
+        <NuxtLink
           v-if="article.full_slug"
-          :href="`/${article.full_slug}`"
+          :to="`/${article.full_slug}`"
         >
           <h3 class="uppercase">{{ article.name }}
             <svg
@@ -38,7 +38,7 @@ const { data } = await storyblokApi.get("cdn/stories", {
               />
             </svg>
           </h3>
-        </a>
+        </NuxtLink>
         <img
           :src="article.content.featured_image.filename"
           :alt="article.content.featured_image.alt"
