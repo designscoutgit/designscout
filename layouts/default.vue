@@ -104,11 +104,10 @@ export default {
   mounted() {
     this.pageName = this.$route.name;
     this.errorPage = false;
+  },
 
-    setTimeout(() => {
-      this.isContentLoaded = true;
-      this.checkContent();
-    }, 1000);
+  updated() {
+    this.checkContent();
   },
 
   beforeRouteEnter(to, from, next) {
