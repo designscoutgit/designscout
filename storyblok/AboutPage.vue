@@ -521,13 +521,13 @@ definePageMeta({
         >
       </div>
       <div>
-        <!-- <label for="pronouns">Pronouns</label> -->
+        <!-- <label for="organization">Organization</label> -->
         <input
           type="text"
-          id="pronouns"
-          placeholder="PRONOUNS"
-          v-model="pronouns"
-          name="pronouns"
+          placeholder="ORGANIZATION"
+          id="organization"
+          v-model="organization"
+          name="organization"
         >
       </div>
       <div>
@@ -551,48 +551,6 @@ definePageMeta({
           name="phone"
           required
         >
-      </div>
-      <div>
-        <!-- <label for="organization">Organization</label> -->
-        <input
-          type="text"
-          placeholder="ORGANIZATION"
-          id="organization"
-          v-model="organization"
-          name="organization"
-        >
-      </div>
-      <div class="wide-container">
-        <!-- <label for="how">HOW DID YOU HEAR ABOUT US?</label> -->
-        <input
-          type="text"
-          id="how"
-          v-model="how"
-          placeholder="HOW DID YOU HEAR ABOUT US?"
-          name="how"
-        >
-      </div>
-      <div class="wide-container">
-        <FormSelect
-          :options="challengeOptions"
-          v-model="challenges"
-          inputName="challenges"
-        />
-        <!-- <label for="challenges">Challenges</label> -->
-        <select
-          id="challenges"
-          class="hidden"
-          v-model="challenges"
-          name="challenges"
-        >
-          <option value="">Select a challenge</option>
-          <option value="New Brand">New Brand</option>
-          <option value="Brand Evolution">Brand Evolution</option>
-          <option value="Website Design">Website Design</option>
-          <option value="Packaging Design">Packaging Design</option>
-          <option value="Restaurant Design">Restaurant Design</option>
-          <option value="Other">Other</option>
-        </select>
       </div>
       <div class="textarea-container">
         <!-- <label for="message">How can we collaborate?</label> -->

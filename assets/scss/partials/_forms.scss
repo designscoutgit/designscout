@@ -227,11 +227,53 @@ form button,
 }
 
 // CONTACT FORM 
+.flex-checks {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    h3 {
+        width: 100%;
+    }
+
+    label {
+        font-family: $fontGTAlpina;
+        font-style: italic;
+        font-size: cRems(21px);
+        line-height: cRems(24px);
+        font-weight: 500;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: cRems(46px);
+
+        @include medium {
+            width: 32%;
+        }
+
+        input {
+            margin-right: cRems(25px);
+        }
+    }
+}
+
 form {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    &#about_page_form {
+
+        div {
+
+            &:nth-child(7),
+            &:nth-child(8) {
+                width: 49%;
+            }
+        }
+    }
 
     > div {
         width: 32%;
@@ -274,6 +316,18 @@ form {
             &:focus {
                 background-color: $colorBeige;
                 outline: none;
+            }
+
+            &[type="checkbox"] {
+                width: cRems(40px);
+                height: cRems(40px);
+                min-height: cRems(40px);
+                border: 1px solid $colorDarkGray;
+                padding: 0;
+
+                &.checked {
+                    background-color: $colorTeal;
+                }
             }
         }
         textarea {

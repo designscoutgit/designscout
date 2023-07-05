@@ -70,6 +70,7 @@
     "vue-animate-onscroll": "^1.0.8",
     "vue-dropdowns": "^1.1.2",
     "vue-masonry-css": "^1.0.3",
+    "vue-multiselect": "^2.1.7",
     "vue-scrollto": "^2.20.0",
     "vue-slick-carousel": "^1.0.6",
     "vue3-carousel": "^0.2.13",

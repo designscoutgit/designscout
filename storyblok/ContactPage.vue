@@ -139,36 +139,109 @@ definePageMeta({
           name="organization"
         >
       </div>
+      <div class="spacer x-small"></div>
+      <div class="textarea-container flex-checks">
+        <h3>REQUESTED SERVICES* <span class="subtext italic">(check all that apply)</span></h3>
+        <label for="new_brand">
+          <input
+            type="checkbox"
+            id="new_brand"
+            value="New Brand"
+            v-model="challenges"
+            :class="{ checked: challenges.includes('New Brand') }"
+          >
+          New Brand</label>
+
+        <label for="brand_evolution">
+          <input
+            type="checkbox"
+            id="brand_evolution"
+            value="Brand Evolution"
+            v-model="challenges"
+            :class="{ checked: challenges.includes('Brand Evolution') }"
+          >
+          Brand Evolution</label>
+
+        <label for="website_design">
+          <input
+            type="checkbox"
+            id="website_design"
+            value="Website Design"
+            v-model="challenges"
+            :class="{ checked: challenges.includes('Website Design') }"
+          >
+          Website Design</label>
+
+        <label for="packaging_design">
+          <input
+            type="checkbox"
+            id="packaging_design"
+            value="Packaging Design"
+            v-model="challenges"
+            :class="{ checked: challenges.includes('Packaging Design') }"
+          >
+          Packaging Design</label>
+
+        <label for="restaurant_design">
+          <input
+            type="checkbox"
+            id="restaurant_design"
+            value="Restaurant Design"
+            v-model="challenges"
+            :class="{ checked: challenges.includes('Restaurant Design') }"
+          >
+          Restaurant Design</label>
+
+        <label for="other">
+          <input
+            type="checkbox"
+            id="other"
+            value="Other"
+            v-model="challenges"
+            :class="{ checked: challenges.includes('Other') }"
+          >
+          Other</label>
+      </div>
+      <div class="spacer x-small"></div>
       <div class="wide-container">
-        <!-- <label for="how">HOW DID YOU HEAR ABOUT US?</label> -->
-        <input
-          type="text"
-          id="how"
-          v-model="how"
-          placeholder="HOW DID YOU HEAR ABOUT US?"
-          name="how"
+        <FormSelect
+          :options="budgetOptions"
+          v-model="budget"
+          inputName="budget"
+        />
+        <!-- <label for="budget">What's your budget?*</label> -->
+        <select
+          id="budget"
+          class="hidden"
+          v-model="budget"
+          name="budget"
         >
+          <option value="">What's your budget?*</option>
+          <option value="$25,000–$35,000">$25,000–$35,000</option>
+          <option value="$35,001–$50,000">$35,001–$50,000</option>
+          <option value="$50,001–$100,000">$50,001–$100,000</option>
+          <option value="$100,001–$300,000">$100,001–$300,000</option>
+        </select>
       </div>
       <div class="wide-container">
         <FormSelect
-          :options="challengeOptions"
-          v-model="challenges"
-          inputName="challenges"
+          :options="goalOptions"
+          v-model="goal"
+          inputName="goal"
         />
-        <!-- <label for="challenges">Challenges</label> -->
+        <!-- <label for="goal">Launch goal?*</label> -->
         <select
-          id="challenges"
+          id="goal"
           class="hidden"
-          v-model="challenges"
-          name="challenges"
+          v-model="goal"
+          name="goal"
         >
-          <option value="">Select a challenge</option>
-          <option value="New Brand">New Brand</option>
-          <option value="Brand Evolution">Brand Evolution</option>
-          <option value="Website Design">Website Design</option>
-          <option value="Packaging Design">Packaging Design</option>
-          <option value="Restaurant Design">Restaurant Design</option>
-          <option value="Other">Other</option>
+          <option value="">Launch goal*</option>
+          <option value="6 weeks">6 weeks</option>
+          <option value="8 weeks">8 weeks</option>
+          <option value="10 weeks">10 weeks</option>
+          <option value="12 weeks">12 weeks</option>
+          <option value="Beyond">Beyond</option>
         </select>
       </div>
       <div class="textarea-container">
@@ -180,6 +253,16 @@ definePageMeta({
           name="message"
           required
         ></textarea>
+      </div>
+      <div class="textarea-container">
+        <!-- <label for="how">HOW DID YOU HEAR ABOUT US?</label> -->
+        <input
+          type="text"
+          id="how"
+          v-model="how"
+          placeholder="HOW DID YOU HEAR ABOUT US?"
+          name="how"
+        >
       </div>
       <div class="button-wrapper">
         <button
@@ -313,16 +396,32 @@ export default {
       message: "",
       organization: "",
       how: "",
-      challenges: "",
+      challenges: [], // Change to an empty array to store multiple selected values
+      budget: "",
+      goal: "",
       submitted: false,
       challengeOptions: [
-        { label: "CHALLENGES", value: "" },
         { label: "New Brand", value: "New Brand" },
         { label: "Brand Evolution", value: "Brand Evolution" },
         { label: "Website Design", value: "Website Design" },
         { label: "Packaging Design", value: "Packaging Design" },
         { label: "Restaurant Design", value: "Restaurant Design" },
         { label: "Other", value: "Other" },
+      ],
+      budgetOptions: [
+        { label: "WHAT'S YOUR BUDGET?*", value: "" },
+        { label: "$25,000–$35,000", value: "$25,000–$35,000" },
+        { label: "$35,001–$50,000", value: "$35,001–$50,000" },
+        { label: "$50,001–$100,000", value: "$50,001–$100,000" },
+        { label: "$100,001–$300,000", value: "$100,001–$300,000" },
+      ],
+      goalOptions: [
+        { label: "LAUNCH GOAL*", value: "" },
+        { label: "6 weeks", value: "6 weeks" },
+        { label: "8 weeks", value: "8 weeks" },
+        { label: "10 weeks", value: "10 weeks" },
+        { label: "12 weeks", value: "12 weeks" },
+        { label: "Beyond", value: "Beyond" },
       ],
     };
   },
@@ -348,6 +447,8 @@ export default {
               organization: this.organization,
               how: this.how,
               challenges: this.challenges,
+              budget: this.budget,
+              goal: this.goal,
             },
           ]);
 
