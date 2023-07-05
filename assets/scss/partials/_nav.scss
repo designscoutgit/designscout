@@ -232,6 +232,10 @@
     overflow-y: auto;
     cursor: url('public/icons/cursor.cur'), url('public/icons/cursor.png'), url('public/icons/cursor.svg'), pointer !important;
 
+    * {
+        cursor: url('public/icons/cursor.cur'), url('public/icons/cursor.png'), url('public/icons/cursor.svg'), pointer !important;
+    }
+
     @include medium {
         padding: cRems(181px) cRems(246px) cRems(215px) cRems(137px);
     }
