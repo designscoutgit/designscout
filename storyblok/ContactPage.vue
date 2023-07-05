@@ -202,7 +202,6 @@ definePageMeta({
           >
           Other</label>
       </div>
-      <div class="spacer x-small"></div>
       <div class="wide-container">
         <FormSelect
           :options="budgetOptions"
