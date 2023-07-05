@@ -10,14 +10,13 @@
       class="error-page large-width"
       :class="[{ errorPage: errorPage }]"
     >
-      <h2 class="size-2 center">404</h2>
+      <h2 class="center">404</h2>
       <h3 class="center">PAGE NOT FOUND.</h3>
       <h3 class="center">IN THE MEANTIME TAKE A LOOK AROUND.</h3>
-      <div class="spacer small"></div>
       <div class="button-row">
         <a
           href="/case-studies"
-          class="btn dark"
+          class="btn"
         ><svg
             width="11"
             height="11"
@@ -33,7 +32,7 @@
           CASE STUDIES</a>
         <a
           href="https://www.instagram.com/designscout/"
-          class="btn dark"
+          class="btn"
           target="_blank"
         ><svg
             width="11"
@@ -50,7 +49,7 @@
           INSTAGRAM</a>
         <a
           href="/camp-diary"
-          class="btn dark"
+          class="btn"
         ><svg
             width="11"
             height="11"
@@ -124,8 +123,10 @@ export default {
           .length === 0
       ) {
         this.errorPage = true;
+        document.body.classList.add("dark");
       } else {
         this.errorPage = false;
+        document.body.classList.remove("dark");
       }
     },
   },

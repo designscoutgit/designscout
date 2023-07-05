@@ -19,6 +19,11 @@ body {
         padding: cRems(219px) cRems(96px);
     }
 
+    .button-row {
+        border-top: none;
+        border-bottom: none;
+    }
+
     &.errorPage {
         display: block !important;
     }
