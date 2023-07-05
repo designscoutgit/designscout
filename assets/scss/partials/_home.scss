@@ -759,11 +759,10 @@
     }
 
     .swiper-pagination-bullet {
-        height: cRems(23px) !important;
-        width: cRems(23px) !important;
+        height: cRems(12px) !important;
+        width: cRems(12px) !important;
         border: cRems(2px) solid $colorDarkGray !important;
         background: transparent !important;
-
 
         &.swiper-pagination-bullet-active {
             background-color: $colorDarkGray !important;
