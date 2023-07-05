@@ -248,6 +248,7 @@ form button,
         justify-content: flex-start;
         align-items: center;
         margin-bottom: cRems(46px);
+        cursor: pointer;
 
         @include medium {
             width: 32%;
