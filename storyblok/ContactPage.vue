@@ -126,7 +126,6 @@ definePageMeta({
           placeholder="PHONE*"
           v-model="phone"
           name="phone"
-          required
         >
       </div>
       <div>
