@@ -139,7 +139,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: flex-start;
+            align-items: center;
             // padding: 0 cRems(74px);
             transition: all .6s ease-in-out;
             // min-height: cRems(906px);
@@ -641,7 +641,7 @@
             @include medium {
                 height: 100%;
                 justify-content: flex-start;
-                align-items: flex-start;
+                align-items: center;
                 padding-bottom: 0;
             }
 
@@ -666,7 +666,7 @@
                 min-height: cRems(1009px);
                 padding-top: cRems(112px);
                 justify-content: flex-start;
-                align-items: flex-start;
+                align-items: center;
             }
 
             ul {
