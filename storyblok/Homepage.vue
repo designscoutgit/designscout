@@ -228,7 +228,7 @@ definePageMeta({
               target="_blank"
               class="underline navy"
             >Wine Women Radio</a></p>
-          <p>Scout’s Podcast: <a
+          <p> Podcast: <a
               href="https://podcasts.apple.com/us/podcast/wine-women-scout-driscoll-founder-ceo-vint-studio/id1467538301?i=1000535631625"
               target="_blank"
               class="underline navy"
