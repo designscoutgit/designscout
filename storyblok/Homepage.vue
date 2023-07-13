@@ -223,7 +223,7 @@ definePageMeta({
           <div class="spacer medium"></div>
           <h3>RECENT APPEARANCES</h3>
           <!-- <p>BOPP Beer Design Conference: <br>Speaker on Sep 21, 2022</p> -->
-          <p>Featured Interviews: <a
+          <p>Features: <a
               href="https://podcasts.apple.com/us/podcast/wine-women-scout-driscoll-founder-ceo-vint-studio/id1467538301?i=1000535631625"
               target="_blank"
               class="underline navy"
