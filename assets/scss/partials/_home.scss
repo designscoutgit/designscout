@@ -394,6 +394,9 @@
                             padding-left: cRems(58px);
                             margin-left: cRems(58px);
                             padding-right: 0 !important;
+                            height: 100%;
+                            display: flex;
+                            justify-content: center;
                         }
                     }
                 }
@@ -630,6 +633,7 @@
         @include medium {
             flex-direction: row;
             justify-content: space-around;
+            padding: 4% 7% 0;
         }
 
         .left-col {
