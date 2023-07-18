@@ -102,7 +102,7 @@ definePageMeta({
                 <p>Captivate your audience with a distinctive brand from our creative studio. We'll get you where you need to go.</p> -->
                 <nuxt-link
                   to="/about"
-                  class="btn dark no-mar-btm"
+                  class="btn dark no-mar-btm margin-bottom-0"
                 >
                   <svg
                     width="12"
