@@ -705,7 +705,7 @@ definePageMeta({
         <div class="divider dark"></div>
         <div class="spacer medium"></div>
 
-        <div class="homepage-articles-container">
+        <div class="homepage-articles-container padding-bottom-0">
           <h2 class="size-2">{{ blok.insights_headline }}</h2>
           <ArticlesBlock />
         </div>

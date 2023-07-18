@@ -6,6 +6,9 @@ module.exports = {
   ssr: false,
   target: 'server',
   head: {
+    script: [
+      { src: '/accessibe-script.js', defer: true },
+    ],  
     link: [
       { hid: "canonical", rel: "canonical", href: 'https://www.designscout.com' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -85,6 +88,9 @@ module.exports = {
     // '@unocss/reset/tailwind.css',
     '~/assets/scss/style.scss'
   ],
+  plugins: [
+    { src: '~/plugins/acsb-script.js', mode: 'client'}
+  ],  
   content: {
     // Set the parser to use YAML instead of Markdown
     yaml: {
@@ -114,87 +120,87 @@ module.exports = {
   },
   app: {
     pageTransition: { name: 'storyblok', mode: 'out-in' },
-    head: {
-      charset: 'utf-8',
-      viewport: 'width=device-width, initial-scale=1',
-      meta: [
-        {
-          hid: 'site_name',
-          name: 'site_name',
-          content:
-            'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
-        },
-        {
-          hid: 'og:site_name',
-          name: 'og:site_name',
-          content:
-            'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
-        },
-        {
-          hid: 'description',
-          name: 'description',
-          content:
-            "We build brave brands. DesignScout is a Chicago Branding Agency that builds bold identities for rule-bending hospitality and disruptor B2B brands.",
-        },
-        {
-          hid: 'og:description',
-          name: 'og:description',
-          content:
-            "We build brave brands. DesignScout is a Chicago Branding Agency that builds bold identities for rule-bending hospitality and disruptor B2B brands.",
-        },
-        {
-          hid: 'title',
-          name: 'title',
-          content:
-            'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
-        },
-        {
-          hid: 'og:title',
-          name: 'og:title',
-          content:
-            'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
-        },
-        {
-          hid: 'og:url',
-          name: 'og:url',
-          content: 'https://www.designscout.com',
-        },
-        {
-          hid: 'image',
-          name: 'image',
-          content: 'https://a.storyblok.com/f/200165/1500x821/cf2a979912/designscout-featured-image.webp',
-        },
-        {
-          hid: 'og:image',
-          name: 'og:image',
-          content: 'https://a.storyblok.com/f/200165/1500x821/cf2a979912/designscout-featured-image.webp',
-        },
-        { property: 'og:updated_time', content: new Date().toISOString() },
-        // Twitter card
-        {
-          hid: 'twitter:description',
-          name: 'twitter:description',
-          content:
-            "We build brave brands. DesignScout is a Chicago Branding Agency that builds bold identities for rule-bending hospitality and disruptor B2B brands.",
-        },
-        {
-          hid: 'twitter:title',
-          name: "twitter:title",
-          content:
-            'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
-        },
-        {
-          hid: 'twitter:url',
-          name: 'twitter:url',
-          content: 'https://www.designscout.com',
-        },
-        {
-          hid: 'twitter:image',
-          name: 'twitter:image',
-          content: 'https://a.storyblok.com/f/200165/1500x821/cf2a979912/designscout-featured-image.webp',
-        },
-      ],
-    },
+    // head: {
+    //   charset: 'utf-8',
+    //   viewport: 'width=device-width, initial-scale=1',
+    //   meta: [
+    //     {
+    //       hid: 'site_name',
+    //       name: 'site_name',
+    //       content:
+    //         'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
+    //     },
+    //     {
+    //       hid: 'og:site_name',
+    //       name: 'og:site_name',
+    //       content:
+    //         'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
+    //     },
+    //     {
+    //       hid: 'description',
+    //       name: 'description',
+    //       content:
+    //         "We build brave brands. DesignScout is a Chicago Branding Agency that builds bold identities for rule-bending hospitality and disruptor B2B brands.",
+    //     },
+    //     {
+    //       hid: 'og:description',
+    //       name: 'og:description',
+    //       content:
+    //         "We build brave brands. DesignScout is a Chicago Branding Agency that builds bold identities for rule-bending hospitality and disruptor B2B brands.",
+    //     },
+    //     {
+    //       hid: 'title',
+    //       name: 'title',
+    //       content:
+    //         'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
+    //     },
+    //     {
+    //       hid: 'og:title',
+    //       name: 'og:title',
+    //       content:
+    //         'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
+    //     },
+    //     {
+    //       hid: 'og:url',
+    //       name: 'og:url',
+    //       content: 'https://www.designscout.com',
+    //     },
+    //     {
+    //       hid: 'image',
+    //       name: 'image',
+    //       content: 'https://a.storyblok.com/f/200165/1500x821/cf2a979912/designscout-featured-image.webp',
+    //     },
+    //     {
+    //       hid: 'og:image',
+    //       name: 'og:image',
+    //       content: 'https://a.storyblok.com/f/200165/1500x821/cf2a979912/designscout-featured-image.webp',
+    //     },
+    //     { property: 'og:updated_time', content: new Date().toISOString() },
+    //     // Twitter card
+    //     {
+    //       hid: 'twitter:description',
+    //       name: 'twitter:description',
+    //       content:
+    //         "We build brave brands. DesignScout is a Chicago Branding Agency that builds bold identities for rule-bending hospitality and disruptor B2B brands.",
+    //     },
+    //     {
+    //       hid: 'twitter:title',
+    //       name: "twitter:title",
+    //       content:
+    //         'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
+    //     },
+    //     {
+    //       hid: 'twitter:url',
+    //       name: 'twitter:url',
+    //       content: 'https://www.designscout.com',
+    //     },
+    //     {
+    //       hid: 'twitter:image',
+    //       name: 'twitter:image',
+    //       content: 'https://a.storyblok.com/f/200165/1500x821/cf2a979912/designscout-featured-image.webp',
+    //     },
+    //   ],
+    // },
   },
   nitro: {
     prerender: {
@@ -223,88 +229,88 @@ module.exports = {
   },
 };
 
-export default {
-  head: {
-    title: 'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      {
-        hid: 'site_name',
-        name: 'site_name',
-        content:
-          'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
-      },
-      {
-        hid: 'og:site_name',
-        name: 'og:site_name',
-        content:
-          'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
-      },
-      {
-        hid: 'description',
-        name: 'description',
-        content:
-          "We build brave brands. DesignScout is a Chicago Branding Agency that builds bold identities for rule-bending hospitality and disruptor B2B brands.",
-      },
-      {
-        hid: 'og:description',
-        name: 'og:description',
-        content:
-          "We build brave brands. DesignScout is a Chicago Branding Agency that builds bold identities for rule-bending hospitality and disruptor B2B brands.",
-      },
-      {
-        hid: 'title',
-        name: 'title',
-        content:
-          'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
-      },
-      {
-        hid: 'og:title',
-        name: 'og:title',
-        content:
-          'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
-      },
-      {
-        hid: 'og:url',
-        name: 'og:url',
-        content: 'https://www.designscout.com',
-      },
-      {
-        hid: 'image',
-        name: 'image',
-        content: 'https://a.storyblok.com/f/200165/1500x821/cf2a979912/designscout-featured-image.webp',
-      },
-      {
-        hid: 'og:image',
-        name: 'og:image',
-        content: 'https://a.storyblok.com/f/200165/1500x821/cf2a979912/designscout-featured-image.webp',
-      },
-      { property: 'updated_time', content: new Date().toISOString() },
-      { property: 'og:updated_time', content: new Date().toISOString() },
-      // Twitter card
-      {
-        hid: 'twitter:description',
-        name: 'twitter:description',
-        content:
-          "We build brave brands. DesignScout is a Chicago Branding Agency that builds bold identities for rule-bending hospitality and disruptor B2B brands.",
-      },
-      {
-        hid: 'twitter:title',
-        name: "twitter:title",
-        content:
-          'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
-      },
-      {
-        hid: 'twitter:url',
-        name: 'twitter:url',
-        content: 'https://www.designscout.com',
-      },
-      {
-        hid: 'twitter:image',
-        name: 'twitter:image',
-        content: 'https://a.storyblok.com/f/200165/1500x821/cf2a979912/designscout-featured-image.webp',
-      },
-    ]
-  }
-}
+// export default {
+//   head: {
+//     title: 'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
+//     meta: [
+//       { charset: 'utf-8' },
+//       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+//       {
+//         hid: 'site_name',
+//         name: 'site_name',
+//         content:
+//           'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
+//       },
+//       {
+//         hid: 'og:site_name',
+//         name: 'og:site_name',
+//         content:
+//           'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
+//       },
+//       {
+//         hid: 'description',
+//         name: 'description',
+//         content:
+//           "We build brave brands. DesignScout is a Chicago Branding Agency that builds bold identities for rule-bending hospitality and disruptor B2B brands.",
+//       },
+//       {
+//         hid: 'og:description',
+//         name: 'og:description',
+//         content:
+//           "We build brave brands. DesignScout is a Chicago Branding Agency that builds bold identities for rule-bending hospitality and disruptor B2B brands.",
+//       },
+//       {
+//         hid: 'title',
+//         name: 'title',
+//         content:
+//           'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
+//       },
+//       {
+//         hid: 'og:title',
+//         name: 'og:title',
+//         content:
+//           'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
+//       },
+//       {
+//         hid: 'og:url',
+//         name: 'og:url',
+//         content: 'https://www.designscout.com',
+//       },
+//       {
+//         hid: 'image',
+//         name: 'image',
+//         content: 'https://a.storyblok.com/f/200165/1500x821/cf2a979912/designscout-featured-image.webp',
+//       },
+//       {
+//         hid: 'og:image',
+//         name: 'og:image',
+//         content: 'https://a.storyblok.com/f/200165/1500x821/cf2a979912/designscout-featured-image.webp',
+//       },
+//       { property: 'updated_time', content: new Date().toISOString() },
+//       { property: 'og:updated_time', content: new Date().toISOString() },
+//       // Twitter card
+//       {
+//         hid: 'twitter:description',
+//         name: 'twitter:description',
+//         content:
+//           "We build brave brands. DesignScout is a Chicago Branding Agency that builds bold identities for rule-bending hospitality and disruptor B2B brands.",
+//       },
+//       {
+//         hid: 'twitter:title',
+//         name: "twitter:title",
+//         content:
+//           'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
+//       },
+//       {
+//         hid: 'twitter:url',
+//         name: 'twitter:url',
+//         content: 'https://www.designscout.com',
+//       },
+//       {
+//         hid: 'twitter:image',
+//         name: 'twitter:image',
+//         content: 'https://a.storyblok.com/f/200165/1500x821/cf2a979912/designscout-featured-image.webp',
+//       },
+//     ]
+//   }
+// }
