@@ -1,9 +1,27 @@
 <script setup>
+// import { useCookieControl, useCookie } from '#imports'
 const storyblokApi = useStoryblokApi();
 const { data } = await storyblokApi.get("cdn/stories/config", {
   version: "draft",
   resolve_links: "url",
 });
+
+const {cookiesEnabledIds} = useCookieControl()
+
+console.log("cookiesEnabledIds",cookiesEnabledIds);
+watch(
+  () => cookiesEnabledIds.value,
+  (current, previous) => {
+    // if (
+    //   (!previous?.includes('google-analytics') &&
+    //     current?.includes('google-analytics'))
+    // ) {
+    //   // cookie with id `google-analytics` got added
+    //   window.location.reload() // placeholder for your custom change handler
+    // }
+  },
+  { deep: true }
+)
 
 console.log(data.story.content.site_title);
 
@@ -31,9 +49,12 @@ async function setup() {
 </script>
 
 <template>
+  <div>
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
+  <CookieControl />
+</div>
 </template>
 
 <script>
@@ -45,12 +66,12 @@ export default {
     };
   },
   mounted() {
+
     // if (location.protocol !== "https:") {
     //   location.href =
     //     "https:" +
     //     window.location.href.substring(window.location.protocol.length);
     // }
-
     this.initGoogleAnalytics();
     this.updatePageNameClass();
     document.addEventListener("click", this.handleClickEvent);
@@ -69,6 +90,7 @@ export default {
         });
       }
     },
+    
   },
   methods: {
     initGoogleAnalytics() {
