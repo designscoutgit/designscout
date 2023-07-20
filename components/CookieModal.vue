@@ -19,13 +19,13 @@
     </div>
     <div class="modal-overlay" v-show="displayinner">
       <div class="modal">
-        <img class="check" src="~/assets/check-icon.png" alt="" />
+        <img class="check" alt="" />
         <h6>Saved!</h6>
         <p>Your Details have been saved Successfully</p>
         <button @click="lol()">Go Home</button>
       </div>
       <div class="close">
-        <img class="close-img" src="~/assets/close-icon.svg" alt="" />
+        <img class="close-img" alt="" />
       </div>
     </div>
   </template>
