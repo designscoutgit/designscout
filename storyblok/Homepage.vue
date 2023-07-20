@@ -402,12 +402,14 @@ definePageMeta({
               :alt="media.alt"
               :title="media.title"
             >
+            
             <video
               v-else
-              controls
+              
               autoplay
               muted
               loop
+              
             >
               <source
                 :src="media.filename"
