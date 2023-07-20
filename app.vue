@@ -1,27 +1,28 @@
 <script setup>
 // import { useCookieControl, useCookie } from '#imports'
+import CookieModal from './components/CookieModal.vue';
 const storyblokApi = useStoryblokApi();
 const { data } = await storyblokApi.get("cdn/stories/config", {
   version: "draft",
   resolve_links: "url",
 });
 
-const {cookiesEnabledIds} = useCookieControl()
+// const {cookiesEnabledIds} = useCookieControl()
 
-console.log("cookiesEnabledIds",cookiesEnabledIds);
-watch(
-  () => cookiesEnabledIds.value,
-  (current, previous) => {
-    // if (
-    //   (!previous?.includes('google-analytics') &&
-    //     current?.includes('google-analytics'))
-    // ) {
-    //   // cookie with id `google-analytics` got added
-    //   window.location.reload() // placeholder for your custom change handler
-    // }
-  },
-  { deep: true }
-)
+// console.log("cookiesEnabledIds",cookiesEnabledIds);
+// watch(
+//   () => cookiesEnabledIds.value,
+//   (current, previous) => {
+//     // if (
+//     //   (!previous?.includes('google-analytics') &&
+//     //     current?.includes('google-analytics'))
+//     // ) {
+//     //   // cookie with id `google-analytics` got added
+//     //   window.location.reload() // placeholder for your custom change handler
+//     // }
+//   },
+//   { deep: true }
+// )
 
 console.log(data.story.content.site_title);
 
@@ -53,7 +54,8 @@ async function setup() {
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
-  <CookieControl />
+  <!-- <CookieControl /> -->
+  <CookieModal  />
 </div>
 </template>
 

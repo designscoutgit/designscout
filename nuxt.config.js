@@ -78,17 +78,17 @@ module.exports = {
     '@nuxt/image-edge',
     '@morev/vue-transitions/nuxt',
     '@nuxtjs/supabase',
-    ['@dargmuesli/nuxt-cookie-control', {
-      barPosition: 'bottom-full',
-      isAcceptNecessaryButtonEnabled: true,
-      isControlButtonEnabled: true,
-      isCookieIdVisible: false,
-      isCssEnabled: true,
-      isCssPonyfillEnabled: false,
-      isDashInDescriptionEnabled: true,
-      isIframeBlocked: false,
-      isModalForced: false,
-    }],
+    // ['@dargmuesli/nuxt-cookie-control', {
+    //   barPosition: 'bottom-full',
+    //   isAcceptNecessaryButtonEnabled: true,
+    //   isControlButtonEnabled: true,
+    //   isCookieIdVisible: false,
+    //   isCssEnabled: true,
+    //   isCssPonyfillEnabled: false,
+    //   isDashInDescriptionEnabled: true,
+    //   isIframeBlocked: false,
+    //   isModalForced: false,
+    // }],
     // '@nuxtjs/tailwindcss',
     // '@unocss/nuxt',
     // '@nuxtjs/fontaine',
@@ -108,6 +108,9 @@ module.exports = {
       safe: true,
     },
   },
+  buildModules: [
+    '@nuxtjs/ngrok',
+  ],
   components: true,
   server: {
     // configure the port and host for your dev server

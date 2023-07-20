@@ -570,3 +570,75 @@ CUSTOM ELEMENTS
 .margin-bottom-0 {
     margin-bottom: 0px !important;
 }
+
+.margin-top-0 {
+    margin-top: 0px !important;
+}
+
+@media only screen and (min-width: 768px){
+    .b2p-container .two-cols .left-col.align-flex-start{
+        align-items: flex-start;
+    }
+}
+
+.cookie-modal-container{
+    padding: cRems(20px);
+    position: fixed;
+    left: 15px;
+    right:15px;
+    bottom: 15px;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 10px 10px 16px 1px rgba(0,0,0,0.17);
+    -webkit-box-shadow: 10px 10px 16px 1px rgba(0,0,0,0.17);
+    -moz-box-shadow: 10px 10px 16px 1px rgba(0,0,0,0.17);
+    p{
+        font-size: 16px;
+        line-height: 1.5;
+    }
+}
+
+.dark .cookie-modal-container{
+    h2{
+        color: $colorDarkGray
+    }
+    p {
+        color: $colorNavy
+    }
+    color: $colorNavy
+}
+
+.padd-bottom-15 {
+    padding-bottom: cRems(15px);
+}
+
+.margin-right-15{
+    margin-right: 15px;
+}
+
+.cookie-desc{
+    // color: $colorDarkGray;
+}
+
+.d-flex{
+    display: flex;
+}
+.justify-end{
+    align-items: end !important;
+}
+.align-center{
+    align-items: center !important;
+}
+
+.btn.btn_secondry{
+    background-color: #F7F5F0;
+    color: #303A3E;
+    border-color: #F7F5F0;
+}
+
+@include medium {
+    .col-7{
+        max-width: 66%;
+        width: 100%;
+    }
+}

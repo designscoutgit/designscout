@@ -302,7 +302,7 @@ definePageMeta({
       >
         <div class="b2p-container">
           <div class="two-cols">
-            <div class="col left-col">
+            <div class="col left-col align-flex-start">
               <h2 class="headline">{{ blok.b2p_headline }}</h2>
               <h3>{{ blok.b2p_subheadline }}</h3>
               <div v-html="b2pBodyCopy"></div>
