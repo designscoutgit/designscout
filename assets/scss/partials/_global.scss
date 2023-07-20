@@ -636,6 +636,10 @@ CUSTOM ELEMENTS
     border-color: #F7F5F0;
 }
 
+.px-2{
+    padding: 0 10px!important;
+}
+
 @include medium {
     .col-7{
         max-width: 66%;

@@ -36,8 +36,8 @@ async function setup() {
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
-  <!-- <CookieControl /> -->
-  <CookieModal  />
+  <CookieControl />
+  <!-- <CookieModal  /> -->
 </div>
 </template>
 

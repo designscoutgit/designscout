@@ -58,12 +58,23 @@ footer {
             display: block;
             width: 100%;
             font-family: $fontStyrene;
-            font-size: cRems(15px);
+            font-size: cRems(10px);
             line-height: cRems(19px);
             letter-spacing: cRems(2.08px);
             padding: cRems(72px) 0 0;
             border-top: cRems(1px) solid $colorCream;
 
+            .list-style-bullet{
+                &::before{
+                    content: '';
+                    height: 1px;
+                    width: 1px;
+                    background-color: #F7F5F0;
+                    position: absolute;
+                    left: 0;
+                    font-size: 15px;
+                }
+            }
             @include medium {
                 display: inline;
                 padding: 0;
