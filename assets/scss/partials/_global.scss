@@ -761,3 +761,7 @@ CUSTOM ELEMENTS
         text-align: right;
     }
 }
+
+.cookieControl .cookieControl__ModalContent li + li{
+    display: none;
+}

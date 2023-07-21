@@ -40,25 +40,35 @@ const ogImage =
   props.blok.metatags && props.blok.metatags.og_image
     ? props.blok.metatags.og_image
     : defaultOgImage;
+    const ogMetaTitle = props?.blok?.metatags?.og_title || defaultTitle;
+    const ogDescription = props?.blok?.metatags?.og_description || ""
+    const twitterDescription = props?.blok?.metatags?.twitter_description || ""
+    const twitterImage = props?.blok?.metatags?.twitter_image || ""
 
 useSeoMeta({
   title: metaTitle,
-  ogTitle: metaTitle,
+  ogTitle: ogMetaTitle,
   description: metaDescription,
-  ogDescription: metaDescription,
+  ogDescription: ogDescription,
   image: ogImage,
   ogImage: ogImage,
   twitterCard: "summary_large_image",
+  twitterDescription: twitterDescription,
+  twitterImage: twitterImage,
+  twitterTitle: twitterTitle,
 });
 
 definePageMeta({
   title: metaTitle,
-  ogTitle: metaTitle,
+  ogTitle: ogMetaTitle,
   description: metaDescription,
-  ogDescription: metaDescription,
+  ogDescription: ogDescription,
   image: ogImage,
   ogImage: ogImage,
   twitterCard: "summary_large_image",
+  twitterDescription: twitterDescription,
+  twitterImage: twitterImage,
+  twitterTitle: twitterTitle,
 });
 </script>
 

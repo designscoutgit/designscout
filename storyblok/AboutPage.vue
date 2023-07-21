@@ -16,37 +16,39 @@ const defaultDescription =
 const defaultOgImage =
   "https://a.storyblok.com/f/200165/1500x821/cf2a979912/designscout-featured-image.webp";
 
-const metaTitle =
-  props.blok.metatags && props.blok.metatags.title
-    ? props.blok.metatags.title
-    : defaultTitle;
-const metaDescription =
-  props.blok.metatags && props.blok.metatags.description
-    ? props.blok.metatags.description
-    : defaultDescription;
-const ogImage =
-  props.blok.metatags && props.blok.metatags.og_image
-    ? props.blok.metatags.og_image
-    : defaultOgImage;
+const metaTitle = props.blok.metatags && props.blok.metatags.title ? props.blok.metatags.title : defaultTitle;
+const metaDescription = props.blok.metatags && props.blok.metatags.description ? props.blok.metatags.description : defaultDescription;
+const ogImage = props.blok.metatags && props.blok.metatags.og_image ? props.blok.metatags.og_image : defaultOgImage;
+const ogMetaTitle = props?.blok?.metatags?.og_title || defaultTitle;
+const ogDescription = props?.blok?.metatags?.og_description || defaultDescription
+const twitterDescription = props?.blok?.metatags?.twitter_description || ""
+const twitterImage = props?.blok?.metatags?.twitter_image || ""
+const twitterTitle = props?.blok?.metatags?.twitter_title || ""
 
 useSeoMeta({
   title: metaTitle,
-  ogTitle: metaTitle,
+  ogTitle: ogMetaTitle,
   description: metaDescription,
-  ogDescription: metaDescription,
+  ogDescription: ogDescription,
   image: ogImage,
   ogImage: ogImage,
   twitterCard: "summary_large_image",
+  twitterDescription: twitterDescription,
+  twitterImage: twitterImage,
+  twitterTitle: twitterTitle
 });
 
 definePageMeta({
   title: metaTitle,
-  ogTitle: metaTitle,
+  ogTitle: ogMetaTitle,
   description: metaDescription,
-  ogDescription: metaDescription,
+  ogDescription: ogDescription,
   image: ogImage,
   ogImage: ogImage,
   twitterCard: "summary_large_image",
+  twitterDescription: twitterDescription,
+  twitterImage: twitterImage,
+  twitterTitle: twitterTitle
 });
 </script>
 
