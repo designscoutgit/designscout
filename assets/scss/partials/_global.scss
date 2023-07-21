@@ -673,8 +673,6 @@ CUSTOM ELEMENTS
     color: $colorNavy; 
     background-color: transparent;
     text-transform: uppercase;
-
-   
 }
 
 .cookieControl .cookieControl__BarButtons button:last-child{
@@ -691,10 +689,15 @@ CUSTOM ELEMENTS
     margin-top: 10px;
     &:hover,&:focus{
         background-color: transparent;
-        color: inherit;
+        color: #303A3E;
         box-shadow: none;
     }
 }
+
+.dark .cookieControl h2 {
+    color: #706D5F
+}
+
 .cookieControl .cookieControl__Bar--bottom-full{
     left: 20px;
     right: 20px;

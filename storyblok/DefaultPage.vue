@@ -50,7 +50,7 @@ const bodyRichText = computed(() => {
         :key="index"
       >
         <component
-          :is="block.component"
+          :is="block?.component"
           :blok="block"
         />
       </div>

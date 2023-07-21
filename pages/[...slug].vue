@@ -24,7 +24,7 @@ console.log(slug);
   <div>
     <StoryblokComponent
       v-if="!isNotFound"
-      :blok="story.content"
+      :blok="story?.content"
     />
     <div
       v-else

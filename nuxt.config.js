@@ -174,16 +174,6 @@ module.exports = {
       exclude: ['fsevents'],
     },
   },
-  router: {
-    // set the base URL for your app to run on localhost
-    base: '/',
-    extendRoutes(routes, resolve) {
-      routes.push({
-        path: '*',
-        component: resolve(__dirname, '404.vue'),
-      })
-    },
-  },
   app: {
     pageTransition: { name: 'storyblok', mode: 'out-in' },
     // head: {
