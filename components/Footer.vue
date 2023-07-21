@@ -85,7 +85,8 @@
         </div>
       </div>
       <div class="row subfooter">
-          <p class="disclaimer">&copy; DESIGNSCOUT. <br class="small-only" />ALL RIGHTS RESERVED. <a class="list-style-bullet" href="/privacy-policy">PRIVACY POLICY</a><a class="list-style-bullet" href="/terms-and-conditions">TERMS CONDITIONS</a></p>
+          <p class="disclaimer">
+            <span class="padd-right-10">&copy; DESIGNSCOUT. <br class="small-only" />ALL RIGHTS RESERVED.</span><a class="list-style-bullet" href="/privacy-policy">PRIVACY POLICY</a><a class="list-style-bullet" href="/terms-and-conditions">TERMS CONDITIONS</a></p>
         <div class="follow-us">
           <h5 class="small-only">FOLLOW US</h5>
           <a
