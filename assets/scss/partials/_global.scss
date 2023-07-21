@@ -581,12 +581,12 @@ CUSTOM ELEMENTS
     }
 }
 
-.cookie-modal-container{
+.cookie-modal-container {
     padding: cRems(20px);
-    position: fixed;
-    left: 15px;
-    right:15px;
-    bottom: 15px;
+    // position: fixed;
+    // left: 15px;
+    // right:15px;
+    // bottom: 15px;
     background-color: #FFFFFF;
     border-radius: 12px;
     box-shadow: 10px 10px 16px 1px rgba(0,0,0,0.17);
@@ -618,6 +618,7 @@ CUSTOM ELEMENTS
 
 .cookie-desc{
     // color: $colorDarkGray;
+    line-height: 1.5;
 }
 
 .d-flex{
@@ -640,9 +641,123 @@ CUSTOM ELEMENTS
     padding: 0 10px!important;
 }
 
+
+.cookieControl__Barbutton{
+    border: cRems(2px) solid $colorNavy;
+        color: $colorNavy; 
+        background-color: transparent;
+        &:hover {
+            background-color: $colorNavy;
+            color: $colorCream; 
+
+           
+        }
+}
+.cookieControl__ControlButton{
+    right: 60px !important;
+}
+
+.cookieControl .cookieControl__ModalContent h3{
+    font-family: "GT Alpina Fine", serif;
+    font-style: italic;
+    font-weight: 250;
+    text-transform: capitalize;
+    text-align: left;
+}
+.cookieControl__ModalCookieName span{
+    display: inline-block;
+    font-size: 11px;
+}
+.cookieControl__ModalCookieName{
+    font-size: 13px;
+    font-family: "Styrene A", Arial, sans-serif;
+    font-style:normal
+}
+.cookieControl .cookieControl__BarButtons button , .cookieControl .cookieControl__ModalButtons button{
+    font-size: cRems(12px);
+    line-height: 1;
+    letter-spacing: cRems(1.76px);
+    font-weight: 700;
+    padding: 0 cRems(24px);
+    border-radius: cRems(100px);
+    font-family: $fontStyrene;
+    text-align: center;
+    min-width: cRems(43px);  
+    text-decoration: none;
+    height: cRems(43px);    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
+   
+    border: cRems(2px) solid $colorNavy;
+    color: $colorNavy; 
+    background-color: transparent;
+    text-transform: uppercase;
+
+   
+}
+
+.cookieControl .cookieControl__BarButtons button:last-child{
+    font-family: "MonotypeBaskervilleSemiBold", sans-serif;
+    font-size: inherit;
+    letter-spacing: normal;
+    text-decoration: underline;
+    border: none;
+    display: block;
+    width: 100%;
+    min-width: auto;
+    text-transform: none;
+    padding: 0;
+    margin-top: 10px;
+    &:hover,&:focus{
+        background-color: transparent;
+        color: inherit;
+        box-shadow: none;
+    }
+}
+.cookieControl .cookieControl__Bar--bottom-full{
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 10px 10px 16px 1px rgba(0,0,0,0.17);
+    -webkit-box-shadow: 10px 10px 16px 1px rgba(0,0,0,0.17);
+    -moz-box-shadow: 10px 10px 16px 1px rgba(0,0,0,0.17);
+}
+
+.cookieControl .cookieControl__ModalContent{
+    border-radius: 12px;
+    box-shadow: 10px 10px 16px 1px rgba(0,0,0,0.17);
+    -webkit-box-shadow: 10px 10px 16px 1px rgba(0,0,0,0.17);
+    -moz-box-shadow: 10px 10px 16px 1px rgba(0,0,0,0.17);
+}
+.cookieControl__ModalContent .cookieControl__ModalClose{
+    background-image: url(../svg/close-dark.svg);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    font-size: 0;
+    &:hover,&:focus{
+        background-color: transparent;
+        color: inherit;
+        box-shadow: none;
+    }
+}
+
 @include medium {
     .col-7{
         max-width: 66%;
         width: 100%;
+    }
+
+    .cookieControl .cookieControl__BarButtons{
+        flex-wrap: wrap;
+        justify-content: end;
+    }
+
+    .cookieControl .cookieControl__BarButtons button:last-child{
+        text-align: right;
     }
 }

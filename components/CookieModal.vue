@@ -8,13 +8,14 @@
                     changed anytime using the cookie button that will appear atter a selection has been made on this banner.
                 </p>
             </div>
-            <div class="col col-3 justify-end">
-                <div class="d-flex padd-bottom-15">
+            <!-- <div class="col col-3 justify-end"> -->
+                <!-- <div class="d-flex padd-bottom-15">
                     <a class="btn dark with-arrow margin-bottom-0 margin-top-0 margin-right-15" @click="displaymain = true" v-show="displaymain">ACCEPT</a>
                     <a class="btn btn_secondry with-arrow margin-bottom-0" @click="displaymain = false" v-show="displaymain">DECLINE</a>
                 </div>
-                <p class="padding-bottom-0"><a class="underline navy size-5" @click="displayinner = true" v-show="displaymain">Learn more & customize</a></p>
-            </div>
+                <p class="padding-bottom-0"><a class="underline navy size-5" @click="displayinner = true" v-show="displaymain">Learn more & customize</a></p> -->
+            <!-- </div> -->
+            
         </div>
     </div>
     <div class="modal-overlay" v-show="displayinner">
