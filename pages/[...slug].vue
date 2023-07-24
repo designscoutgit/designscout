@@ -11,12 +11,12 @@ const story = await useAsyncStoryblok(
   {
     resolveRelations,
   }
-);
+)
 
-const isNotFound = !story;
+const isNotFound = !story?.value;
 
 console.log(isNotFound);
-console.log(story.content);
+console.log(story?.content);
 console.log(slug);
 </script>
  
@@ -28,9 +28,9 @@ console.log(slug);
     />
     <div
       v-else
-      class="error-page"
+      class="error-page d-blok"
     >
-      <h2 class="size-2 center">404</h2>
+      <h2 class="size-2 center custom-404">404</h2>
       <h3 class="center">PAGE NOT FOUND.</h3>
       <h3 class="center">IN THE MEANTIME TAKE A LOOK AROUND.</h3>
       <div class="button-row">
@@ -87,3 +87,12 @@ console.log(slug);
     </div>
   </div>
 </template>
+<!-- <script>
+  export default {
+    mounted() {
+      // if(isNotFound){
+      //   document.body.classList.add("dark");
+      // }
+    }
+  }
+</script> -->

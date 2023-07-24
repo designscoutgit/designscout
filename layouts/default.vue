@@ -6,7 +6,7 @@
     <main ref="mainContent">
       <slot />
     </main>
-    <div
+    <!-- <div
       class="error-page large-width"
       :class="[{ errorPage: errorPage }]"
     >
@@ -64,7 +64,7 @@
           </svg>
           CAMP DIARY</a>
       </div>
-    </div>
+    </div> -->
     <!-- FOOTER -->
     <Footer />
   </div>
@@ -104,9 +104,9 @@ export default {
     this.pageName = this.$route.name;
     this.errorPage = false;
 
-    setTimeout(() => {
-      this.checkContent();
-    }, 2000);
+    // setTimeout(() => {
+    //   this.checkContent();
+    // }, 2000);
   },
 
   beforeRouteEnter(to, from, next) {
