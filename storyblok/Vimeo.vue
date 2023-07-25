@@ -74,7 +74,7 @@ const padding = computed(() => {
 });
 </script>
 
-<style scoped>
+<style>
 .vimeo-player {
   width: 100%;
   position: relative;
