@@ -157,9 +157,6 @@ module.exports = {
       safe: true,
     },
   },
-  buildModules: [
-    '@nuxtjs/ngrok',
-  ],
   components: true,
   server: {
     // configure the port and host for your dev server
