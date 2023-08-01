@@ -5,10 +5,7 @@ const redirectHttpMiddleware = require('./middleware/redirect-http');
 module.exports = {
   ssr: false,
   target: 'server',
-  head: {
-    script: [
-      { src: '/accessibe-script.js', defer: true },
-    ],  
+  head: { 
     link: [
       { hid: "canonical", rel: "canonical", href: 'https://www.designscout.com' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
