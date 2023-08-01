@@ -70,7 +70,7 @@ module.exports = {
       '@storyblok/nuxt',
       {
         accessToken: 'rd1GrPIgxeRvpje21SjVnAtt',
-        use: [apiPlugin],
+        use: [apiPlugin], 
       },
     ],    
     '@nuxt/content',
