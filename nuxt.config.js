@@ -122,8 +122,8 @@ module.exports = {
             id: 'op',
             name: 'Optional Cookie',
             links: {
-              'https://example.com': 'Privacy Policy',
-              'https://example.cop': null,
+              'https://www.designscout.com/privacy-policy': 'Privacy Policy',
+              // 'https://example.cop': null,
             },
             targetCookieIds: ["li_sugr", "AnalyticsSyncHistory", "bscookie", "vuid", "#collect", "_ga_#", "_ga", "bcookie", "UserMatchHistory", "lidc"],
           },
