@@ -75,69 +75,69 @@ module.exports = {
     '@nuxt/image-edge',
     '@morev/vue-transitions/nuxt',
     '@nuxtjs/supabase',
-    // ['@dargmuesli/nuxt-cookie-control', {
-    //   colors: {
-    //     checkboxActiveBackground: '#00A34A', // text-green-600
-    //     modalBackground: '#fff',
-    //     barBackground: '#FFFFFF',
-    //     barButtonBackground: '#f7f5f0',
-    //     barButtonColor: '#303a3e',
-    //     barButtonHoverBackground: '#303a3e',
-    //     barButtonHoverColor: '#f7f5f0',
-    //     barTextColor: '#706D5F',
-    //     modalButtonBackground: '#f7f5f0',
-    //     modalButtonColor: '#303a3e',
-    //     modalButtonHoverBackground: '#303a3e',
-    //     modalButtonHoverColor: '#f7f5f0',
-    //     modalOverlay: '#000',
-    //     modalOverlayOpacity: 0.5,
-    //     modalTextColor: '#706D5F',
-    //     modalUnsavedColor: '#fff',
+    ['@dargmuesli/nuxt-cookie-control', {
+      colors: {
+        checkboxActiveBackground: '#00A34A', // text-green-600
+        modalBackground: '#fff',
+        barBackground: '#FFFFFF',
+        barButtonBackground: '#f7f5f0',
+        barButtonColor: '#303a3e',
+        barButtonHoverBackground: '#303a3e',
+        barButtonHoverColor: '#f7f5f0',
+        barTextColor: '#706D5F',
+        modalButtonBackground: '#f7f5f0',
+        modalButtonColor: '#303a3e',
+        modalButtonHoverBackground: '#303a3e',
+        modalButtonHoverColor: '#f7f5f0',
+        modalOverlay: '#000',
+        modalOverlayOpacity: 0.5,
+        modalTextColor: '#706D5F',
+        modalUnsavedColor: '#fff',
 
-    //     checkboxActiveBackground: '#F7F5F0',
-    //     checkboxActiveCircleBackground: '#fff',
-    //     checkboxDisabledBackground: '#ddd',
-    //     checkboxDisabledCircleBackground: '#fff',
-    //     checkboxInactiveBackground: '#2A3336',
-    //     checkboxInactiveCircleBackground: '#fff',
-    //   },
-    //   closeModalOnClickOutside: true,
-    //   // isControlButtonEnabled: false,
-    //   cookies: {
-    //     necessary: [
-    //       {
-    //         description: {
-    //           de: 'Dieser Cookie tut etwas.',
-    //           en: ' This cookie does something very very very very very very very long.',
-    //         },
-    //         name: {
-    //           de: 'Notwendiger Cookie',
-    //           en: 'Necessary Cookie',
-    //         },
-    //         targetCookieIds: ["__cf_bm", "aka_debug"],
-    //       },
-    //     ],
-    //     optional: [
-    //       {
-    //         id: 'op',
-    //         name: 'Optional Cookie',
-    //         links: {
-    //           'https://example.com': 'Privacy Policy',
-    //           'https://example.cop': null,
-    //         },
-    //         targetCookieIds: ["li_sugr", "AnalyticsSyncHistory", "bscookie", "vuid", "#collect", "_ga_#", "_ga", "bcookie", "UserMatchHistory", "lidc"],
-    //       },
-    //     ],
-    //   },
-    //   isCookieIdVisible: true,
-    //   isIframeBlocked: true,
-    //   locales: ['en', 'de'],
-    //   localeTexts: {
-    //     de: {
-    //       iframeBlocked: 'Bitte funktionale Cookies aktivieren:',
-    //     },
-    //   },
-    // }],
+        checkboxActiveBackground: '#F7F5F0',
+        checkboxActiveCircleBackground: '#fff',
+        checkboxDisabledBackground: '#ddd',
+        checkboxDisabledCircleBackground: '#fff',
+        checkboxInactiveBackground: '#2A3336',
+        checkboxInactiveCircleBackground: '#fff',
+      },
+      closeModalOnClickOutside: true,
+      // isControlButtonEnabled: false,
+      cookies: {
+        necessary: [
+          {
+            description: {
+              de: 'Dieser Cookie tut etwas.',
+              en: ' This cookie does something very very very very very very very long.',
+            },
+            name: {
+              de: 'Notwendiger Cookie',
+              en: 'Necessary Cookie',
+            },
+            targetCookieIds: ["__cf_bm", "aka_debug"],
+          },
+        ],
+        optional: [
+          {
+            id: 'op',
+            name: 'Optional Cookie',
+            links: {
+              'https://example.com': 'Privacy Policy',
+              'https://example.cop': null,
+            },
+            targetCookieIds: ["li_sugr", "AnalyticsSyncHistory", "bscookie", "vuid", "#collect", "_ga_#", "_ga", "bcookie", "UserMatchHistory", "lidc"],
+          },
+        ],
+      },
+      isCookieIdVisible: true,
+      isIframeBlocked: true,
+      locales: ['en', 'de'],
+      localeTexts: {
+        de: {
+          iframeBlocked: 'Bitte funktionale Cookies aktivieren:',
+        },
+      },
+    }],
     // '@nuxtjs/tailwindcss',
     // '@unocss/nuxt',
     // '@nuxtjs/fontaine',

@@ -1,5 +1,4 @@
 <script setup>
-import CookieModal from './components/CookieModal.vue';
 const storyblokApi = useStoryblokApi();
 const { data } = await storyblokApi.get("cdn/stories/config", {
   version: "draft",
@@ -36,8 +35,8 @@ async function setup() {
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
-  <!-- <CookieControl >
-    < !-- <CookieModal  /> -- >
+  <CookieControl >
+    <!-- <CookieModal  /> -->
     <template #bar class="test">
       <h2 class="size-4 padd-bottom-15">Cookies Settings</h2>
       <p class="size-5 padding-bottom-0 cookie-desc">We use our own cookies and third-party cookies so that we can display this website correctly and better understand how
@@ -45,7 +44,7 @@ async function setup() {
           changed anytime using the cookie button that will appear atter a selection has been made on this banner.
       </p>
     </template>
-  </CookieControl> -->
+  </CookieControl>
 </div>
 </template>
 

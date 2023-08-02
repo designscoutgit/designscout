@@ -31,6 +31,7 @@ const ogImage =
     const ogDescription = props?.blok?.metatags?.og_description || ""
     const twitterDescription = props?.blok?.metatags?.twitter_description || ""
     const twitterImage = props?.blok?.metatags?.twitter_image || ""
+    const twitterTitle = props?.blok?.metatags?.twitter_title || ""
 
 useSeoMeta({
   title: metaTitle,
