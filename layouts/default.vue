@@ -82,14 +82,14 @@ export default {
     Footer,
   },
 
-  head() {
-    return {
-      title: "DesignScout | Chicago Branding Agency | Ego-Free Since 2003™",
-      meta: [
-        // ... your existing meta tags
-      ],
-    };
-  },
+  // head() {
+  //   return {
+  //     title: "DesignScout | Chicago Branding Agency | Ego-Free Since 2003™",
+  //     meta: [
+  //       // ... your existing meta tags
+  //     ],
+  //   };
+  // },
 
   data() {
     return {
