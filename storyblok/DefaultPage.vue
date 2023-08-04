@@ -44,7 +44,9 @@ const bodyRichText = computed(() => {
       v-editable="blok"
       class="content-right"
     >
-      <div v-html="bodyRichText"></div>
+      <client-only>
+        <div v-html="bodyRichText"></div>
+      </client-only>
       <div
         v-for="(block, index) in blok.additional_content"
         :key="index"

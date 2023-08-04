@@ -372,7 +372,9 @@ import FormSelect from "~/components/FormSelect.vue";
 import TabbedContent from "~/components/TabbedContent.vue";
 import { createClient } from "@supabase/supabase-js";
 
-const router = useRouter();
+let router;
+if(process.client)
+  router = useRouter();
 
 const supabase = createClient(
   "https://xnpxxlvywrcjtuqsjnun.supabase.co",
@@ -415,10 +417,12 @@ export default {
   },
 
   created() {
-    this.observer = new IntersectionObserver(this.onElementObserved, {
-      root: this.$el,
-      threshold: 0.22,
-    });
+    if(process.client){
+      this.observer = new IntersectionObserver(this.onElementObserved, {
+        root: this.$el,
+        threshold: 0.22,
+      });
+    }
   },
 
   methods: {
@@ -461,38 +465,40 @@ export default {
     },
 
     onElementObserved(entries) {
-      let lastActiveIndex = -1; // keep track of index of last active section
-      entries.forEach(({ target, isIntersecting }) => {
-        const id = target.getAttribute("id");
-        const anchor = this.$el.querySelector(
-          `.badge-anchor-container li a[href="#${id}"]`
-        );
-        if (isIntersecting) {
-          const index = Array.from(
-            this.$el.querySelectorAll("section[id]")
-          ).indexOf(target);
-          if (index > lastActiveIndex) {
-            lastActiveIndex = index; // update last active index
-          }
-        }
-      });
-
-      const activeSection = this.$el.querySelector(
-        `section[id]:nth-of-type(${lastActiveIndex + 1})`
-      );
-      if (activeSection) {
-        activeSection.scrollIntoView({ behavior: "smooth" });
-      }
-
-      this.$el
-        .querySelectorAll(".badge-anchor-container li")
-        .forEach((li, index) => {
-          if (index === lastActiveIndex) {
-            li.classList.add("active");
-          } else {
-            li.classList.remove("active");
+      if(process.client){
+        let lastActiveIndex = -1; // keep track of index of last active section
+        entries.forEach(({ target, isIntersecting }) => {
+          const id = target.getAttribute("id");
+          const anchor = this.$el.querySelector(
+            `.badge-anchor-container li a[href="#${id}"]`
+          );
+          if (isIntersecting) {
+            const index = Array.from(
+              this.$el.querySelectorAll("section[id]")
+            ).indexOf(target);
+            if (index > lastActiveIndex) {
+              lastActiveIndex = index; // update last active index
+            }
           }
         });
+
+        const activeSection = this.$el.querySelector(
+          `section[id]:nth-of-type(${lastActiveIndex + 1})`
+        );
+        if (activeSection) {
+          activeSection.scrollIntoView({ behavior: "smooth" });
+        }
+
+        this.$el
+          .querySelectorAll(".badge-anchor-container li")
+          .forEach((li, index) => {
+            if (index === lastActiveIndex) {
+              li.classList.add("active");
+            } else {
+              li.classList.remove("active");
+            }
+          });
+        }
     },
   },
 
@@ -501,58 +507,60 @@ export default {
   },
 
   mounted() {
-    document.querySelectorAll("a.smooth-scroll").forEach((anchor) => {
-      anchor.addEventListener("click", function (event) {
-        event.preventDefault();
+    if(process.client){
+      document.querySelectorAll("a.smooth-scroll").forEach((anchor) => {
+        anchor.addEventListener("click", function (event) {
+          event.preventDefault();
 
-        const targetElement = document.querySelector(this.getAttribute("href"));
-        const targetPosition = targetElement.offsetTop;
-        const startPosition = window.pageYOffset;
-        const distance = targetPosition - startPosition;
-        const duration = 1000; // adjust as needed
-        let start = null;
+          const targetElement = document.querySelector(this.getAttribute("href"));
+          const targetPosition = targetElement.offsetTop;
+          const startPosition = window.pageYOffset;
+          const distance = targetPosition - startPosition;
+          const duration = 1000; // adjust as needed
+          let start = null;
 
-        function step(timestamp) {
-          if (!start) start = timestamp;
-          const progress = timestamp - start;
-          window.scrollTo(
-            0,
-            easeInOutCubic(progress, startPosition, distance, duration)
-          );
-          if (progress < duration) window.requestAnimationFrame(step);
-        }
+          function step(timestamp) {
+            if (!start) start = timestamp;
+            const progress = timestamp - start;
+            window.scrollTo(
+              0,
+              easeInOutCubic(progress, startPosition, distance, duration)
+            );
+            if (progress < duration) window.requestAnimationFrame(step);
+          }
 
-        function easeInOutCubic(t, b, c, d) {
-          t /= d / 2;
-          if (t < 1) return (c / 2) * t * t * t + b;
-          t -= 2;
-          return (c / 2) * (t * t * t + 2) + b;
-        }
+          function easeInOutCubic(t, b, c, d) {
+            t /= d / 2;
+            if (t < 1) return (c / 2) * t * t * t + b;
+            t -= 2;
+            return (c / 2) * (t * t * t + 2) + b;
+          }
 
-        window.requestAnimationFrame(step);
+          window.requestAnimationFrame(step);
+        });
       });
-    });
 
-    this.$el.querySelectorAll("section[id]").forEach((section) => {
-      this.observer.observe(section);
-    });
+      this.$el.querySelectorAll("section[id]").forEach((section) => {
+        this.observer.observe(section);
+      });
 
-    const processNav = document.querySelector(".badge-anchor-container");
-    let processNavOffset =
-      processNav.getBoundingClientRect().top + window.scrollY;
-    const handleScroll = () => {
-      if (window.scrollY >= processNavOffset) {
-        processNav.classList.add("snap");
-      } else {
-        processNav.classList.remove("snap");
-      }
-    };
-    const handleResize = () => {
-      processNavOffset =
+      const processNav = document.querySelector(".badge-anchor-container");
+      let processNavOffset =
         processNav.getBoundingClientRect().top + window.scrollY;
-    };
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleResize);
+      const handleScroll = () => {
+        if (window.scrollY >= processNavOffset) {
+          processNav.classList.add("snap");
+        } else {
+          processNav.classList.remove("snap");
+        }
+      };
+      const handleResize = () => {
+        processNavOffset =
+          processNav.getBoundingClientRect().top + window.scrollY;
+      };
+      window.addEventListener("scroll", handleScroll);
+      window.addEventListener("resize", handleResize);
+    }
   },
 };
 </script>

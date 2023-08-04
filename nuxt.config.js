@@ -3,8 +3,8 @@ const { join } = require('path');
 const redirectHttpMiddleware = require('./middleware/redirect-http');
 
 module.exports = {
-  ssr: false,
-  target: 'server',
+  ssr: true,
+  target: 'static',
   head: { 
     link: [
       { hid: "canonical", rel: "canonical", href: 'https://www.designscout.com' },
@@ -102,17 +102,17 @@ module.exports = {
         checkboxInactiveCircleBackground: '#fff',
       },
       closeModalOnClickOutside: true,
-      // isControlButtonEnabled: false,
+      isControlButtonEnabled: false,
       cookies: {
         necessary: [
           {
-            description: {
-              de: 'Dieser Cookie tut etwas.',
-              en: ' This cookie does something very very very very very very very long.',
-            },
+            // description: {
+            //   de: 'Dieser Cookie tut etwas.',
+            //   en: ' This cookie does something very very very very very very very long.',
+            // },
             name: {
-              de: 'Notwendiger Cookie',
-              en: 'Necessary Cookie',
+              de: 'Notwendiger Cookies',
+              en: 'Necessary Cookies',
             },
             targetCookieIds: ["__cf_bm", "aka_debug"],
           },
@@ -120,7 +120,7 @@ module.exports = {
         optional: [
           {
             id: 'op',
-            name: 'Optional Cookie',
+            name: 'Optional Cookies',
             links: {
               'https://www.designscout.com/privacy-policy': 'Privacy Policy',
               // 'https://example.cop': null,
