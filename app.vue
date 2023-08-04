@@ -7,14 +7,14 @@ const { data } = await storyblokApi.get("cdn/stories/config", {
 
 console.log(data.story.content.site_title);
 
-useSeoMeta({
-  title: data.story.content.site_title,
-  ogTitle: data.story.content.site_title,
-  description: data.story.content.site_description,
-  ogDescription: data.story.content.site_description,
-  ogImage: data.story.content.featured_image.filename,
-  twitterCard: "summary_large_image",
-});
+// useSeoMeta({
+//   title: data.story.content.site_title,
+//   ogTitle: data.story.content.site_title,
+//   description: data.story.content.site_description,
+//   ogDescription: data.story.content.site_description,
+//   ogImage: data.story.content.featured_image.filename,
+//   twitterCard: "summary_large_image",
+// });
 
 const { slug } = useRoute().params;
 
