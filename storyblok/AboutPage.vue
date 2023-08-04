@@ -595,7 +595,9 @@ import FaqAccordion from "~/components/AboutFaqAccordion.vue";
 import BackToTop from "../components/BackToTop.vue";
 import { createClient } from "@supabase/supabase-js";
 
-const router = useRouter();
+let router;
+if(process.client)
+  router = useRouter();
 
 const supabase = createClient(
   "https://xnpxxlvywrcjtuqsjnun.supabase.co",
@@ -640,25 +642,27 @@ export default {
     return { pageTitle };
   },
   mounted() {
-    this.handleScroll(); // Call handleScroll() to set the initial state of the navbar
-    window.addEventListener("scroll", this.handleScroll);
+    if(process.client){
+      this.handleScroll(); // Call handleScroll() to set the initial state of the navbar
+      window.addEventListener("scroll", this.handleScroll);
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("strike-animate-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        rootMargin: "-50% 0px -50% 0px",
-        threshold: 0,
-      }
-    );
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("strike-animate-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          rootMargin: "-50% 0px -50% 0px",
+          threshold: 0,
+        }
+      );
 
-    observer.observe(this.$refs.strike);
+      observer.observe(this.$refs.strike);
+    }
   },
   methods: {
     async submitForm() {

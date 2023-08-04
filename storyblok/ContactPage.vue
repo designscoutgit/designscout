@@ -150,68 +150,70 @@ definePageMeta({
         >
       </div>
       <div class="spacer x-small"></div>
-      <div class="textarea-container flex-checks">
-        <h3>REQUESTED SERVICES* <span class="subtext italic">(check all that apply)</span></h3>
-        <label for="new_brand">
-          <input
-            type="checkbox"
-            id="new_brand"
-            value="New Brand"
-            v-model="challenges"
-            :class="{ checked: challenges.includes('New Brand') }"
-          >
-          New Brand</label>
+      <client-only>
+        <div class="textarea-container flex-checks">
+          <h3>REQUESTED SERVICES* <span class="subtext italic">(check all that apply)</span></h3>
+          <label for="new_brand">
+            <input
+              type="checkbox"
+              id="new_brand"
+              value="New Brand"
+              v-model="challenges"
+              :class="{ checked: challenges.includes('New Brand') }"
+            >
+            New Brand</label>
 
-        <label for="brand_evolution">
-          <input
-            type="checkbox"
-            id="brand_evolution"
-            value="Brand Evolution"
-            v-model="challenges"
-            :class="{ checked: challenges.includes('Brand Evolution') }"
-          >
-          Brand Evolution</label>
+          <label for="brand_evolution">
+            <input
+              type="checkbox"
+              id="brand_evolution"
+              value="Brand Evolution"
+              v-model="challenges"
+              :class="{ checked: challenges.includes('Brand Evolution') }"
+            >
+            Brand Evolution</label>
 
-        <label for="website_design">
-          <input
-            type="checkbox"
-            id="website_design"
-            value="Website Design"
-            v-model="challenges"
-            :class="{ checked: challenges.includes('Website Design') }"
-          >
-          Website Design</label>
+          <label for="website_design">
+            <input
+              type="checkbox"
+              id="website_design"
+              value="Website Design"
+              v-model="challenges"
+              :class="{ checked: challenges.includes('Website Design') }"
+            >
+            Website Design</label>
 
-        <label for="packaging_design">
-          <input
-            type="checkbox"
-            id="packaging_design"
-            value="Packaging Design"
-            v-model="challenges"
-            :class="{ checked: challenges.includes('Packaging Design') }"
-          >
-          Packaging Design</label>
+          <label for="packaging_design">
+            <input
+              type="checkbox"
+              id="packaging_design"
+              value="Packaging Design"
+              v-model="challenges"
+              :class="{ checked: challenges.includes('Packaging Design') }"
+            >
+            Packaging Design</label>
 
-        <label for="restaurant_design">
-          <input
-            type="checkbox"
-            id="restaurant_design"
-            value="Restaurant Design"
-            v-model="challenges"
-            :class="{ checked: challenges.includes('Restaurant Design') }"
-          >
-          Restaurant Design</label>
+          <label for="restaurant_design">
+            <input
+              type="checkbox"
+              id="restaurant_design"
+              value="Restaurant Design"
+              v-model="challenges"
+              :class="{ checked: challenges.includes('Restaurant Design') }"
+            >
+            Restaurant Design</label>
 
-        <label for="other">
-          <input
-            type="checkbox"
-            id="other"
-            value="Other"
-            v-model="challenges"
-            :class="{ checked: challenges.includes('Other') }"
-          >
-          Other</label>
-      </div>
+          <label for="other">
+            <input
+              type="checkbox"
+              id="other"
+              value="Other"
+              v-model="challenges"
+              :class="{ checked: challenges.includes('Other') }"
+            >
+            Other</label>
+        </div>
+      </client-only>
       <div class="wide-container">
         <FormSelect
           :options="budgetOptions"
@@ -384,7 +386,9 @@ definePageMeta({
 import FormSelect from "~/components/FormSelect.vue";
 import { createClient } from "@supabase/supabase-js";
 
-const router = useRouter();
+let router;
+if(process.client)
+  router = useRouter();
 
 const supabase = createClient(
   "https://xnpxxlvywrcjtuqsjnun.supabase.co",

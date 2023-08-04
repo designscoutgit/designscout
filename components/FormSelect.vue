@@ -58,9 +58,9 @@ export default {
   },
   data() {
     return {
-      selectedOption:
+      selectedOption: process.client ?
         this.options.find((option) => option.value === this.modelValue) ||
-        this.options[0],
+        this.options[0] : {},
       isOpen: false,
     };
   },

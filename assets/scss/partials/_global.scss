@@ -746,6 +746,10 @@ CUSTOM ELEMENTS
     display: none;
 }
 
+.cookieControl .cookieControl__ModalCookieName span {
+    display: block;
+}
+
 .slug{
     display: flex;
     flex-direction: column;

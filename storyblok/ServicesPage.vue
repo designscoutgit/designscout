@@ -21,7 +21,8 @@ if (data && data.stories) {
 }
 
 setTimeout(() => {
-  document.body.classList.add("dark");
+  if (process.client) 
+    document.body.classList.add("dark");
 }, 150);
 
 const defaultTitle =
@@ -156,7 +157,8 @@ export default {
   name: "Services",
 
   mounted() {
-    document.querySelector(".contact-copy h2").classList.add("size-3");
+    if (process.client) 
+      document.querySelector(".contact-copy h2").classList.add("size-3");
   },
 };
 </script>

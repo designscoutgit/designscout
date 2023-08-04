@@ -340,11 +340,13 @@ const rightCol3RichText = computed(() =>
 
     <div class="case-study-content-container">
       <div v-editable="blok">
-        <StoryblokComponent
-          v-for="blok in blok.body"
-          :key="blok._uid"
-          :blok="blok"
-        />
+        <client-only>
+          <StoryblokComponent
+            v-for="blok in blok.body"
+            :key="blok._uid"
+            :blok="blok"
+          />
+        </client-only>
       </div>
       <!-- 
       <div class="section-1">
@@ -600,46 +602,51 @@ export default {
 
   mounted() {
     this.applyFullWidthClass();
+    if(process.client){
+      this.$nextTick(() => {
+        this.equalizeCreditLabelWidths();
 
-    this.$nextTick(() => {
-      this.equalizeCreditLabelWidths();
-
-      const grids = document.querySelectorAll(".image-grid");
-      grids.forEach((grid) => {
-        const childCount = grid.childElementCount;
-        grid.classList.add(`grid-layout-${childCount}`);
+        const grids = document.querySelectorAll(".image-grid");
+        grids.forEach((grid) => {
+          const childCount = grid.childElementCount;
+          grid.classList.add(`grid-layout-${childCount}`);
+        });
       });
-    });
+    }
   },
 
   methods: {
     applyFullWidthClass() {
-      const rows = document.querySelectorAll(".row");
-      rows.forEach((row) => {
-        const cols = row.querySelectorAll(".col");
-        if (cols.length === 1) {
-          cols[0].classList.add("full-width");
-        }
-      });
+      if(process.client){
+        const rows = document.querySelectorAll(".row");
+        rows.forEach((row) => {
+          const cols = row.querySelectorAll(".col");
+          if (cols.length === 1) {
+            cols[0].classList.add("full-width");
+          }
+        });
+      }
     },
 
     equalizeCreditLabelWidths() {
       this.$nextTick(() => {
-        const creditLabels = this.$el.querySelectorAll(".credit-label");
-        let maxWidth = 0;
+        if(process.client){
+          const creditLabels = this.$el.querySelectorAll(".credit-label");
+          let maxWidth = 0;
 
-        // Find the maximum width of credit-label elements
-        creditLabels.forEach((label) => {
-          const labelWidth = label.getBoundingClientRect().width;
-          if (labelWidth > maxWidth) {
-            maxWidth = labelWidth;
-          }
-        });
+          // Find the maximum width of credit-label elements
+          creditLabels.forEach((label) => {
+            const labelWidth = label.getBoundingClientRect().width;
+            if (labelWidth > maxWidth) {
+              maxWidth = labelWidth;
+            }
+          });
 
-        // Set the width of all credit-label elements to the maximum width
-        creditLabels.forEach((label) => {
-          label.style.width = `${maxWidth}px`;
-        });
+          // Set the width of all credit-label elements to the maximum width
+          creditLabels.forEach((label) => {
+            label.style.width = `${maxWidth}px`;
+          });
+        }
       });
     },
 

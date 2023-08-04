@@ -63,12 +63,16 @@ export default {
     //     "https:" +
     //     window.location.href.substring(window.location.protocol.length);
     // }
-    this.initGoogleAnalytics();
-    this.updatePageNameClass();
-    document.addEventListener("click", this.handleClickEvent);
+    if(process.client) {
+      this.initGoogleAnalytics();
+      this.updatePageNameClass();
+      document.addEventListener("click", this.handleClickEvent);
+    }
   },
   beforeUnmount() {
-    document.removeEventListener("click", this.handleClickEvent);
+    if(process.client) {
+      document.removeEventListener("click", this.handleClickEvent);
+    }
   },
   watch: {
     $route(to, from) {

@@ -23,7 +23,8 @@ if (data && data.stories) {
 const bodyRichText = computed(() => renderRichText(props.blok.body_copy));
 
 setTimeout(() => {
-  document.body.classList.add("dark");
+  if (process.client) 
+    document.body.classList.add("dark");
 }, 150);
 
 const defaultTitle =
