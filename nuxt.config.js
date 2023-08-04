@@ -66,7 +66,7 @@ module.exports = {
     [
       '@storyblok/nuxt',
       {
-        accessToken: 'rd1GrPIgxeRvpje21SjVnAtt',
+        accessToken:  process.env.STORYBLOK_API_TOKEN,
         use: [apiPlugin], 
       },
     ],    
@@ -273,7 +273,7 @@ module.exports = {
     },
   },
   publicRuntimeConfig: {
-    storyblokApiToken: "rd1GrPIgxeRvpje21SjVnAtt",
+    storyblokApiToken: process.env.STORYBLOK_API_TOKEN,
     supabaseUrl: process.env.SUPABASE_URL,
     supabaseKey: process.env.SUPABASE_KEY,
   },
