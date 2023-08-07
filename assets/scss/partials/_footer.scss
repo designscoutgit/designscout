@@ -3,7 +3,7 @@ footer {
     color: $colorCream;
     text-transform: uppercase;
     padding: cRems(62px) cRems(35px) cRems(84px);
-    cursor: url('public/icons/cursor.cur'), url('public/icons/cursor.png'), url('public/icons/cursor.svg'), pointer;
+    cursor: url('public/icons/cursor.cur') 20 20, url('public/icons/cursor.png') 20 20, url('public/icons/cursor.svg') 20 20, pointer;
     
     @include medium {
         padding: cRems(88px) cRems(96px) cRems(59px);

@@ -151,18 +151,18 @@ svg {
 }
 
 .custom-cursor-light {
-  cursor: url("../svg/cursor.svg") 40 40, auto !important;
+  cursor: url("../svg/cursor.svg") 20 20, auto !important;
 
   * {
-    cursor: url("../svg/cursor.svg") 40 40, auto !important;
+    cursor: url("../svg/cursor.svg") 20 20, auto !important;
   }
 }
 
 .custom-cursor-dark {
-  cursor: url("../svg/cursor-dark.svg") 40 40, auto !important;
+  cursor: url("../svg/cursor-dark.svg") 20 20, auto !important;
 
   * {
-    cursor: url("../svg/cursor-dark.svg") 40 40, auto !important;
+    cursor: url("../svg/cursor-dark.svg") 20 20, auto !important;
   }
 }
 
