@@ -279,6 +279,10 @@ module.exports = {
   },
 };
 
+export default {
+  loading: false
+}
+
 // export default {
 //   head: {
 //     title: 'DesignScout | Chicago Branding Agency | Ego-Free Since 2003™',
