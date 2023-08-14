@@ -23,7 +23,7 @@ if (data && data.stories) {
 setTimeout(() => {
   if (process.client) 
     document.body.classList.add("dark");
-}, 150);
+}, 550);
 
 const defaultTitle =
   "DesignScout | Chicago Branding Agency | Ego-Free Since 2003™";

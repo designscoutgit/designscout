@@ -7,9 +7,45 @@ const story = await useAsyncStoryblok(
   { version: useRoute().query._storyblok ? "draft" : "published" }
 );
 
-definePageMeta({
-  layout: "default",
+const defaultTitle = "DesignScout | Chicago Branding Agency | Ego-Free Since 2003™";
+const defaultDescription = "We build brave brands. DesignScout is a Chicago Branding Agency that builds bold identities for rule-bending hospitality and disruptor B2B brands.";
+const defaultOgImage = "https://a.storyblok.com/f/200165/1500x821/cf2a979912/designscout-featured-image.webp";
+
+const metaTitle = props.blok.metatags && props.blok.metatags.title ? props.blok.metatags.title : defaultTitle;
+const ogMetaTitle = props?.blok?.metatags?.og_title || defaultTitle;
+const metaDescription = props.blok.metatags && props.blok.metatags.description ? props.blok.metatags.description : defaultDescription;
+const ogDescription = props?.blok?.metatags?.og_description || ""
+const ogImage = props.blok.metatags && props.blok.metatags.og_image ? props.blok.metatags.og_image : defaultOgImage;
+const twitterDescription = props?.blok?.metatags?.twitter_description || ""
+const twitterImage = props?.blok?.metatags?.twitter_image || ""
+const twitterTitle = props?.blok?.metatags?.twitter_title || ""
+
+useSeoMeta({
+  title: metaTitle,
+  ogTitle: ogMetaTitle,
+  description: metaDescription,
+  ogDescription: ogDescription,
+  image: ogImage,
+  ogImage: ogImage,
+  twitterDescription,
+  twitterImage,
+  twitterTitle,
+  twitterCard: "summary_large_image",
 });
+
+definePageMeta({
+  title: metaTitle,
+  ogTitle: metaTitle,
+  description: metaDescription,
+  ogDescription: metaDescription,
+  image: ogImage,
+  ogImage: ogImage,
+  twitterCard: "summary_large_image",
+});
+
+// definePageMeta({
+//   layout: "default",
+// });
 
 async function setup() {
   return {
