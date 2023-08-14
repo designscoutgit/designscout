@@ -340,13 +340,13 @@ const rightCol3RichText = computed(() =>
 
     <div class="case-study-content-container">
       <div v-editable="blok">
-        <client-only>
+        <!-- <client-only> -->
           <StoryblokComponent
             v-for="blok in blok.body"
             :key="blok._uid"
             :blok="blok"
           />
-        </client-only>
+        <!-- </client-only> -->
       </div>
       <!-- 
       <div class="section-1">
