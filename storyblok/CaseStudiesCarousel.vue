@@ -125,6 +125,7 @@ export default {
       }
     },
     slideCarousel(amount) {
+      if(process.client){
       const carousel = this.$refs.carousel;
       const slideWidth = carousel.clientWidth / this.itemsPerSlide;
       this.currentIndex += amount;
@@ -137,6 +138,7 @@ export default {
       carousel.style.transform = `translateX(${
         -this.currentIndex * slideWidth
       }px)`;
+    }
     },
     handleMouseOver() {
       this.hovering = true;

@@ -8,12 +8,14 @@ defineProps({ blok: Object });
     class="grid"
   >
     <div class="grid-row">
+      <client-only>
       <StoryblokComponent
         v-for="blok in blok.columns"
         :key="blok._uid"
         :blok="blok"
         class="grid-col"
       />
+    </client-only>
     </div>
   </div>
 </template>
@@ -26,13 +28,15 @@ export default {
 
   methods: {
     applyFullWidthClass() {
-      const rows = document.querySelectorAll(".grid-row");
-      rows.forEach((row) => {
-        const cols = row.querySelectorAll(".grid-col");
-        if (cols.length === 1) {
-          cols[0].classList.add("full-width");
-        }
-      });
+      if(process.client){
+        const rows = document.querySelectorAll(".grid-row");
+        rows.forEach((row) => {
+          const cols = row.querySelectorAll(".grid-col");
+          if (cols.length === 1) {
+            cols[0].classList.add("full-width");
+          }
+        });
+      }
     },
   },
 };

@@ -16,7 +16,7 @@ const story = await useAsyncStoryblok(
 const isNotFound = (slug == "services" || slug == "services/") ? false : !story?.value;
 
 console.log(isNotFound);
-console.log(story?.value);
+// console.log(story?.value);
 console.log(slug);
 </script>
  
