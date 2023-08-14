@@ -38,46 +38,46 @@ const outputNames = () => {
 };
 outputNames();
 
-const strategiesRichText = computed(() =>
-  renderRichText(props.blok.strategies)
-);
-const servicesRichText = computed(() => renderRichText(props.blok.services));
+// const strategiesRichText = computed(() =>
+//   renderRichText(props.blok.strategies)
+// );
+// const servicesRichText = computed(() => renderRichText(props.blok.services));
 const linksRichText = computed(() => renderRichText(props.blok.links));
 
-const list1RichText = computed(() => renderRichText(props.blok.list_copy_1));
-const bodyCopy1RichText = computed(() =>
-  renderRichText(props.blok.body_copy_1)
-);
+// const list1RichText = computed(() => renderRichText(props.blok.list_copy_1));
+// const bodyCopy1RichText = computed(() =>
+//   renderRichText(props.blok.body_copy_1)
+// );
 
-const BodyCopyLeft2RichText = computed(() =>
-  renderRichText(props.blok.body_copy_left_2)
-);
-const BodyCopyRight2RichText = computed(() =>
-  renderRichText(props.blok.body_copy_right_2)
-);
+// const BodyCopyLeft2RichText = computed(() =>
+//   renderRichText(props.blok.body_copy_left_2)
+// );
+// const BodyCopyRight2RichText = computed(() =>
+//   renderRichText(props.blok.body_copy_right_2)
+// );
 
-const testimonialRichText = computed(() =>
-  renderRichText(props.blok.testimonial_copy)
-);
+// const testimonialRichText = computed(() =>
+//   renderRichText(props.blok.testimonial_copy)
+// );
 
-const resultsBodyCopyRichText = computed(() =>
-  renderRichText(props.blok.results_body_copy)
-);
+// const resultsBodyCopyRichText = computed(() =>
+//   renderRichText(props.blok.results_body_copy)
+// );
 
-const leftCol1RichText = computed(() => renderRichText(props.blok.left_col_1));
-const rightCol1RichText = computed(() =>
-  renderRichText(props.blok.right_col_1)
-);
+// const leftCol1RichText = computed(() => renderRichText(props.blok.left_col_1));
+// const rightCol1RichText = computed(() =>
+//   renderRichText(props.blok.right_col_1)
+// );
 
-const leftCol2RichText = computed(() => renderRichText(props.blok.left_col_2));
-const rightCol2RichText = computed(() =>
-  renderRichText(props.blok.right_col_2)
-);
+// const leftCol2RichText = computed(() => renderRichText(props.blok.left_col_2));
+// const rightCol2RichText = computed(() =>
+//   renderRichText(props.blok.right_col_2)
+// );
 
-const leftCol3RichText = computed(() => renderRichText(props.blok.left_col_3));
-const rightCol3RichText = computed(() =>
-  renderRichText(props.blok.right_col_3)
-);
+// const leftCol3RichText = computed(() => renderRichText(props.blok.left_col_3));
+// const rightCol3RichText = computed(() =>
+//   renderRichText(props.blok.right_col_3)
+// );
 </script>
 
 <template>

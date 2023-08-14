@@ -34,13 +34,14 @@ const vimeoIframe = ref(null);
 const allow = "autoplay;";
 let aspectRatio = ref(0);
 let portraitMaxHeight = 600; // Maximum acceptable height for portrait videos. Adjust as needed.
-let windowWidth = ref(window.innerWidth);
+let windowWidth = process.client ? ref(window.innerWidth) : {};
 
 const updateWindowWidth = () => {
   windowWidth.value = window.innerWidth;
 };
 
 onMounted(async () => {
+  if(process.client)
   window.addEventListener("resize", updateWindowWidth);
 
   const player = new Player(vimeoIframe.value);
@@ -54,10 +55,12 @@ onMounted(async () => {
 });
 
 onUnmounted(() => {
-  window.removeEventListener("resize", updateWindowWidth);
+  if(process.client)
+    window.removeEventListener("resize", updateWindowWidth);
 });
 
 const padding = computed(() => {
+  if(process.client)
   if (windowWidth.value <= 768) {
     // Mobile breakpoint
     if (aspectRatio.value > 1) {
