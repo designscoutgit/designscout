@@ -13,10 +13,10 @@ const story = await useAsyncStoryblok(
   }
 )
 
-const isNotFound = !story?.value;
+const isNotFound = (slug == "services" || slug == "services/") ? false : !story?.value;
 
 console.log(isNotFound);
-console.log(story?.content);
+console.log(story?.value);
 console.log(slug);
 </script>
  
