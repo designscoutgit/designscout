@@ -3,8 +3,8 @@ const { join } = require('path');
 const redirectHttpMiddleware = require('./middleware/redirect-http');
 
 module.exports = {
-  ssr: true,
-  target: 'static',
+  ssr: process.env.SSR || true,
+  target: process.env.MODE || "statice",
   head: { 
     link: [
       { hid: "canonical", rel: "canonical", href: 'https://www.designscout.com' },
