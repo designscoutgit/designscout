@@ -35,7 +35,7 @@ async function setup() {
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
-  <CookieControl >
+  <CookieControl v-if="!isProduction">
     <!-- <CookieModal  /> -->
     <template #bar class="test">
       <h2 class="size-4 padd-bottom-15">Cookies Settings</h2>
@@ -54,6 +54,7 @@ export default {
   data() {
     return {
       pageName: "",
+      isProduction: process.env.ENVIORMENT != 'dev'
     };
   },
   mounted() {
