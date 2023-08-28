@@ -134,7 +134,7 @@ definePageMeta({
         <input
           type="tel"
           id="phone"
-          placeholder="PHONE*"
+          placeholder="PHONE"
           v-model="phone"
           name="phone"
         >
@@ -225,7 +225,7 @@ definePageMeta({
           v-model="budget"
           name="budget"
         >
-          <option value="">What's your budget?*</option>
+          <option value="">What's your budget?</option>
           <option value="$25,000–$35,000">$25,000–$35,000</option>
           <option value="$35,001–$50,000">$35,001–$50,000</option>
           <option value="$50,001–$100,000">$50,001–$100,000</option>
@@ -238,7 +238,7 @@ definePageMeta({
           v-model="goal"
           inputName="goal"
         />
-        <!-- <label for="goal">Launch goal?*</label> -->
+        <!-- <label for="goal">Launch goal?</label> -->
         <select
           id="goal"
           class="hidden"
@@ -257,7 +257,7 @@ definePageMeta({
         <!-- <label for="message">How can we collaborate?</label> -->
         <textarea
           id="collaborate"
-          placeholder="HOW CAN WE COLLABORATE?*"
+          placeholder="HOW CAN WE COLLABORATE?"
           v-model="message"
           name="message"
           required
