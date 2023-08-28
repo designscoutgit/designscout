@@ -134,7 +134,7 @@ definePageMeta({
         <input
           type="tel"
           id="phone"
-          placeholder="PHONE*"
+          placeholder="PHONE"
           v-model="phone"
           name="phone"
         >
@@ -227,7 +227,7 @@ definePageMeta({
           v-model="budget"
           name="budget"
         >
-          <option value="">What's your budget?*</option>
+          <option value="">What's your budget?</option>
           <option value="$25,000–$35,000">$25,000–$35,000</option>
           <option value="$35,001–$50,000">$35,001–$50,000</option>
           <option value="$50,001–$100,000">$50,001–$100,000</option>
@@ -247,7 +247,7 @@ definePageMeta({
           v-model="goal"
           name="goal"
         >
-          <option value="">Launch goal*</option>
+          <option value="">Launch goal</option>
           <option value="6 weeks">6 weeks</option>
           <option value="8 weeks">8 weeks</option>
           <option value="10 weeks">10 weeks</option>
