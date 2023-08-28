@@ -220,7 +220,7 @@ definePageMeta({
           v-model="budget"
           inputName="budget"
         />
-        <!-- <label for="budget">What's your budget?*</label> -->
+        <!-- <label for="budget">What's your budget?</label> -->
         <select
           id="budget"
           class="hidden"
@@ -240,7 +240,7 @@ definePageMeta({
           v-model="goal"
           inputName="goal"
         />
-        <!-- <label for="goal">Launch goal?*</label> -->
+        <!-- <label for="goal">Launch goal?</label> -->
         <select
           id="goal"
           class="hidden"
@@ -422,14 +422,14 @@ export default {
         { label: "Other", value: "Other" },
       ],
       budgetOptions: [
-        { label: "WHAT'S YOUR BUDGET?*", value: "" },
+        { label: "WHAT'S YOUR BUDGET?", value: "" },
         { label: "$25,000–$35,000", value: "$25,000–$35,000" },
         { label: "$35,001–$50,000", value: "$35,001–$50,000" },
         { label: "$50,001–$100,000", value: "$50,001–$100,000" },
         { label: "$100,001–$300,000", value: "$100,001–$300,000" },
       ],
       goalOptions: [
-        { label: "LAUNCH GOAL*", value: "" },
+        { label: "LAUNCH GOAL", value: "" },
         { label: "6 weeks", value: "6 weeks" },
         { label: "8 weeks", value: "8 weeks" },
         { label: "10 weeks", value: "10 weeks" },
