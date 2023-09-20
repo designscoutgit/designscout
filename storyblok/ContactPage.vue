@@ -134,7 +134,7 @@ definePageMeta({
         <input
           type="tel"
           id="phone"
-          placeholder="PHONE*"
+          placeholder="PHONE"
           v-model="phone"
           name="phone"
         >
@@ -220,14 +220,14 @@ definePageMeta({
           v-model="budget"
           inputName="budget"
         />
-        <!-- <label for="budget">What's your budget?*</label> -->
+        <!-- <label for="budget">What's your budget?</label> -->
         <select
           id="budget"
           class="hidden"
           v-model="budget"
           name="budget"
         >
-          <option value="">What's your budget?*</option>
+          <option value="">What's your budget?</option>
           <option value="$25,000–$35,000">$25,000–$35,000</option>
           <option value="$35,001–$50,000">$35,001–$50,000</option>
           <option value="$50,001–$100,000">$50,001–$100,000</option>
@@ -240,14 +240,14 @@ definePageMeta({
           v-model="goal"
           inputName="goal"
         />
-        <!-- <label for="goal">Launch goal?*</label> -->
+        <!-- <label for="goal">Launch goal?</label> -->
         <select
           id="goal"
           class="hidden"
           v-model="goal"
           name="goal"
         >
-          <option value="">Launch goal*</option>
+          <option value="">Launch goal</option>
           <option value="6 weeks">6 weeks</option>
           <option value="8 weeks">8 weeks</option>
           <option value="10 weeks">10 weeks</option>
@@ -422,14 +422,14 @@ export default {
         { label: "Other", value: "Other" },
       ],
       budgetOptions: [
-        { label: "WHAT'S YOUR BUDGET?*", value: "" },
+        { label: "WHAT'S YOUR BUDGET?", value: "" },
         { label: "$25,000–$35,000", value: "$25,000–$35,000" },
         { label: "$35,001–$50,000", value: "$35,001–$50,000" },
         { label: "$50,001–$100,000", value: "$50,001–$100,000" },
         { label: "$100,001–$300,000", value: "$100,001–$300,000" },
       ],
       goalOptions: [
-        { label: "LAUNCH GOAL*", value: "" },
+        { label: "LAUNCH GOAL", value: "" },
         { label: "6 weeks", value: "6 weeks" },
         { label: "8 weeks", value: "8 weeks" },
         { label: "10 weeks", value: "10 weeks" },

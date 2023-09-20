@@ -12,7 +12,7 @@ const story = await useAsyncStoryblok(
 const caseStudies = ref(null);
 const storyblokApi = useStoryblokApi();
 const { data } = await storyblokApi.get("cdn/stories", {
-  version: "draft",
+  version: useRoute().query._storyblok ? "draft" : "published",
   starts_with: "case-studies",
   is_startpage: false,
 });
