@@ -26,7 +26,7 @@ const props = defineProps({ blok: Object });
 
 const storyblokApi = useStoryblokApi();
 const { data } = await storyblokApi.get("cdn/stories", {
-  version: "draft",
+  version: useRoute().query._storyblok ? "draft" : "published",
   starts_with: "home",
 });
 
