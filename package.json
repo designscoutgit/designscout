@@ -15,8 +15,8 @@
     "node": "v18.16.0"
   },
   "scripts": {
-    "start": "serve ./.output/public",
-    "build": "nuxt generate",
+    "start": "nuxt start",
+    "build": "nuxt build",
     "dev": "nuxt dev",
     "dev:https": "nuxt dev --https",
     "dev-ssl": "NODE_TLS_REJECT_UNAUTHORIZED=0 nuxt dev --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
@@ -67,7 +67,6 @@
     "lodash": "^4.17.21",
     "storyblok-js-client": "^5.8.0",
     "swiper": "^9.0.5",
-    "serve": "^14.1.2",
     "touch-dnd": "^1.2.1",
     "vue-animate-onscroll": "^1.0.8",
     "vue-dropdowns": "^1.1.2",
