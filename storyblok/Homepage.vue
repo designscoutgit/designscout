@@ -222,12 +222,17 @@ definePageMeta({
           <h3>RECENT APPEARANCES</h3>
           <!-- <p>BOPP Beer Design Conference: <br>Speaker on Sep 21, 2022</p> -->
           <p>Features: <a
-              href="https://podcasts.apple.com/us/podcast/wine-women-scout-driscoll-founder-ceo-vint-studio/id1467538301?i=1000535631625"
+              href="https://www.spreaker.com/user/foodabletv/how-to-be-brave-and-bold-with-your-brand"
               target="_blank"
               class="underline navy"
-            >Wine Women Radio</a></p>
+            >Turning Tables Podcast</a>, 
+            <a
+              href="https://www.allupinmyladybusiness.com/timeless-design-fine-wine-with-scout-driscoll/"
+              target="_blank"
+              class="underline navy"
+            > All Up In My Lady Business</a></p>
           <p> Podcast: <a
-              href="https://podcasts.apple.com/us/podcast/wine-women-scout-driscoll-founder-ceo-vint-studio/id1467538301?i=1000535631625"
+              href="https://vint.studio/vinted-podcast/"
               target="_blank"
               class="underline navy"
             >VINT<em>ed</em> by Scout Driscoll</a></p>
